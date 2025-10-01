@@ -1,0 +1,129 @@
+// Custom styling that resembles Gov.uk
+$link-color: #1d70b8;
+$border-color: #b1b4b6;
+
+// Swedish governmental blue
+$sidebar-color: #005293;
+$nav-child-link-color: #005293;
+
+// Font settings
+$body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+@media (min-width: 31.25rem) {
+	html {
+		font-size: 1.5rem !important;
+	}
+}
+
+html {
+	font-size: 1.25rem !important;
+}
+
+html {
+	line-height: 1.25;
+	text-size-adjust: 100%;
+}
+
+// Clearer headings
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 1.5rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+	margin-top: 2.5rem;
+}
+
+// Add with support for light/dark
+.example {
+	border: 2px solid $grey-lt-300;
+	padding: 1.5rem;
+	margin: 1.5rem 0;
+	background-color: rgba(135, 135, 135, 0.1);
+	color: $body-text-color;
+
+	>h3 {
+		color: $body-text-color;
+	}
+
+	& input {
+		background-color: $grey-lt-200;
+	}
+}
+
+// Dos and don'ts
+.do-dont {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	margin: 1.5rem 0;
+}
+
+.do,
+.dont {
+	padding: 1rem;
+	border-radius: 4px;
+}
+
+.do {
+	// Use transparency för att fungera i båda teman
+	background-color: rgba(0, 255, 0, 0.1);
+	border-left: 4px solid $green-300;
+	color: $body-text-color;
+}
+
+.dont {
+	background-color: rgba(255, 0, 0, 0.1);
+	border-left: 4px solid $red-300;
+	color: $body-text-color;
+}
+
+/* Make the caret button (arrow) easier to hit */
+.nav-list .nav-list-expander.btn-reset {
+	padding: 0.4rem;
+	/* bigger hit area around the icon */
+	margin: -0.2rem 0;
+	/* don't push the text down */
+	border-radius: 4px;
+	/* optional: nicer focus ring */
+}
+
+.nav-list .nav-list-expander.btn-reset:focus {
+	outline: 3px solid #1d70b8;
+	outline-offset: 2px;
+}
+
+/* Make top-level labels without href feel clickable */
+.nav-list .nav-list-link:not([href]) {
+	cursor: pointer;
+	user-select: none;
+}
+
+/* >>> Remove accordion like menu */
+/* Show all nested lists */
+#site-nav .nav-list .nav-list {
+	display: block !important;
+}
+
+/* Optional: hide the toggle buttons if everything is always open */
+#site-nav .nav-list-expander {
+	display: none;
+}
+
+/* <<< Remove accordion like menu */
+
+.js-toggle-dark-mode {
+	margin-left: 1rem;
+	background: transparent;
+	border: 1px solid var(--color-border);
+	box-shadow: none;
+	font-size: 1.2rem;
+	padding: 0.25rem 0.5rem;
+	cursor: pointer;
+	border-radius: 0;
+
+	&:hover {
+		background: var(--color-grey-lt-000);
+	}
+}

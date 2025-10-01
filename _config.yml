@@ -1,0 +1,42 @@
+# Basic configuration for Jekyll and Just the Docs
+title: Designmönster
+description: Designmönster med god tillgänglighet för svenska myndigheter
+
+# Use remote_theme instead of theme to make it compatible with GitHub Pages
+remote_theme: just-the-docs/just-the-docs@v0.10.1
+
+url: https://pattespatte.github.io
+baseurl: /design-patterns-test
+
+# Set the site language to Swedish
+lang: sv-SE
+locale: sv_SE
+
+# Additional configuration
+logo: false
+search_enabled: true
+search_tokenizer_separator: /[\s/]+/
+heading_level: 2
+
+# Color scheme
+# color_scheme: light
+
+# Aux links
+aux_links:
+  "GitHub":
+    - "//github.com/pattespatte/design-patterns-test"
+
+aux_links_new_tab: true
+
+# Footer
+footer_content: "Copyright &copy; 2025 Gemensamma designmönster med god tillgänglighet."
+
+# Collections
+collections:
+  docs:
+    output: false
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
