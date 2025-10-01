@@ -2,9 +2,21 @@
 layout: default
 title: Personnummer
 parent: Designmönster
-nav_order: 4
+nav_order: 10
 ---
+
+**Fråga användare efter**
 
 # Personnummer
 
-Här kommer innehåll.
+## Använd mönstret när
+
+Beskrivning.
+
+## Använd inte mönstret när
+
+Beskrivning.
+
+## Så fungerar mönstret
+
+Beskrivning.

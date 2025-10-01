@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Namn
+title: Datum
 parent: Designmönster
-nav_order: 1
+nav_order: 10
 ---
 
 **Fråga användare efter**
 
-# Namn
+# Datum
 
 ## Använd mönstret när
 

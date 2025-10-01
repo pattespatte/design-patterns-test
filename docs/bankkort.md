@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Namn
+title: Bankkort
 parent: Designmönster
-nav_order: 1
+nav_order: 8
 ---
 
 **Fråga användare efter**
 
-# Namn
+# Bankkort
 
 ## Använd mönstret när
 

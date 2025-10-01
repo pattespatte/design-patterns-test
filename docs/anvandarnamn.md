@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Namn
+title: Användarnamn och lösenord
 parent: Designmönster
-nav_order: 1
+nav_order: 10
 ---
 
 **Fråga användare efter**
 
-# Namn
+# Användarnamn och lösenord
 
 ## Använd mönstret när
 

@@ -15,6 +15,7 @@ Detta är ett samarbete mellan svenska myndigheter för att utveckla gemensamma 
 ## Hur du använder mönstren
 
 Varje mönster innehåller:
+
 - När och hur mönstret ska användas
 - Exempel på implementering
 - Tillgänglighetsriktlinjer

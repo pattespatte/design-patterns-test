@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Namn
+title: Civilstånd
 parent: Designmönster
-nav_order: 1
+nav_order: 7
 ---
 
 **Fråga användare efter**
 
-# Namn
+# Civilstånd
 
 ## Använd mönstret när
 

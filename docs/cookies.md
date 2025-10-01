@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Namn
+title: Cookies
 parent: Designmönster
-nav_order: 1
+nav_order: 9
 ---
 
 **Fråga användare efter**
 
-# Namn
+# Cookies
 
 ## Använd mönstret när
 
