@@ -27,4 +27,4 @@ Utforska våra [designmönster](/design-patterns-test/docs/) eller läs mer [om 
 
 ---
 
-💡 **Bidra till projektet**: Vi välkomnar feedback och förslag! Kontakta oss eller skapa ett issue på GitHub.
+💡 **Bidra till projektet**: Vi välkomnar feedback och förslag! Kontakta oss eller [skapa ett issue på GitHub](https://github.com/pattespatte/design-patterns-test/issues).
