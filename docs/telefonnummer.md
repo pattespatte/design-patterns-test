@@ -19,4 +19,4 @@ Beskrivning.
 
 ## Så fungerar mönstret
 
-Beskrivning.
+Vi diskuterade hur vi frågar efter telefonnummer.
