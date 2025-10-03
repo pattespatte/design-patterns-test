@@ -22,3 +22,7 @@ Beskrivning.
 Vi diskuterade hur vi frågar efter telefonnummer.
 
 ### Valideringsregler
+
+- Tecken som bör vara tillåtna är +, - och mellanslag.
+- När landskod behövs – så rekommenderar vi att lägga ett eget fält för detsom är en droplista eller liknande där världens länder finns som val.
+- Om systemet vet var vi är så är det bra om vi kan erbjuda landskoden.
