@@ -38,7 +38,7 @@ Beskrivning.
     - Uppgift saknas, fyll i e-postadress.
     - Fel format, fyll i en giltig e-postadress
 
-![e-post obligatoriskt](assets/images/e-post-adress-obligatorisk.png)
+![e-post obligatoriskt](../assets/images/e-post-adress-obligatorisk.png)
 
 - Valideringstexten bör vara ovanför och inte under, men också att fältet är annan färg, att inte bara ha färg utan också ikon
 - Om det går att spåra vad användaren har gjort för fel och det går att skriva ut vad som borde rättas.
