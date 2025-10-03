@@ -8,7 +8,9 @@ nav_order: 2
 **Fråga användare efter**
 
 # Telefonnummer
-![NMA 0032617](https://github.com/user-attachments/assets/def2d824-0dd2-43e3-9b27-d4cbf79e82e7)
+
+<img width="808" height="327" alt="Applikationsexempel" src="https://github.com/user-attachments/assets/05419269-d9ad-4a5b-87e9-0b4ff94c1a32" />
+
 
 ## Använd mönstret när
 
