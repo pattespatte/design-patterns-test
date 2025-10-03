@@ -141,3 +141,12 @@ h2 {
 		background: var(--color-grey-lt-000);
 	}
 }
+
+@media (min-width: 50rem) {
+
+	.site-header,
+	.main-header {
+		height: 4.75rem;
+		max-height: 4.75rem;
+	}
+}
