@@ -8,6 +8,7 @@ nav_order: 2
 **Fråga användare efter**
 
 # Telefonnummer
+![NMA 0032617](https://github.com/user-attachments/assets/def2d824-0dd2-43e3-9b27-d4cbf79e82e7)
 
 ## Använd mönstret när
 
