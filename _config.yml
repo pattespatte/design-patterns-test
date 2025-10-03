@@ -1,5 +1,5 @@
 # Basic configuration for Jekyll and Just the Docs
-title: Designmönster
+title: Statliga designmönster
 description: Designmönster med god tillgänglighet för svenska myndigheter
 
 # Use remote_theme instead of theme to make it compatible with GitHub Pages
