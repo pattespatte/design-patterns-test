@@ -9,7 +9,7 @@ nav_order: 2
 
 # Telefonnummer
 
-<img width="808" height="327" alt="Applikationsexempel" src="https://github.com/user-attachments/assets/05419269-d9ad-4a5b-87e9-0b4ff94c1a32" />
+<img width="808" height="374" alt="Applikationsexempel" src="https://github.com/user-attachments/assets/323ce6c9-bf59-46e5-95c7-9906d791b8e5" />
 
 ## Använd mönstret när
 
