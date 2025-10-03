@@ -20,3 +20,5 @@ Beskrivning.
 ## Så fungerar mönstret
 
 Vi diskuterade hur vi frågar efter telefonnummer.
+
+### Valideringsregler
