@@ -31,7 +31,7 @@ I situationer när vi vill ha för- och efternamn, men inte är beroende av att 
 
 Använd två separata fält med rubrikerna förnamn och efternamn för att hämta in namn i situationer:
 
-- då det är viktigt att veta vad som är för- respektive efternamn användtvå fält.
+- då det är viktigt att veta vad som är för- respektive efternamn använd två fält.
 - då man vill kunna tilltala personen på rätt sätt med förnamnet kan vara bra att veta vilket namn som är förnamn.
 
 ### När vi ber om samtliga namn
@@ -51,7 +51,7 @@ I det fall (Patrik E kollar upp hur de har löst det, i de fall  man ska fylla i
 
 ### Namn för kontaktuppgifter
 
-- I många fall &ndash; t.ex. när en person kontaktar en myndighet på en fråga i ett frågeformulär och då ingen persondata ska lagras &ndash; så kräver vi intein alla namn utan det är upp till frågeställaren vilka namn denne vill delge. Använd ett fält med rubriken Namn.
+- I många fall &ndash; t.ex. när en person kontaktar en myndighet på en fråga i ett frågeformulär och då ingen persondata ska lagras &ndash; så kräver vi inte in alla namn utan det är upp till frågeställaren vilka namn denne vill delge. Använd ett fält med rubriken Namn.
 
 ### Generellt
 
