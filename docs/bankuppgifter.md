@@ -2,6 +2,7 @@
 layout: default
 title: Bankuppgifter
 parent: Designmönster
+status: utkast
 nav_order: 5
 ---
 

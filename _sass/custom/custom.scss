@@ -31,9 +31,6 @@ a:hover {
 
 html {
 	font-size: 1.25rem !important;
-}
-
-html {
 	line-height: 1.25;
 	text-size-adjust: 100%;
 }
@@ -47,6 +44,13 @@ h1 {
 h2 {
 	font-size: 1.75rem;
 	margin-top: 2.5rem;
+}
+
+.label:not(g),
+.label-blue:not(g) {
+	float: right;
+	margin: 1rem 2rem 0 1rem;
+	position: float;
 }
 
 // Add with support for light/dark

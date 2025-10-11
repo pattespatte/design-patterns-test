@@ -2,6 +2,7 @@
 layout: default
 title: Namn
 parent: Designmönster
+status: utkast
 nav_order: 1
 ---
 
@@ -73,4 +74,3 @@ Vi diskuterade hur vi frågar efter namn och vi kan se några olika scenarion:
 
 - GOV-UK säger att autocomplete ska användas vid fråga om namn.
 - I vissa fall kan det finnas säkerhetsskäl att inte lägga in autocomplete på fält för personuppgifter. Scenariot kan vara att en person sitter på en lånad dator t.ex. på ett bibliotek och fyller i ett formulär av något slag till en myndighet. Om uppgifter då sparas för autocomplete så kan dessa exponeras när nästa person lånar datorn. Några myndigheter som är representerade i mötet uppger att de går efter den principen.
-

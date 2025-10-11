@@ -2,6 +2,7 @@
 layout: default
 title: Cookies
 parent: Designmönster
+status: utkast
 nav_order: 9
 ---
 

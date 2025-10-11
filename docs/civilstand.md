@@ -2,6 +2,7 @@
 layout: default
 title: Civilstånd
 parent: Designmönster
+status: utkast
 nav_order: 7
 ---
 

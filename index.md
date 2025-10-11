@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Hem
+status: utkast
 nav_order: 1
 ---
 

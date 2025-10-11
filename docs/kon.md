@@ -2,6 +2,7 @@
 layout: default
 title: Kön
 parent: Designmönster
+status: utkast
 nav_order: 6
 ---
 

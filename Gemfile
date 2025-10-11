@@ -1,8 +1,8 @@
 
 # GitHub Pages gems
-gem "github-pages", "~> 232", group: :jekyll_plugins
+source "https://rubygems.org"
+gem "github-pages", group: :jekyll_plugins
 gem "webrick", "~> 1.8"
-
 
 # Development tools
 group :development do
@@ -15,4 +15,6 @@ platforms :windows , :jruby do
   gem "tzinfo-data"
 end
 
+gem "just-the-docs", "~> 0.10.1"
 gem "wdm", "~> 0.1", :platforms => [:windows ]
+gem "faraday-retry", "~> 2.3"

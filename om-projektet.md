@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Om projektet
+status: utkast
 nav_order: 3
 ---
 

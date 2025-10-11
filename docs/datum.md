@@ -2,6 +2,7 @@
 layout: default
 title: Datum
 parent: Designmönster
+status: utkast
 nav_order: 10
 ---
 

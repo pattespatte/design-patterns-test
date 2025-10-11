@@ -2,6 +2,7 @@
 layout: default
 title: Bankkort
 parent: Designmönster
+status: utkast
 nav_order: 8
 ---
 
