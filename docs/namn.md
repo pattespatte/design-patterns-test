@@ -12,7 +12,7 @@ nav_order: 1
 
 ## Använd mönstret när
 
-Mönstret för namn kan användas både i e-tjänster och blanketter. Fråga baraefter namn när det behövs.
+Mönstret för namn kan användas både i e-tjänster och blanketter. Fråga bara efter namn när det behövs.
 
 ## Använd inte mönstret när
 
