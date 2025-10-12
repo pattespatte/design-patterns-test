@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Drafts
-published: false
-status: draft
-parent: -
-nav_exclude: true     # Hidden from navigation
-search_exclude: true  # Hidden from search
+published: false      # Will not be built in Github Pages
+status: draft         # Will get "draft" as a label
+parent: ""            # No parent
+nav_exclude: true     # Will not be part of the navigation
+search_exclude: true  # Will not show up in search
 ---
 
 # Hide a page
@@ -105,11 +105,11 @@ layout: default
     <p>Detta innehåll är fortfarande under utveckling.</p>
   </div>
 {% else %}
-  
+
   {% include status-badge.html %}
-  
+
   {{ content }}
-  
+
 {% endif %}
 ```
 
@@ -199,7 +199,7 @@ defaults:
 ```html
 {% if page.status %}
   {% assign status = page.status | downcase %}
-  
+
   {% if status == "opublicerad" or status == "unpublished" %}
     {% if jekyll.environment == "production" %}
       <!-- Hide content in production -->
@@ -293,5 +293,5 @@ status: Godkänd
 | `status: Utkast` | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
 | In `_drafts/` | ❌ No** | ❌ No | ❌ No | ❌ No |
 
-*Unless also excluded  
+*Unless also excluded
 **Only builds with `--drafts` flag
