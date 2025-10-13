@@ -5,13 +5,13 @@ status: utkast
 nav_order: 1
 ---
 
-# Gemensamma designmönster för svenska myndigheter
+# Digital tillgänglighet och inkluderande design
 
-Välkommen till vår samling av designmönster för att skapa tillgängliga och användarvänliga digitala tjänster inom offentlig sektor.
+Välkommen till en samling av designmönster. De har skapats för att bidra till tillgängliga och användarvänliga digitala tjänster inom offentlig sektor.
 
 ## Om projektet
 
-Detta är ett samarbete mellan svenska myndigheter för att utveckla gemensamma designmönster med god tillgänglighet. Vårt arbete är inspirerat av [Gov.uk Design System](https://design-system.service.gov.uk/patterns/) men anpassat för svenska förhållanden.
+Detta är ett samarbete mellan svenska myndigheter för att utveckla gemensamma designmönster med god tillgänglighet. Vårt arbete är inspirerat av [Gov.uk Design System](https://design-system.service.gov.uk/patterns/) och anpassat för svenska förhållanden.
 
 ## Hur du använder mönstren
 
