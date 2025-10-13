@@ -7,7 +7,7 @@ nav_order: 1
 
 # Digital tillgänglighet och inkluderande design
 
-Välkommen till en samling av designmönster. De har skapats för att bidra till tillgängliga och användarvänliga digitala tjänster inom offentlig sektor.
+Välkommen till en samling av designmönster. De kan användas i digitala tjänster för att göra tjänsterna tillgängliga och användarvänliga.
 
 ## Om projektet
 
