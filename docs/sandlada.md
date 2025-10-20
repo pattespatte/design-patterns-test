@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Sandlåda - här kan vi testa att redigera
+title: Sandlåda (för test)
 parent: Designmönster
 status: utkast
 nav_order: 12
@@ -8,4 +8,4 @@ nav_order: 12
 
 # Sandlåda – en sida där man kan testa hursomhelst 👩‍🎨
 
-Testa här
+Lägg in något här!
