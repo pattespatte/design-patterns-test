@@ -1,33 +1,60 @@
-# Install dependencies
+# Install
+
+## Ruby
+
+```bash
 
 # Check your Ruby version (needs to be 2.5 or higher)
+
 ruby -v
 
 # Check if Bundler is installed
+
 bundler -v
 
 # If not installed, install it
+
 gem install bundler
 
 # Install rbenv to manage Ruby versions
+
 brew install rbenv ruby-build
 
 # Install the latest Ruby
-rbenv install 3.2.2
-rbenv global 3.2.2
+
+rbenv install 3.4.7
+rbenv global 3.4.7
 
 # Verify
+
 ruby -v
+```
 
-# Install dependencies from Gemfile
+## Dependencies from Gemfile
 
+```bash
 ## 🛠️ Install Bundler
 
 gem install bundler
 gem install github-pages -v 232
 gem install jekyll-livereload
+```
 
 ## 🚀 Start local server
+
+```bash
+# Make sure local template is active
+
+awk '
+/^remote_theme: just-the-docs\/just-the-docs@v0.10.1$/ {
+    print "# " $0
+    next
+}
+/^# theme: just-the-docs$/ {
+    $0 = "theme: just-the-docs"
+}
+1
+' _config.yml > temp && mv temp _config.yml
 
 # bundle exec jekyll serve
 
@@ -43,4 +70,12 @@ bundle exec jekyll serve --livereload
 # Visit your local site
 # Open your browser and go to:
 
-open http://localhost:4000/${project_name}/
+open http://127.0.0.1:4000/design-patterns-test/
+```
+
+Remember to set this back in `_config.yml` to remote template before checking in updates:
+
+```bash
+remote_theme: just-the-docs/just-the-docs@v0.10.1
+# theme: just-the-docs
+```
