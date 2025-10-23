@@ -10,7 +10,7 @@ nav_order: 10
 
 # Personnummer
 
-![personnummer](../assets/images/Exempel_personnummer.png)
+![personnummer](../assets/images/exempel_personnummer.png)
 
 ## Använd mönstret när
 
