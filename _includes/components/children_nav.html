@@ -1,0 +1,13 @@
+{% if page.has_children %}
+<div class="children-nav">
+	<h2 class="children-nav-title">Underordnade sidor</h2>
+	<ul class="children-nav-list">
+		{% assign children = site.html_pages | where: "parent", page.title | sort: "nav_order" %}
+		{% for child in children %}
+		<li class="children-nav-list-item">
+			<a href="{{ child.url | relative_url }}" class="children-nav-link">{{ child.title }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endif %}

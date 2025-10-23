@@ -67,6 +67,17 @@ bundle exec jekyll serve --livereload
 # If you want to access from other devices on the network
 # bundle exec jekyll serve --host 0.0.0.0 --livereload
 
+# Reset and activate remote template
+awk '
+/^# remote_theme: just-the-docs\/just-the-docs@v0.10.1$/ {
+    sub(/^# /, "")
+}
+/^theme: just-the-docs$/ {
+    $0 = "# " $0
+}
+1
+' _config.yml > temp && mv temp _config.yml
+
 # Visit your local site
 # Open your browser and go to:
 

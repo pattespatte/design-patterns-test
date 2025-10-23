@@ -1,0 +1,73 @@
+{% comment %}
+Custom navigation component that includes h3 headers based on nav_header front matter
+{% endcomment %}
+
+<nav aria-label="Main navigation" class="site-nav">
+	<ul class="nav-list">
+		{% assign pages = site.html_pages | where_exp:"item", "item.title != nil" | sort:"nav_order" %}
+
+		{% for node in pages %}
+		{% if node.parent == nil and node.nav_order != nil %}
+		{% assign has_nav_header = false %}
+		{% if node.nav_header %}
+		{% assign has_nav_header = true %}
+		{% endif %}
+
+		<li class="nav-list-item{% if page.url == node.url %} active{% endif %}">
+			{% if has_nav_header %}
+			<h3>{{ node.nav_header }}</h3>
+			{% endif %}
+
+			{% if node.has_children %}
+			<a href="{{ node.url | relative_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">{{ node.title }}</a>
+			<ul class="nav-list-child-list">
+				{% assign previous_header = "" %}
+				{% for child in pages %}
+				{% if child.parent == node.title or child.parent == node.url %}
+				{% assign child_has_nav_header = false %}
+				{% if child.nav_header %}
+				{% assign child_has_nav_header = true %}
+				{% endif %}
+
+				<li class="nav-list-item{% if page.url == child.url %} active{% endif %}">
+					{% if child_has_nav_header and child.nav_header != previous_header %}
+					<h3>{{ child.nav_header }}</h3>
+					{% assign previous_header = child.nav_header %}
+					{% endif %}
+
+					<a href="{{ child.url | relative_url }}" class="nav-list-link{% if page.url == child.url %} active{% endif %}">{{ child.title }}</a>
+
+					{% if child.has_children %}
+					<ul class="nav-list-child-list">
+						{% assign previous_grandchild_header = "" %}
+						{% for grandchild in pages %}
+						{% if grandchild.parent == child.title or grandchild.parent == child.url %}
+						{% assign grandchild_has_nav_header = false %}
+						{% if grandchild.nav_header %}
+						{% assign grandchild_has_nav_header = true %}
+						{% endif %}
+
+						<li class="nav-list-item{% if page.url == grandchild.url %} active{% endif %}">
+							{% if grandchild_has_nav_header and grandchild.nav_header != previous_grandchild_header %}
+							<h3>{{ grandchild.nav_header }}</h3>
+							{% assign previous_grandchild_header = grandchild.nav_header %}
+							{% endif %}
+
+							<a href="{{ grandchild.url | relative_url }}" class="nav-list-link{% if page.url == grandchild.url %} active{% endif %}">{{ grandchild.title }}</a>
+						</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+					{% endif %}
+				</li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+			{% else %}
+			<a href="{{ node.url | relative_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">{{ node.title }}</a>
+			{% endif %}
+		</li>
+		{% endif %}
+		{% endfor %}
+	</ul>
+</nav>

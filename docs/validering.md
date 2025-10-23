@@ -1,15 +1,17 @@
 ---
 layout: default
-title: Se en översikt
+title: Få reda på vad som är fel
 parent: Designmönster
 status: utkast
-nav_order: 31
+nav_order: 30
 nav_header: Hjälp användare att…
 ---
 
 **Hjälp användare att**
 
-# Se en översikt
+# Få reda på vad som är fel (validering)
+
+<img width="808" height="374" alt="Applikationsexempel" src="https://github.com/user-attachments/assets/323ce6c9-bf59-46e5-95c7-9906d791b8e5" />
 
 ## Använd mönstret när
 

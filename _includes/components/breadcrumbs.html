@@ -1,0 +1,27 @@
+<nav aria-label="Breadcrumb" class="breadcrumb-nav">
+	<ol class="breadcrumb-nav-list">
+		{% assign crumbs = page.url | split: "/" %}
+		{% assign crumbs_size = crumbs | size | minus: 1 %}
+
+		<li class="breadcrumb-nav-list-item">
+			<a href="{{ " /" | relative_url }}">Hem</a>
+		</li>
+
+		{% for crumb in crumbs offset:1 limit:crumbs_size %}
+		{% if crumb != "" %}
+		{% assign crumb_url = crumb | append: "/" %}
+		{% assign crumb_path = "/" | append: crumb | append: "/" %}
+
+		<li class="breadcrumb-nav-list-item">
+			<a href="{{ crumb_path | relative_url }}">{{ crumb | replace: "-", " " | capitalize }}</a>
+		</li>
+		{% endif %}
+		{% endfor %}
+
+		{% if page.title %}
+		<li class="breadcrumb-nav-list-item">
+			<span>{{ page.title }}</span>
+		</li>
+		{% endif %}
+	</ol>
+</nav>
