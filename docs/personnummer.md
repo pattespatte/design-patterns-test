@@ -10,6 +10,8 @@ nav_order: 10
 
 # Personnummer
 
+![personnummer](../assets/images/Exempel_personnummer.png)
+
 ## Använd mönstret när
 
 Beskrivning.
