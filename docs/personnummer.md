@@ -23,11 +23,13 @@ nav_order: 10
 ## Så fungerar mönstret
 
 Hjälp användare att ange ett personnummer genom att alltid använda ett förlåtande formulär där användaren kan mata in de vanligast förekommande varianterna:
+
 - ÅÅÅÅMMDD-NNNN
 - ÅÅMMDD-NNNN
 - ÅÅÅÅMMDDNNNN
 - ÅÅMMDDNNNN
 - ÅÅÅÅMMDD NNNN
 - ÅÅMMDD NNNN
+
 Oavsett vilken variant som användaren matar in så korrigeras det automatiskt till rätt format i koden.
 Även med förlåtande inmatning kan en del användare behöva ett exempel för hur inmatningen kan se ut. Använd stora bokstäver (versaler) i exemplet, så som ÅÅÅÅ.
