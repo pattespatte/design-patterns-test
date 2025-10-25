@@ -29,6 +29,7 @@ html {
 	font-size: 1.25rem !important;
 	line-height: 1.25;
 	text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 }
 
 // Clearer headings
@@ -112,6 +113,7 @@ h2 {
 .nav-list .nav-list-link:not([href]) {
 	cursor: pointer;
 	user-select: none;
+	-webkit-user-select: none;
 }
 
 /* >>> Expand accordion like menu */
@@ -216,4 +218,17 @@ h2 {
 		padding: 0 .5rem 0 0;
 		vertical-align: .15rem;
 	}
+}
+
+/* Ensure sidebar can display the footer at the bottom */
+.side-bar {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* Make site-nav grow to fill available space */
+.site-nav {
+	flex: 1 0 auto;
+	overflow-y: auto;
 }
