@@ -1,15 +1,16 @@
 {% if page.status %}
 {% assign status = page.status | downcase %}
-
-{% if status == "utkast" or status == "draft" %}
-<span class="label label-yellow">{{ page.status }}</span>
-{% elsif status == "granskning" or status == "review" %}
-<span class="label label-blue">{{ page.status }}</span>
-{% elsif status == "godkänd" or status == "approved" %}
-<span class="label label-green">{{ page.status }}</span>
-{% elsif status == "utgått" or status == "deprecated" %}
-<span class="label label-red">{{ page.status }}</span>
-{% else %}
-<span class="label label-purple">{{ page.status }}</span>
-{% endif %}
+<div class="stauts-label">
+	{% if status == "utkast" or status == "draft" %}
+	<span class="label label-yellow">{{ page.status }}</span>
+	{% elsif status == "granskning" or status == "review" %}
+	<span class="label label-blue">{{ page.status }}</span>
+	{% elsif status == "godkänd" or status == "approved" %}
+	<span class="label label-green">{{ page.status }}</span>
+	{% elsif status == "utgått" or status == "deprecated" %}
+	<span class="label label-red">{{ page.status }}</span>
+	{% else %}
+	<span class="label label-purple">{{ page.status }}</span>
+	{% endif %}
+</div>
 {% endif %}

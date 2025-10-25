@@ -43,11 +43,15 @@ h2 {
 	margin-top: 2.5rem;
 }
 
+.stauts-label {
+	position: absolute;
+	right: 1rem;
+	top: 4.5rem;
+}
+
 .label:not(g),
 .label-blue:not(g) {
-	float: right;
-	margin: 1rem 2rem 0 1rem;
-	position: float;
+	position: relative;
 }
 
 // Add with support for light/dark
@@ -55,7 +59,7 @@ h2 {
 	border: 2px solid $grey-lt-300;
 	padding: 1.5rem;
 	margin: 1.5rem 0;
-	background-color: rgba(135, 135, 135, 0.1);
+	background-color: rgba(135, 135, 135, .1);
 	color: $body-text-color;
 
 	>h3 {
@@ -83,20 +87,20 @@ h2 {
 
 .do {
 	// Use transparency för att fungera i båda teman
-	background-color: rgba(0, 255, 0, 0.1);
+	background-color: rgba(0, 255, 0, .1);
 	border-left: 4px solid $green-300;
 	color: $body-text-color;
 }
 
 .dont {
-	background-color: rgba(255, 0, 0, 0.1);
+	background-color: rgba(255, 0, 0, .1);
 	border-left: 4px solid $red-300;
 	color: $body-text-color;
 }
 
 /* Make the caret button (arrow) easier to hit */
 .nav-list .nav-list-expander.btn-reset {
-	padding: 0.4rem;
+	padding: .4rem;
 	/* bigger hit area around the icon */
 	margin: -0.2rem 0;
 	/* don't push the text down */
@@ -135,7 +139,7 @@ h2 {
 }
 
 #site-nav .nav-list-item>h3 {
-	margin: .5rem 0 0.5rem;
+	margin: .5rem 0 .5rem;
 	padding: 0 0 0 2rem;
 }
 
@@ -145,7 +149,7 @@ h2 {
 	border: 1px solid var(--color-border);
 	box-shadow: none;
 	font-size: 1.2rem;
-	padding: 0.25rem 0.5rem;
+	padding: .25rem .5rem;
 	cursor: pointer;
 	border-radius: 0;
 
@@ -158,13 +162,6 @@ h2 {
 	font-weight: 700;
 }
 
-@media (min-width: 31.25rem) {
-	.site-title {
-		font-size: 1.5rem !important;
-		line-height: 1.25;
-	}
-}
-
 /* Footer positioning */
 .content-footer {
 	margin-top: auto;
@@ -174,33 +171,41 @@ h2 {
 	align-items: flex-end;
 }
 
-/* Ensure main-content-wrap can grow to fill available space */
-.main-content-wrap {
-	display: flex;
-	flex-direction: column;
-	min-height: calc(100vh - 4rem);
-	/* Full viewport height minus header height */
-}
 
-/* Allow main-content to grow and push footer to bottom when there's little content */
-.main-content {
-	flex: 1 1 auto;
-	/* Allow main content to grow and fill available space */
-}
-
-/* Ensure sidebar can display the footer at the bottom */
-.side-bar {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-
-/* Make site-nav grow to fill available space */
-.site-nav {
-	overflow-y: auto;
+@media (min-width: 31.25rem) {
+	.site-title {
+		font-size: 1.5rem !important;
+		line-height: 1.25;
+	}
 }
 
 @media (min-width: 50rem) {
+
+	/* Ensure main-content-wrap can grow to fill available space */
+	.main-content-wrap {
+		display: flex;
+		flex-direction: column;
+		min-height: calc(100vh - 4rem);
+		/* Full viewport height minus header height */
+	}
+
+	/* Allow main-content to grow and push footer to bottom when there's little content */
+	.main-content {
+		flex: 1 1 auto;
+		/* Allow main content to grow and fill available space */
+	}
+
+	/* Ensure sidebar can display the footer at the bottom */
+	.side-bar {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	/* Make site-nav grow to fill available space */
+	.site-nav {
+		overflow-y: auto;
+	}
 
 	.site-header,
 	.main-header {
@@ -211,7 +216,7 @@ h2 {
 
 	.site-title {
 		font-size: 1.125rem !important;
-		padding: 0.75rem 2rem;
+		padding: .75rem 2rem;
 	}
 
 	.site-nav {
@@ -226,7 +231,7 @@ h2 {
 
 	.nav-list .nav-list-child-list .nav-list-link::before {
 		content: "↳";
-		font-size: 0.5rem;
+		font-size: .5rem;
 		padding: 0 .5rem 0 0;
 		vertical-align: .15rem;
 	}
