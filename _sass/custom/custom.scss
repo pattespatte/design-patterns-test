@@ -188,6 +188,18 @@ h2 {
 	/* Allow main content to grow and fill available space */
 }
 
+/* Ensure sidebar can display the footer at the bottom */
+.side-bar {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* Make site-nav grow to fill available space */
+.site-nav {
+	overflow-y: auto;
+}
+
 @media (min-width: 50rem) {
 
 	.site-header,
@@ -218,17 +230,4 @@ h2 {
 		padding: 0 .5rem 0 0;
 		vertical-align: .15rem;
 	}
-}
-
-/* Ensure sidebar can display the footer at the bottom */
-.side-bar {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-
-/* Make site-nav grow to fill available space */
-.site-nav {
-	flex: 1 0 auto;
-	overflow-y: auto;
 }
