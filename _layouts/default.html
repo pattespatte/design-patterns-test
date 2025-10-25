@@ -3,11 +3,10 @@ layout: base
 ---
 
 {% comment %}
-Denna layout ärver från Just the Docs base layout
+Denna layout ärver från 'Just the Docs base layout'
 men lägger till svenska språkinställningar
 Källa: https://github.com/just-the-docs/just-the-docs/blob/main/_layouts/default.html
 {% endcomment %}
-
 
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'sv-SE' }}" xml:lang="{{ page.lang | default: site.lang | default: 'sv-SE' }}">
@@ -15,6 +14,7 @@ Källa: https://github.com/just-the-docs/just-the-docs/blob/main/_layouts/defaul
 
 <body>
 	<a class="skip-to-main" href="#main-content">Hoppa till huvudinnehåll</a>
+	{% include status-badge.html %}
 	{% include icons/icons.html %}
 
 	{% comment %} Sidebar logic {% endcomment %}
@@ -28,7 +28,6 @@ Källa: https://github.com/just-the-docs/just-the-docs/blob/main/_layouts/defaul
 
 	<div class="main" id="top">
 		{% include components/header.html %}
-		{% include status-badge.html %}
 
 		<div id="main-content-wrap" class="main-content-wrap">
 			{% comment %} Breadcrumbs {% endcomment %}
@@ -50,9 +49,9 @@ Källa: https://github.com/just-the-docs/just-the-docs/blob/main/_layouts/defaul
 			</main>
 
 			{% comment %} Footer content - placed outside main-content but inside main-content-wrap {% endcomment %}
-			<div class="content-footer">
+			<footer class="content-footer">
 				{% include footer_custom.html %}
-			</div>
+			</footer>
 		</div>
 
 		{% if site.search_enabled != false %}
