@@ -46,10 +46,42 @@
 					if (siteNav) siteNav.classList.add('nav-open');
 					if (mainHeader) mainHeader.classList.add('nav-open');
 					newMenuButton.ariaPressed = true;
+					// Add class to body for overlay and prevent scroll
+					document.body.classList.add('nav-open');
+					document.body.style.overflow = 'hidden';
 				} else {
 					if (siteNav) siteNav.classList.remove('nav-open');
 					if (mainHeader) mainHeader.classList.remove('nav-open');
 					newMenuButton.ariaPressed = false;
+					// Remove class from body and restore scroll
+					document.body.classList.remove('nav-open');
+					document.body.style.overflow = '';
+				}
+			});
+
+			// Close menu when clicking outside on mobile
+			document.addEventListener('click', function (e) {
+				if (window.innerWidth <= 800 &&
+					newMenuButton.classList.contains('nav-open') &&
+					!siteNav.contains(e.target) &&
+					!newMenuButton.contains(e.target)) {
+					newMenuButton.click();
+				}
+			});
+
+			// Close menu on escape key
+			document.addEventListener('keydown', function (e) {
+				if (e.key === 'Escape' && newMenuButton.classList.contains('nav-open')) {
+					newMenuButton.click();
+				}
+			});
+
+			// Close menu when clicking outside navigation
+			document.addEventListener('click', function (e) {
+				if (document.body.classList.contains('nav-open') &&
+					!siteNav.contains(e.target) &&
+					!newMenuButton.contains(e.target)) {
+					newMenuButton.click();
 				}
 			});
 		}

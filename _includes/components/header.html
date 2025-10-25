@@ -16,9 +16,15 @@
 		<ul class="aux-nav-list">
 			{% for link in site.aux_links %}
 			<li class="aux-nav-list-item">
-				<a href="{{ link.last }}" class="site-button" {% if site.aux_links_new_tab %} target="_blank" rel="noopener noreferrer" {% endif %}>
+				{% if site.aux_links_new_tab %}
+				<a href="{{ link.last }}" class="site-button" target="_blank" rel="noopener noreferrer">
 					{{ link.first }}
 				</a>
+				{% else %}
+				<a href="{{ link.last }}" class="site-button">
+					{{ link.first }}
+				</a>
+				{% endif %}
 			</li>
 			{% endfor %}
 		</ul>
