@@ -47,9 +47,12 @@ Källa: https://github.com/just-the-docs/just-the-docs/blob/main/_layouts/defaul
 				{% if page.has_children == true and page.has_toc != false %}
 				{% include components/children_nav.html %}
 				{% endif %}
-
-				{% include footer_custom.html %}
 			</main>
+
+			{% comment %} Footer content - placed outside main-content but inside main-content-wrap {% endcomment %}
+			<div class="content-footer">
+				{% include footer_custom.html %}
+			</div>
 		</div>
 
 		{% if site.search_enabled != false %}

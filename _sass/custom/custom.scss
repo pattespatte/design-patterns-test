@@ -14,14 +14,10 @@ a:hover {
 	color: #1d70b8;
 }
 
-// $border-color: #b1b4b6;
-
-// // Swedish governmental blue
-// $sidebar-color: #005293;
-// $nav-child-link-color: #005293;
-
-// // Font settings
-// $body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+.nav-list-link.active,
+.nav-list-link:visited.active {
+	color: #175a93;
+}
 
 @media (min-width: 31.25rem) {
 	html {
@@ -156,6 +152,40 @@ h2 {
 	}
 }
 
+.site-title {
+	font-weight: 700;
+}
+
+@media (min-width: 31.25rem) {
+	.site-title {
+		font-size: 1.5rem !important;
+		line-height: 1.25;
+	}
+}
+
+/* Footer positioning */
+.content-footer {
+	margin-top: auto;
+	padding: 2rem 0 1rem;
+	text-align: center;
+	display: flex;
+	align-items: flex-end;
+}
+
+/* Ensure main-content-wrap can grow to fill available space */
+.main-content-wrap {
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 4rem);
+	/* Full viewport height minus header height */
+}
+
+/* Allow main-content to grow and push footer to bottom when there's little content */
+.main-content {
+	flex: 1 1 auto;
+	/* Allow main content to grow and fill available space */
+}
+
 @media (min-width: 50rem) {
 
 	.site-header,
@@ -165,31 +195,8 @@ h2 {
 		min-height: 4rem;
 	}
 
-	@media (min-width: 50rem) {
-		.site-title {
-			padding-top: 0.5rem;
-			padding-bottom: 0.5rem;
-		}
-	}
-
-	@media (min-width: 31.25rem) {
-		.site-title {
-			font-size: 1.5rem !important;
-			line-height: 1.25;
-		}
-	}
-
 	.site-title {
 		font-size: 1.125rem !important;
-	}
-
-	@media (min-width: 50rem) {
-		.site-title {
-			font-size: 1rem !important;
-		}
-	}
-
-	.site-title {
 		padding: 0.75rem 2rem;
 	}
 

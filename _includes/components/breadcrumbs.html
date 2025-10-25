@@ -9,12 +9,13 @@
 
 		{% for crumb in crumbs offset:1 limit:crumbs_size %}
 		{% if crumb != "" %}
+		{% unless crumb contains ".html" %}
 		{% assign crumb_url = crumb | append: "/" %}
 		{% assign crumb_path = "/" | append: crumb | append: "/" %}
-
 		<li class="breadcrumb-nav-list-item">
 			<a href="{{ crumb_path | relative_url }}">{{ crumb | replace: "-", " " | capitalize }}</a>
 		</li>
+		{% endunless %}
 		{% endif %}
 		{% endfor %}
 
