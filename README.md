@@ -22,8 +22,8 @@ brew install rbenv ruby-build
 
 # Install the latest Ruby
 
-rbenv install 3.4.7
-rbenv global 3.4.7
+rbenv install 3.2.2
+rbenv global 3.2.2
 
 # Verify
 
