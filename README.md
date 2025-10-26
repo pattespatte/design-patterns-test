@@ -44,13 +44,13 @@ gem install jekyll-livereload
 
 ```bash
 # Start with live reload and automatic theme reset
-./scripts/start-server.sh --livereload
+./_scripts/start-server.sh --livereload
 
 # With shorter local URL (http://localhost:4000)
-# ./scripts/start-server.sh --baseurl="" --livereload
+# ./_scripts/start-server.sh --baseurl="" --livereload
 
 # If you want to access from other devices on the network
-# ./scripts/start-server.sh --host 0.0.0.0 --livereload
+# ./_scripts/start-server.sh --host 0.0.0.0 --livereload
 ```
 
 > The script automatically switches to the local theme before starting and restores the remote theme when stopped. It works across macOS, Linux, and Windows.

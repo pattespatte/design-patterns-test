@@ -1,34 +1,5 @@
-// Force override all link colors
-a,
-a:visited {
-	color: #1d70b8;
-}
-
-a:hover {
-	color: darken(#1d70b8, 10%);
-}
-
-// Navigation links
-.nav-list-link,
-.nav-list-link:visited,
-.icon {
-	color: #1d70b8;
-}
-
-.nav-list-link.active,
-.nav-list-link:visited.active,
-.icon:hover {
-	color: #175a93;
-}
-
-@media (min-width: 31.25rem) {
-	html {
-		font-size: 1.5rem !important;
-	}
-}
-
 html {
-	font-size: 1.25rem !important;
+	font-size: 1.5rem !important;
 	line-height: 1.25;
 	text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -45,7 +16,60 @@ h2 {
 	margin-top: 2.5rem;
 }
 
-.stauts-label {
+// Force override all link colors
+a,
+a:visited {
+	color: #1d70b8;
+}
+
+a:hover {
+	color: darken(#1d70b8, 10%);
+}
+
+// Navigation
+
+#site-nav .nav-list-child-list {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+#site-nav .nav-list-item>h3 {
+	margin: .5rem 0;
+	padding: 0 .5rem 0 .25rem;
+}
+
+.nav-list .nav-list-item .nav-list-link {
+	min-height: 2rem;
+	padding: .25rem 2rem 0 1rem;
+	line-height: 2rem;
+}
+
+.nav-list .nav-list>.nav-list-item>.nav-list-link {
+	padding: 0 .5rem 0 .25rem;
+}
+
+.nav-list .nav-list-item>.nav-list .nav-list-item .nav-list-link,
+.nav-list-link,
+.nav-list-link:visited,
+.icon {
+	color: #1d70b8;
+}
+
+.nav-list .nav-list-item>.nav-list .nav-list-item .nav-list-link.active,
+.nav-list-link.active,
+.nav-list-link:visited.active,
+.icon:hover {
+	color: #175a93;
+}
+
+#site-nav .nav-list .nav-list>.nav-list-item>.nav-list-link::before {
+	content: "↳";
+	font-size: .5rem;
+	padding: 0 .5rem 0 0;
+	vertical-align: .15rem;
+}
+
+.status-label {
 	position: absolute;
 	right: 1rem;
 	top: 4.5rem;
@@ -135,16 +159,6 @@ h2 {
 
 /* <<< Expand accordion like menu */
 
-#site-nav .nav-list-child-list {
-	list-style-type: none;
-	padding-left: 0;
-}
-
-#site-nav .nav-list-item>h3 {
-	margin: .5rem 0;
-	padding: 0 0 0 2rem;
-}
-
 .js-toggle-dark-mode {
 	margin-left: 1rem;
 	background: transparent;
@@ -173,17 +187,18 @@ h2 {
 	align-items: flex-end;
 }
 
-
 @media (min-width: 31.25rem) {
+	html {
+		font-size: 1.1rem !important;
+	}
+
 	.site-title {
-		font-size: 1.5rem !important;
+		font-size: 1.5rem;
 		line-height: 1.25;
 	}
 }
 
 @media (min-width: 50rem) {
-
-
 	.site-title {
 		font-size: 1.125rem !important;
 		padding: .75rem 2rem;
@@ -193,15 +208,7 @@ h2 {
 		padding-top: 1.5rem;
 	}
 
-	.nav-list .nav-list-item .nav-list-link {
-		min-height: 1.8rem;
-		line-height: 1.5rem;
-		content: "↳";
-	}
-
-	#site-nav .nav-list-item .nav-list-link::before {
-		content: "↳";
-		font-size: .5rem;
+	.nav-list .nav-list>.nav-list-item>.nav-list-link::before {
 		padding: 0 .5rem 0 0;
 		vertical-align: .15rem;
 	}

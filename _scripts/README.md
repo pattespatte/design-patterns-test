@@ -18,13 +18,13 @@ A cross-platform script to start the Jekyll development server with automatic th
 
 ```bash
 # Start with live reload
-./scripts/start-server.sh --livereload
+./_scripts/start-server.sh --livereload
 
 # With shorter local URL
-./scripts/start-server.sh --baseurl="" --livereload
+./_scripts/start-server.sh --baseurl="" --livereload
 
 # Access from other devices on the network
-./scripts/start-server.sh --host 0.0.0.0 --livereload
+./_scripts/start-server.sh --host 0.0.0.0 --livereload
 ```
 
 The script handles all the theme switching that was previously done manually with awk commands.
