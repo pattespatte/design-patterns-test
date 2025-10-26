@@ -220,6 +220,8 @@ a:hover {
 	}
 
 	.site-footer {
+		display: inline;
+		font-style: italic;
 		padding: .25rem 1rem;
 	}
 
@@ -235,7 +237,7 @@ a:hover {
 	}
 
 	.site-nav {
-		padding-top: 1.5rem;
+		padding-top: 0
 	}
 
 	.nav-list .nav-list>.nav-list-item>.nav-list-link::before {
