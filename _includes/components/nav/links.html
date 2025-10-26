@@ -1,0 +1,44 @@
+{%- comment -%}
+Include as: {%- include components/nav/links.html pages=page_array ancestors=ancestors_array all=bool -%}
+Depends on: include.pages, include.ancestors, include.all.
+Results in: HTML for navigation links with optional nav_header.
+{%- endcomment -%}
+<ul class="nav-list">
+	{%- for p in include.pages %}
+	{%- if p.title %}
+	{%- if p.url == page.url %}
+	{%- assign li_class = "nav-list-item active" %}
+	{%- else %}
+	{%- assign li_class = "nav-list-item" %}
+	{%- endif %}
+	<li class="{{ li_class }}">
+		{%- if p.nav_header %}
+		<h3>{{ p.nav_header }}</h3>
+		{%- endif %}
+		<a href="{{ p.url | relative_url }}" class="nav-list-link">{{ p.title }}</a>
+		{%- if p.has_children %}
+		{%- assign children = site.html_pages | where: "parent", p.title | sort: "nav_order" %}
+		{%- if children.size &gt; 0 %}
+		<ul class="nav-list">
+			{%- for child in children %}
+			{%- if include.all or child.nav_exclude != true %}
+			{%- if child.url == page.url %}
+			{%- assign child_li_class = "nav-list-item active" %}
+			{%- else %}
+			{%- assign child_li_class = "nav-list-item" %}
+			{%- endif %}
+			<li class="{{ child_li_class }}">
+				{%- if child.nav_header %}
+				<h3>{{ child.nav_header }}</h3>
+				{%- endif %}
+				<a href="{{ child.url | relative_url }}" class="nav-list-link">{{ child.title }}</a>
+			</li>
+			{%- endif %}
+			{%- endfor %}
+		</ul>
+		{%- endif %}
+		{%- endif %}
+	</li>
+	{%- endif %}
+	{%- endfor %}
+</ul>

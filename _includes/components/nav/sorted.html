@@ -1,0 +1,7 @@
+{%- comment -%}
+Include as: {%- include components/nav/sorted.html pages=page_array -%}
+Depends on: include.pages.
+Results in: Sorted array of pages based on nav_order.
+Assigns to: nav_sorted.
+{%- endcomment -%}
+{%- assign nav_sorted = include.pages | sort: "nav_order" -%}

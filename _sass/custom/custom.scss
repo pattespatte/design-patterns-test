@@ -104,7 +104,7 @@ h2 {
 .nav-list .nav-list-expander.btn-reset {
 	padding: .4rem;
 	/* bigger hit area around the icon */
-	margin: -0.2rem 0;
+	margin: -.2rem 0;
 	/* don't push the text down */
 	border-radius: 4px;
 	/* optional: nicer focus ring */
@@ -134,6 +134,16 @@ h2 {
 }
 
 /* <<< Expand accordion like menu */
+
+#site-nav .nav-list-child-list {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+#site-nav .nav-list-item>h3 {
+	margin: .5rem 0;
+	padding: 0 0 0 2rem;
+}
 
 .js-toggle-dark-mode {
 	margin-left: 1rem;
@@ -189,7 +199,7 @@ h2 {
 		content: "↳";
 	}
 
-	.nav-list .nav-list-child-list .nav-list-link::before {
+	#site-nav .nav-list-item .nav-list-link::before {
 		content: "↳";
 		font-size: .5rem;
 		padding: 0 .5rem 0 0;
