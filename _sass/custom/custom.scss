@@ -10,12 +10,14 @@ a:hover {
 
 // Navigation links
 .nav-list-link,
-.nav-list-link:visited {
+.nav-list-link:visited,
+.icon {
 	color: #1d70b8;
 }
 
 .nav-list-link.active,
-.nav-list-link:visited.active {
+.nav-list-link:visited.active,
+.icon:hover {
 	color: #175a93;
 }
 
@@ -133,16 +135,6 @@ h2 {
 
 /* <<< Expand accordion like menu */
 
-#site-nav .nav-list-child-list {
-	list-style-type: none;
-	padding-left: 0;
-}
-
-#site-nav .nav-list-item>h3 {
-	margin: .5rem 0 .5rem;
-	padding: 0 0 0 2rem;
-}
-
 .js-toggle-dark-mode {
 	margin-left: 1rem;
 	background: transparent;
@@ -181,38 +173,6 @@ h2 {
 
 @media (min-width: 50rem) {
 
-	/* Ensure main-content-wrap can grow to fill available space */
-	.main-content-wrap {
-		display: flex;
-		flex-direction: column;
-		min-height: calc(100vh - 4rem);
-		/* Full viewport height minus header height */
-	}
-
-	/* Allow main-content to grow and push footer to bottom when there's little content */
-	.main-content {
-		flex: 1 1 auto;
-		/* Allow main content to grow and fill available space */
-	}
-
-	/* Ensure sidebar can display the footer at the bottom */
-	.side-bar {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	/* Make site-nav grow to fill available space */
-	.site-nav {
-		overflow-y: auto;
-	}
-
-	.site-header,
-	.main-header {
-		height: 4rem;
-		max-height: 4rem;
-		min-height: 4rem;
-	}
 
 	.site-title {
 		font-size: 1.125rem !important;
@@ -234,95 +194,5 @@ h2 {
 		font-size: .5rem;
 		padding: 0 .5rem 0 0;
 		vertical-align: .15rem;
-	}
-}
-
-/* Mobile menu styles */
-@media (max-width: 49.9375rem) {
-
-	/* Make sure site-nav is displayed on mobile */
-	.site-nav {
-		display: block !important;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 80%;
-		max-width: 300px;
-		height: 100%;
-		background: var(--color-background);
-		z-index: 99;
-		transform: translateX(-100%);
-		transition: transform 0.3s ease;
-		overflow-y: auto;
-		padding: 4rem 1rem 1rem;
-		box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-	}
-
-	/* Override any display: none that might be set by theme */
-	.side-bar {
-		display: block !important;
-	}
-
-	.site-nav.nav-open {
-		transform: translateX(0);
-	}
-
-	/* Menu button styles - match Just the Docs */
-	#menu-button.site-button.btn-reset {
-		display: block;
-		padding: 0.5rem;
-		background: transparent;
-		border: 1px solid var(--color-border);
-		border-radius: 4px;
-		cursor: pointer;
-		margin-right: 0.5rem;
-	}
-
-	/* Make site-header use flexbox for inline layout */
-	.site-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0.75rem 1rem;
-	}
-
-	#menu-button.site-button.btn-reset .menu-icon {
-		width: 1.5rem;
-		height: 1.5rem;
-		stroke: var(--color-text);
-	}
-
-	/* Header adjustments for mobile */
-	.main-header {
-		padding-right: 4rem;
-		/* Space for menu button */
-	}
-
-	/* No overlay - just use box-shadow on site-nav for depth */
-	.site-nav {
-		z-index: 999;
-		box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-	}
-}
-
-/* Hide menu button on desktop */
-@media (min-width: 50rem) {
-	#menu-button.site-button.btn-reset {
-		display: none;
-	}
-
-	/* Reset site-header styles on desktop */
-	.site-header {
-		display: block;
-		padding: 0;
-	}
-
-	/* Reset site-nav positioning on desktop */
-	.site-nav {
-		position: static !important;
-		transform: none !important;
-		width: auto !important;
-		height: auto !important;
-		padding-top: 0 !important;
 	}
 }
