@@ -1,25 +1,205 @@
-<button class="btn js-toggle-dark-mode">🌙</button>
+<button type="button" class="btn js-toggle-dark-mode" aria-label="Växla mellan ljust och mörkt tema">
+	<!-- Sun icon for light mode (shown when dark mode is active) -->
+	<svg class="theme-icon sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<circle cx="12" cy="12" r="5"></circle>
+		<line x1="12" y1="1" x2="12" y2="3"></line>
+		<line x1="12" y1="21" x2="12" y2="23"></line>
+		<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+		<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+		<line x1="1" y1="12" x2="3" y2="12"></line>
+		<line x1="21" y1="12" x2="23" y2="12"></line>
+		<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+		<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+	</svg>
+
+	<!-- Moon icon for dark mode (shown when light mode is active) -->
+	<svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+	</svg>
+</button>
 
 <script>
-	// Check for saved theme preference or default to 'light'
-	const currentTheme = localStorage.getItem('theme') || 'light';
+	// Wait for DOM to be ready
+	jtd.onReady(function () {
+		console.log('[Dark Mode Debug] DOM ready, initializing theme toggle');
 
-	// Apply the saved theme on page load
-	if (currentTheme === 'dark') {
-		jtd.setTheme('dark');
-		document.querySelector('.js-toggle-dark-mode').textContent = '☀️';
-	}
-
-	const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
-	jtd.addEvent(toggleDarkMode, 'click', function () {
-		if (jtd.getTheme() === 'dark') {
-			jtd.setTheme('light');
-			toggleDarkMode.textContent = '🌙';
-			localStorage.setItem('theme', 'light');
-		} else {
-			jtd.setTheme('dark');
-			toggleDarkMode.textContent = '☀️';
-			localStorage.setItem('theme', 'dark');
+		// Check if jtd is available
+		if (typeof jtd === 'undefined') {
+			console.error('[Dark Mode Debug] jtd object is not available');
+			return;
 		}
+
+		// Get toggle button
+		const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+		const sunIcon = document.querySelector('.sun-icon');
+		const moonIcon = document.querySelector('.moon-icon');
+
+		if (!toggleDarkMode || !sunIcon || !moonIcon) {
+			console.error('[Dark Mode Debug] Required elements not found');
+			return;
+		}
+
+		// Check for saved theme preference or default to 'light'
+		const currentTheme = localStorage.getItem('theme') || 'light';
+		console.log('[Dark Mode Debug] Current theme from localStorage:', currentTheme);
+
+		// Function to update icon visibility
+		function updateIcons(theme) {
+			console.log('[Dark Mode Debug] updateIcons called with theme:', theme);
+
+			if (theme === 'dark') {
+				sunIcon.style.display = 'block';
+				moonIcon.style.display = 'none';
+				// Add dark mode class to button
+				toggleDarkMode.classList.add('dark-mode');
+				toggleDarkMode.classList.remove('light-mode');
+				console.log('[Dark Mode Debug] Added dark-mode class, removed light-mode');
+			} else {
+				sunIcon.style.display = 'none';
+				moonIcon.style.display = 'block';
+				// Add light mode class to button
+				toggleDarkMode.classList.add('light-mode');
+				toggleDarkMode.classList.remove('dark-mode');
+				console.log('[Dark Mode Debug] Added light-mode class, removed dark-mode');
+			}
+
+			// Log current colors
+			const sunStroke = window.getComputedStyle(sunIcon).stroke;
+			const moonStroke = window.getComputedStyle(moonIcon).stroke;
+			console.log('[Dark Mode Debug] Sun icon stroke:', sunStroke);
+			console.log('[Dark Mode Debug] Moon icon stroke:', moonStroke);
+		}
+
+		// Apply the saved theme on page load
+		if (currentTheme === 'dark') {
+			console.log('[Dark Mode Debug] Applying dark theme on load');
+			jtd.setTheme('dark');
+			updateIcons('dark');
+		} else {
+			updateIcons('light');
+		}
+
+		// Add click event listener
+		jtd.addEvent(toggleDarkMode, 'click', function () {
+			console.log('[Dark Mode Debug] Toggle button clicked');
+			const currentTheme = jtd.getTheme();
+			console.log('[Dark Mode Debug] Current theme from jtd.getTheme():', currentTheme);
+
+			if (currentTheme === 'dark') {
+				console.log('[Dark Mode Debug] Switching to light theme');
+				jtd.setTheme('light');
+				updateIcons('light');
+				localStorage.setItem('theme', 'light');
+			} else {
+				console.log('[Dark Mode Debug] Switching to dark theme');
+				jtd.setTheme('dark');
+				updateIcons('dark');
+				localStorage.setItem('theme', 'dark');
+			}
+
+			// Verify the theme was applied
+			setTimeout(() => {
+				const newTheme = jtd.getTheme();
+				console.log('[Dark Mode Debug] Theme after switch:', newTheme);
+			}, 100);
+		});
+
+		// Check mobile viewport
+		function checkMobileViewport() {
+			const isMobile = window.innerWidth <= 768;
+			console.log('[Dark Mode Debug] Is mobile viewport:', isMobile, 'Width:', window.innerWidth);
+
+			if (toggleDarkMode) {
+				const rect = toggleDarkMode.getBoundingClientRect();
+				console.log('[Dark Mode Debug] Button position:', {
+					top: rect.top,
+					left: rect.left,
+					width: rect.width,
+					height: rect.height,
+					visible: rect.width > 0 && rect.height > 0
+				});
+			}
+		}
+
+		// Check viewport on load and resize
+		checkMobileViewport();
+		window.addEventListener('resize', checkMobileViewport);
 	});
 </script>
+
+<style>
+	.js-toggle-dark-mode {
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		min-width: 44px !important;
+		min-height: 44px !important;
+		padding: 8px !important;
+		margin-left: 1rem;
+		background: transparent;
+		border: 1px solid var(--color-border);
+		box-shadow: none;
+		cursor: pointer;
+		border-radius: 4px;
+		transition: all 0.2s ease;
+		position: relative;
+		z-index: 10;
+	}
+
+	.js-toggle-dark-mode:hover {
+		background: var(--color-grey-lt-000);
+	}
+
+	.js-toggle-dark-mode:focus {
+		outline: 2px solid #1d70b8;
+		outline-offset: 2px;
+	}
+
+	.theme-icon {
+		width: 20px;
+		height: 20px;
+		transition: opacity 0.2s ease;
+		stroke: #27262b;
+	}
+
+	/* Light mode styles */
+	.js-toggle-dark-mode.light-mode .theme-icon {
+		stroke: #27262b !important;
+	}
+
+	/* Dark mode styles */
+	.js-toggle-dark-mode.dark-mode {
+		border-color: var(--color-grey-dk-100) !important;
+	}
+
+	.js-toggle-dark-mode.dark-mode:hover {
+		background: var(--color-grey-dk-100) !important;
+	}
+
+	.js-toggle-dark-mode.dark-mode .theme-icon {
+		stroke: #fafafa !important;
+	}
+
+	/* Ensure visibility on mobile */
+	@media (max-width: 768px) {
+		.js-toggle-dark-mode {
+			min-width: 44px !important;
+			min-height: 44px !important;
+			padding: 8px !important;
+			position: fixed !important;
+			top: 10px !important;
+			right: 60px !important;
+			z-index: 100 !important;
+			background: transparent !important;
+			border: 1px solid var(--color-border) !important;
+		}
+
+		.js-toggle-dark-mode.dark-mode {
+			background: transparent !important;
+		}
+
+		.theme-icon {
+			width: 20px;
+			height: 20px;
+		}
+</style>

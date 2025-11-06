@@ -174,20 +174,7 @@ a:hover {
 
 /* <<< Expand accordion like menu */
 
-.js-toggle-dark-mode {
-	margin-left: 1rem;
-	background: transparent;
-	border: 1px solid var(--color-border);
-	box-shadow: none;
-	font-size: 1.2rem;
-	padding: .25rem .5rem;
-	cursor: pointer;
-	border-radius: 0;
-
-	&:hover {
-		background: var(--color-grey-lt-000);
-	}
-}
+/* Dark mode toggle styles are now handled inline in header_custom.html */
 
 .site-title {
 	font-weight: 700;
