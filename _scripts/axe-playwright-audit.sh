@@ -3,7 +3,7 @@
 # cSpell:disable
 # This script uses technical terms like "networkidle" and "wcag" which are valid in this context
 
-URL="${1:-https://pattespatte.github.io/swedish-healthcare-demo-site/}"
+URL="${1:-http://127.0.0.1:4000/design-patterns-test/}"
 OUTPUT="accessibility-report"
 
 # Check if Node.js is installed
