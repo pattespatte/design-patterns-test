@@ -191,6 +191,24 @@ a:hover {
 	text-align: inherit;
 }
 
+/* Fix color contrast for footer content */
+.content-footer,
+.text-grey-dk-100 {
+	color: #5a585b !important;
+	/* Darker color for better contrast against #f5f6fa background */
+}
+
+.content-footer a,
+.text-grey-dk-100 a {
+	color: #1d70b8 !important;
+	/* Ensure links have sufficient contrast */
+}
+
+.content-footer a:hover,
+.text-grey-dk-100 a:hover {
+	color: darken(#1d70b8, 10%) !important;
+}
+
 @media (min-width: 31.25rem) {
 	html {
 		font-size: 1.1rem !important;
@@ -205,6 +223,17 @@ a:hover {
 		display: inline;
 		font-style: italic;
 		padding: .25rem 1rem;
+		color: #5a585b;
+		/* Darker color for better contrast against #f5f6fa background */
+	}
+
+	.site-footer a {
+		color: #1d70b8;
+		/* Ensure links have sufficient contrast */
+	}
+
+	.site-footer a:hover {
+		color: darken(#1d70b8, 10%);
 	}
 
 	.content-footer {

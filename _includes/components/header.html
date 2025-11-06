@@ -12,7 +12,7 @@
 	{% endif %}
 
 	{% if site.aux_links %}
-	<nav aria-label="Auxiliary" class="aux-nav">
+	<nav aria-label="Ytterligare navigering" class="aux-nav">
 		<ul class="aux-nav-list">
 			{% for link in site.aux_links %}
 			<li class="aux-nav-list-item">
@@ -30,5 +30,6 @@
 		</ul>
 	</nav>
 	{% endif %}
+	{% include status-badge.html %}
 	{% include header_custom.html %}
 </div>

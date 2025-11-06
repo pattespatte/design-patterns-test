@@ -14,7 +14,6 @@ Källa: https://github.com/just-the-docs/just-the-docs/blob/main/_layouts/defaul
 
 <body>
 	<a class="skip-to-main" href="#main-content">Hoppa till huvudinnehåll</a>
-	{% include status-badge.html %}
 	{% include icons/icons.html %}
 
 	{% comment %} Sidebar logic {% endcomment %}
@@ -49,7 +48,7 @@ Källa: https://github.com/just-the-docs/just-the-docs/blob/main/_layouts/defaul
 			</main>
 
 			{% comment %} Footer content - placed outside main-content but inside main-content-wrap {% endcomment %}
-			<footer class="content-footer">
+			<footer class="content-footer" role="contentinfo" aria-label="Sidfot med copyright-information">
 				{% include footer_custom.html %}
 			</footer>
 		</div>
