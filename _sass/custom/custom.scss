@@ -115,6 +115,11 @@ a:hover {
 
 /* <<< Expand accordion like menu */
 
+.nav-list .nav-list>.nav-list-item>h3 {
+	padding: 1rem 0 0;
+	margin-bottom: .5rem;
+}
+
 /* Dark mode toggle styles are now handled inline in header_custom.html */
 
 .site-title {

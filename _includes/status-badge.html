@@ -1,6 +1,6 @@
 {% if page.status %}
 {% assign status = page.status | downcase %}
-<div class="status-label">
+<div class="status-label float-right">
 	{% if status == "utkast" or status == "draft" %}
 	<span class="label label-yellow">{{ page.status }}</span>
 	{% elsif status == "granskning" or status == "review" %}
