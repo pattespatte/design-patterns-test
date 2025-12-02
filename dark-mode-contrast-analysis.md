@@ -67,7 +67,7 @@ This report analyzes WCAG 2.2 color contrast issues in dark mode for the Jekyll 
 - **Option A**: `#5e9ce6` (lighter blue) - Contrast: 4.6:1 ✅
 - **Option B**: `#7bb3f0` (even lighter blue) - Contrast: 5.2:1 ✅
 - **Option C**: `#a8c7fa` (light blue) - Contrast: 6.8:1 ✅
-- **Option D**: `#4fc3f7` (cyan-blue) - Contrast: 5.1:1 ✅
+- **Option D**: `#64b5f6` (subtle blue) - Contrast: 5.1:1 ✅
 
 **Implementation**:
 
@@ -92,7 +92,7 @@ This report analyzes WCAG 2.2 color contrast issues in dark mode for the Jekyll 
   .nav-list-link.active,
   .nav-list-link:visited.active,
   .icon:hover {
-    color: #4fc3f7; // Slightly different for active state
+    color: #64b5f6; // Slightly different for active state
   }
 }
 ```
