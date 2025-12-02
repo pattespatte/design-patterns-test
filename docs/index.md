@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Designmönster
-nav_order: 2
+nav_order: 20
 status: utkast
 has_children: true
 ---

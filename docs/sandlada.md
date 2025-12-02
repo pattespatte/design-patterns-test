@@ -3,7 +3,7 @@ layout: default
 title: Sandlåda (för test)
 parent: Designmönster
 status: utkast
-nav_order: 12
+nav_order: 190
 ---
 
 # Sandlåda – en sida där man kan testa hursomhelst 👩‍🎨

@@ -3,7 +3,7 @@ layout: default
 title: QR-kod
 parent: Designmönster
 status: utkast
-nav_order: 10
+nav_order: 130
 ---
 
 **Fråga användare efter**
@@ -32,6 +32,6 @@ Hjälp alla användare att skanna en QR-kod genom att se till att:
 ### Forskning/användartestning av mönstret
 
 - [Tillgänglig inloggning med QR-kod (axbom.se)](https://axbom.se/tillganglig-inloggning-med-qr-kod/)
-- Handelsbanken
+- Exempel på QR-kod i mörkt läge från Handelsbanken:
 
 ![Handelsbanken QR-kod](../assets/images/handelsbanken-qr-kod.jpg)

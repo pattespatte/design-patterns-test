@@ -3,7 +3,7 @@ layout: default
 title: Bankuppgifter
 parent: Designmönster
 status: utkast
-nav_order: 5
+nav_order: 50
 ---
 
 **Fråga användare efter**

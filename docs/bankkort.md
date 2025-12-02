@@ -3,7 +3,7 @@ layout: default
 title: Bankkort
 parent: Designmönster
 status: utkast
-nav_order: 8
+nav_order: 80
 ---
 
 **Fråga användare efter**

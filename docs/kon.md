@@ -3,7 +3,7 @@ layout: default
 title: Kön
 parent: Designmönster
 status: utkast
-nav_order: 6
+nav_order: 60
 ---
 
 **Fråga användare efter**

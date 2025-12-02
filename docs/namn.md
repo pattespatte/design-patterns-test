@@ -3,7 +3,7 @@ layout: default
 title: Namn
 parent: Designmönster
 status: utkast
-nav_order: 1
+nav_order: 10
 nav_header: Fråga användare efter…
 ---
 

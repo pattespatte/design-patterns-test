@@ -3,7 +3,7 @@ layout: default
 title: Datum
 parent: Designmönster
 status: utkast
-nav_order: 10
+nav_order: 100
 ---
 
 **Fråga användare efter**
@@ -56,7 +56,7 @@ Du kan behöva be om datum som är relativa till dagens datum eller ett annat da
 
 För att göra detta låt användarna ange eller välja relativa datum som "i morgon" eller "1 dag innan". Om veckodagen är viktig, visa detta också.
 
-Hjälper användare att välja ett datum
+### 5. Hjälper användare att välja ett datum
 
 Användare kan behöva välja ett datum från ett urval, till exempel för att boka ett möte.
 
@@ -70,30 +70,10 @@ Använd endast en kalenderkontroll om användare behöver:
 
 Gör aldrig en kalenderkomponent som är beroende av JavaScript som det enda inmatningsalternativet. Tillåt användare att ange datum i en textinmatning samt använda komponenten.
 
-Har kommit hit i redigeringen /2024-11-25, Patrik E
-
 ### Hur man skriver datum
 
-Se stilen GOV.UK för att skriva datum och datumintervall.
+> Har kommit hit i redigeringen /2024-11-25, Patrik E
 
-Om du anger ett exempeldatum, använd 13 eller mer för dagen och 9 eller mindre för månaden - till exempel '27 3 2007'. Detta hjälper användare att ange datumet i rätt ordning och visar dem att de inte behöver inkludera inledande nollor.
+> Se stilen GOV.UK för att skriva [datum och datumintervall](https://design-system.service.gov.uk/patterns/dates/)].
 
-## Forskning om detta mönster
-
-Läs ett blogginlägg om att be om födelsedatum.
-
-Om du har använt det här mönstret, kontakta oss för att dela dina användarforskningsresultat.
-
-Mer forskning behövs för att avgöra i vilken utsträckning användare kämpar för att ange månader som siffror, och om det är användbart att låta dem ange månader som text.
-
-## Hjälp till att förbättra detta mönster
-
-För att se till att den här sidan är användbar, relevant och uppdaterad kan du:
-Uppdaterad 2024-11-25 /Patrik E.
-
-- delta i "Datum"-diskussionen på GitHub och dela din forskning
-- föreslå en förändring– läs mer om hur du föreslår ändringar i GitHub
-
-### Berätta för oss om din tjänst använder detta mönster
-
-Delta i vår användningsundersökning (öppnas i en ny flik) för att hjälpa oss att förbättra detta mönster för att bättre möta behoven hos de tjänster som använder det.
+> Om du anger ett exempeldatum, använd 13 eller mer för dagen och 9 eller mindre för månaden - till exempel '27 3 2007'. Detta hjälper användare att ange datumet i rätt ordning och visar dem att de inte behöver inkludera inledande nollor.
