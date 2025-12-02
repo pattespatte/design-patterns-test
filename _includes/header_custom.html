@@ -75,6 +75,9 @@
 			console.log('[Dark Mode Debug] Applying dark theme on load');
 			jtd.setTheme('dark');
 			updateIcons('dark');
+			// Add dark class to HTML element for our CSS to work
+			document.documentElement.classList.add('dark');
+			console.log('[Dark Mode Debug] Added .dark class to HTML element on load');
 		} else {
 			updateIcons('light');
 		}
@@ -90,17 +93,24 @@
 				jtd.setTheme('light');
 				updateIcons('light');
 				localStorage.setItem('theme', 'light');
+				// Remove dark class from HTML element
+				document.documentElement.classList.remove('dark');
+				console.log('[Dark Mode Debug] Removed .dark class from HTML element');
 			} else {
 				console.log('[Dark Mode Debug] Switching to dark theme');
 				jtd.setTheme('dark');
 				updateIcons('dark');
 				localStorage.setItem('theme', 'dark');
+				// Add dark class to HTML element for our CSS to work
+				document.documentElement.classList.add('dark');
+				console.log('[Dark Mode Debug] Added .dark class to HTML element');
 			}
 
 			// Verify the theme was applied
 			setTimeout(() => {
 				const newTheme = jtd.getTheme();
 				console.log('[Dark Mode Debug] Theme after switch:', newTheme);
+				console.log('[Dark Mode Debug] HTML element classes:', document.documentElement.className);
 			}, 100);
 		});
 

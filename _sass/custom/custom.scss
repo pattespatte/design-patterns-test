@@ -234,3 +234,88 @@ a:hover {
 		vertical-align: .15rem;
 	}
 }
+
+/* Dark mode color contrast fixes for WCAG 2.2 compliance */
+/* Just the Docs uses .dark class on HTML element for dark mode */
+html.dark {
+
+	/* Fix primary link color contrast - #1d70b8 has 2.9:1 ratio, #5e9ce6 has 4.6:1 ratio */
+	a,
+	a:visited {
+		color: #5e9ce6;
+	}
+
+	a:hover {
+		color: lighten(#5e9ce6, 10%);
+	}
+
+	/* Navigation links */
+	.nav-list .nav-list-item>.nav-list .nav-list-item .nav-list-link,
+	.nav-list-link,
+	.nav-list-link:visited,
+	.icon {
+		color: #5e9ce6;
+	}
+
+	.nav-list .nav-list-item>.nav-list .nav-list-item .nav-list-link.active,
+	.nav-list-link.active,
+	.nav-list-link:visited.active,
+	.icon:hover {
+		color: #4fc3f7;
+		/* Slightly different for active state */
+	}
+
+	/* Fix footer text contrast - #5a585b has 2.13:1 ratio, #a8a8a8 has 4.7:1 ratio */
+	.content-footer,
+	.text-grey-dk-100,
+	.site-footer {
+		color: #a8a8a8 !important;
+	}
+
+	.content-footer a,
+	.text-grey-dk-100 a,
+	.site-footer a {
+		color: #5e9ce6 !important;
+		/* Use same as primary links */
+	}
+
+	.content-footer a:hover,
+	.text-grey-dk-100 a:hover,
+	.site-footer a:hover {
+		color: lighten(#5e9ce6, 10%) !important;
+	}
+
+	/* Fix yellow label contrast - current has 6.54:1 ratio, need 7:1 for AAA */
+	.label.label-yellow {
+		/* Option A: Darken text to meet AAA compliance */
+		color: #333333;
+
+		/* Option B: Use darker yellow background (alternative approach) */
+		/* background-color: #e6c200; */
+	}
+
+	/* Fix focus outline for better visibility in dark mode */
+	.nav-list .nav-list-expander.btn-reset:focus {
+		outline: 3px solid #5e9ce6;
+		outline-offset: 2px;
+	}
+}
+
+/* Media query overrides for dark mode */
+@media (min-width: 31.25rem) {
+	html.dark {
+		.site-footer {
+			color: #a8a8a8;
+			/* Darker color for better contrast */
+		}
+
+		.site-footer a {
+			color: #5e9ce6;
+			/* Ensure links have sufficient contrast */
+		}
+
+		.site-footer a:hover {
+			color: lighten(#5e9ce6, 10%);
+		}
+	}
+}
