@@ -49,4 +49,4 @@ Visa exempel för följande:
 
 ## Forskning/användartestning av mönstret
 
-- Kapitel 7.5.4 Korrigering av misstag och fel i ISO-standarden Kognitiv tillgänglighet – Del 1: Allmänna riktlinjer (21801-1:2020).
+- Kapitel 7.5.4 Korrigering av misstag och fel i ISO-standarden [Kognitiv tillgänglighet – Del 1: Allmänna riktlinjer \(21801-1:2020\)](https://www.sis.se/produkter/halso-och-sjukvard/hjalpmedel-for-personer-med-funktionsnedsattning/hjalpmedel-for-personer-med-funktionsnedsattningar/ss-en-iso-21801-120212/).
