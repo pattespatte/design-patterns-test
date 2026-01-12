@@ -10,7 +10,7 @@ nav_order: 150
 
 # Personnummer
 
-Fråga användare efter personnummer
+Fråga användare efter personnummer.
 
 ## Använd mönstret när
 
@@ -18,11 +18,11 @@ När vi behöver ta reda på ett personnummer.
 
 ## Använd inte mönstret när
 
-När det inte är relevant att fråga efter personnummer. Fråga inte efter personnummer där det verkligen inte behövs.
+Fråga bara efter personnummer när det verkligen behövs.
 
 ## Så fungerar mönstret
 
-Hjälp användare att ange ett personnummer genom att alltid använda ett förlåtande formulär där användaren kan mata in de vanligast förekommande varianterna:
+Hjälp användare genom att erbjuda förlåtande formulär där användare kan mata in de vanligast förekommande varianterna av personnummer:
 
 - ååååmmdd-nnnn
 - ååmmdd-nnnn
@@ -31,9 +31,9 @@ Hjälp användare att ange ett personnummer genom att alltid använda ett förl�
 - ååååmmdd nnnn
 - ååmmdd nnnn
 
-Oavsett vilken variant som användaren matar in så korrigeras det automatiskt till rätt format i koden.
+Oavsett vilken variant användare matar in korrigeras det automatiskt till rätt format i koden med ett förlåtande formulär.
 
-Även med förlåtande inmatning kan en del användare behöva ett exempel för hur inmatningen kan se ut. Använd små bokstäver (gemener) i exemplet, så som åååå istället för ÅÅÅÅ.
+En del användare kan behöva ett exempel för hur inmatningen kan se ut. Använd små bokstäver (gemener) i exemplet, så som åååå istället för ÅÅÅÅ.
 
 ## Exempel
 
@@ -43,9 +43,10 @@ Visa exempel för följande:
 - Exempel för hur inmatning kan se ut.
 - Användning av gemener vs. versaler.
 
-## Referenser
+## Referensimplementation
 
 - Förlåtande inmatning av personnummer, källkod – Försäkringskassans designsystem: <https://github.com/Forsakringskassan/fkds-pnr>
+- Gäller även samordningsnummer.
 
 ## Forskning/användartestning av mönstret
 
