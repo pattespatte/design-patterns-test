@@ -20,12 +20,21 @@
 
 <script>
 	// Wait for DOM to be ready
-	jtd.onReady(function () {
+	document.addEventListener('DOMContentLoaded', function () {
 		// Check if jtd is available
 		if (typeof jtd === 'undefined') {
+			// Fallback: use vanilla JS if jtd is not available yet
+			initDarkModeFallback();
 			return;
 		}
 
+		// jtd is available - use it
+		jtd.onReady(function () {
+			initDarkMode();
+		});
+	});
+
+	function initDarkMode() {
 		// Get toggle button
 		const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 		const sunIcon = document.querySelector('.sun-icon');
@@ -83,16 +92,48 @@
 				document.documentElement.classList.add('dark');
 			}
 		});
+	}
 
-		// Check mobile viewport
-		function checkMobileViewport() {
-			const isMobile = window.innerWidth <= 768;
+	function initDarkModeFallback() {
+		// Fallback using vanilla JS (for when jtd is not yet loaded)
+		const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+		const sunIcon = document.querySelector('.sun-icon');
+		const moonIcon = document.querySelector('.moon-icon');
+
+		if (!toggleDarkMode || !sunIcon || !moonIcon) {
+			return;
 		}
 
-		// Check viewport on load and resize
-		checkMobileViewport();
-		window.addEventListener('resize', checkMobileViewport);
-	});
+		// Check for saved theme preference or default to 'light'
+		const currentTheme = localStorage.getItem('theme') || 'light';
+
+		// Function to update icon visibility
+		function updateIcons(theme) {
+			if (theme === 'dark') {
+				sunIcon.style.display = 'block';
+				moonIcon.style.display = 'none';
+				toggleDarkMode.classList.add('dark-mode');
+				toggleDarkMode.classList.remove('light-mode');
+				document.documentElement.classList.add('dark');
+			} else {
+				sunIcon.style.display = 'none';
+				moonIcon.style.display = 'block';
+				toggleDarkMode.classList.add('light-mode');
+				toggleDarkMode.classList.remove('dark-mode');
+				document.documentElement.classList.remove('dark');
+			}
+		}
+
+		// Apply the saved theme on page load
+		updateIcons(currentTheme);
+
+		// Add click event listener
+		toggleDarkMode.addEventListener('click', function () {
+			const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+			updateIcons(newTheme);
+			localStorage.setItem('theme', newTheme);
+		});
+	}
 </script>
 
 <style>
