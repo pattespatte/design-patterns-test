@@ -30,13 +30,23 @@ aux_links:
 aux_links_new_tab: true
 
 # Footer
-footer_content: "&copy; 2025 Gemensamma designmönster med god tillgänglighet."
+# Note: The year is now automatically updated in _includes/footer_custom.html using {{ site.time | date: '%Y' }}
+footer_content: "&copy; Gemensamma designmönster med god tillgänglighet."
 
 # Collections
 collections:
   docs:
     output: true
     permalink: /:collection/:path/
+
+# Exclude files from being processed
+exclude:
+  - CLAUDE.md
+  - README.md
+  - LICENSE
+  - .gitignore
+  - _scripts
+  - node_modules
 
 # Plugins
 plugins:
