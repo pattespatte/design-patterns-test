@@ -39,7 +39,14 @@ Beskrivning.
     - Uppgift saknas, fyll i e-postadress.
     - Fel format, fyll i en giltig e-postadress
 
-![e-post obligatoriskt](../assets/images/e-post-adress-obligatorisk.png)
+<picture>
+  <source srcset="../assets/images/e-post-adress-obligatorisk.webp" type="image/webp">
+  <img src="../assets/images/e-post-adress-obligatorisk.png"
+       alt="Exempel på valideringsmeddelande för e-postadress som saknar @-symbol"
+       loading="lazy"
+       width="369"
+       height="169">
+</picture>
 
 - Valideringstexten bör vara ovanför och inte under, men också att fältet är annan färg, att inte bara ha färg utan också ikon
 - Om det går att spåra vad användaren har gjort för fel och det går att skriva ut vad som borde rättas.

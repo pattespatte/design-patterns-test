@@ -21,11 +21,8 @@
 <script>
 	// Wait for DOM to be ready
 	jtd.onReady(function () {
-		console.log('[Dark Mode Debug] DOM ready, initializing theme toggle');
-
 		// Check if jtd is available
 		if (typeof jtd === 'undefined') {
-			console.error('[Dark Mode Debug] jtd object is not available');
 			return;
 		}
 
@@ -35,100 +32,61 @@
 		const moonIcon = document.querySelector('.moon-icon');
 
 		if (!toggleDarkMode || !sunIcon || !moonIcon) {
-			console.error('[Dark Mode Debug] Required elements not found');
 			return;
 		}
 
 		// Check for saved theme preference or default to 'light'
 		const currentTheme = localStorage.getItem('theme') || 'light';
-		console.log('[Dark Mode Debug] Current theme from localStorage:', currentTheme);
 
 		// Function to update icon visibility
 		function updateIcons(theme) {
-			console.log('[Dark Mode Debug] updateIcons called with theme:', theme);
-
 			if (theme === 'dark') {
 				sunIcon.style.display = 'block';
 				moonIcon.style.display = 'none';
 				// Add dark mode class to button
 				toggleDarkMode.classList.add('dark-mode');
 				toggleDarkMode.classList.remove('light-mode');
-				console.log('[Dark Mode Debug] Added dark-mode class, removed light-mode');
 			} else {
 				sunIcon.style.display = 'none';
 				moonIcon.style.display = 'block';
 				// Add light mode class to button
 				toggleDarkMode.classList.add('light-mode');
 				toggleDarkMode.classList.remove('dark-mode');
-				console.log('[Dark Mode Debug] Added light-mode class, removed dark-mode');
 			}
-
-			// Log current colors
-			const sunStroke = window.getComputedStyle(sunIcon).stroke;
-			const moonStroke = window.getComputedStyle(moonIcon).stroke;
-			console.log('[Dark Mode Debug] Sun icon stroke:', sunStroke);
-			console.log('[Dark Mode Debug] Moon icon stroke:', moonStroke);
 		}
 
 		// Apply the saved theme on page load
 		if (currentTheme === 'dark') {
-			console.log('[Dark Mode Debug] Applying dark theme on load');
 			jtd.setTheme('dark');
 			updateIcons('dark');
 			// Add dark class to HTML element for our CSS to work
 			document.documentElement.classList.add('dark');
-			console.log('[Dark Mode Debug] Added .dark class to HTML element on load');
 		} else {
 			updateIcons('light');
 		}
 
 		// Add click event listener
 		jtd.addEvent(toggleDarkMode, 'click', function () {
-			console.log('[Dark Mode Debug] Toggle button clicked');
 			const currentTheme = jtd.getTheme();
-			console.log('[Dark Mode Debug] Current theme from jtd.getTheme():', currentTheme);
 
 			if (currentTheme === 'dark') {
-				console.log('[Dark Mode Debug] Switching to light theme');
 				jtd.setTheme('light');
 				updateIcons('light');
 				localStorage.setItem('theme', 'light');
 				// Remove dark class from HTML element
 				document.documentElement.classList.remove('dark');
-				console.log('[Dark Mode Debug] Removed .dark class from HTML element');
 			} else {
-				console.log('[Dark Mode Debug] Switching to dark theme');
 				jtd.setTheme('dark');
 				updateIcons('dark');
 				localStorage.setItem('theme', 'dark');
 				// Add dark class to HTML element for our CSS to work
 				document.documentElement.classList.add('dark');
-				console.log('[Dark Mode Debug] Added .dark class to HTML element');
 			}
-
-			// Verify the theme was applied
-			setTimeout(() => {
-				const newTheme = jtd.getTheme();
-				console.log('[Dark Mode Debug] Theme after switch:', newTheme);
-				console.log('[Dark Mode Debug] HTML element classes:', document.documentElement.className);
-			}, 100);
 		});
 
 		// Check mobile viewport
 		function checkMobileViewport() {
 			const isMobile = window.innerWidth <= 768;
-			console.log('[Dark Mode Debug] Is mobile viewport:', isMobile, 'Width:', window.innerWidth);
-
-			if (toggleDarkMode) {
-				const rect = toggleDarkMode.getBoundingClientRect();
-				console.log('[Dark Mode Debug] Button position:', {
-					top: rect.top,
-					left: rect.left,
-					width: rect.width,
-					height: rect.height,
-					visible: rect.width > 0 && rect.height > 0
-				});
-			}
 		}
 
 		// Check viewport on load and resize
@@ -212,4 +170,19 @@
 			width: 20px;
 			height: 20px;
 		}
+}
 </style>
+
+<script>
+	// Add aria-current="page" to active navigation link
+	document.addEventListener('DOMContentLoaded', function() {
+		const currentPath = window.location.pathname;
+		const navLinks = document.querySelectorAll('.nav-list-link');
+
+		navLinks.forEach(link => {
+			if (link.getAttribute('href') === currentPath) {
+				link.setAttribute('aria-current', 'page');
+			}
+		});
+	});
+</script>

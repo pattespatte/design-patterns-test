@@ -36,7 +36,14 @@ I vissa fall kan du behöva be användaren att välja ett datum från ett givet 
 
 Be om minnesvärda datum, som födelsedatum. [Här har UK GOV en modell som bygger på följande datuminmatningskomponenten vi ska ju inte tala om exakt hur vilken komponent som ska användas hos respektive myndighet – vad kan vi skriva här som hjälper myndigheterna att göra rätt?]
 
-![datum-boxar](../assets/images/datum-boxar.png)
+<picture>
+  <source srcset="../assets/images/datum-boxar.webp" type="image/webp">
+  <img src="../assets/images/datum-boxar.png"
+       alt="Exempel på inmatning av datum med separata fält för dag, månad och år"
+       loading="lazy"
+       width="565"
+       height="255">
+</picture>
 
 ### 2. Ber om datum som användaren har tillhands, t.ex. från ett dokument
 

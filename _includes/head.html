@@ -2,19 +2,31 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+	<!-- Resource Hints -->
+	<link rel="preload" href="{{ '/assets/css/just-the-docs-default.css' | relative_url }}" as="style">
+	<link rel="preload" href="{{ '/assets/js/just-the-docs.js' | relative_url }}" as="script">
+	{% if site.search_enabled %}
+	<link rel="preload" href="{{ '/assets/js/vendor/lunr.min.js' | relative_url }}" as="script">
+	{% endif %}
+
 	<link rel="stylesheet" href="{{ '/assets/css/just-the-docs-default.css' | relative_url }}">
 
 	<link rel="stylesheet" href="{{ '/assets/css/just-the-docs-head-nav.css' | relative_url }}" id="jtd-head-nav-stylesheet">
 
 	{% if site.search_enabled %}
-	<script src="{{ '/assets/js/vendor/lunr.min.js' | relative_url }}"></script>
+	<script src="{{ '/assets/js/vendor/lunr.min.js' | relative_url }}" defer></script>
 	{% endif %}
 
-	<script src="{{ '/assets/js/just-the-docs.js' | relative_url }}"></script>
+	<script src="{{ '/assets/js/just-the-docs.js' | relative_url }}" defer></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	{% seo %}
 
 	<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
+
+	<!-- Security Headers -->
+	<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+	<meta http-equiv="X-Content-Type-Options" content="nosniff">
+	<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 </head>

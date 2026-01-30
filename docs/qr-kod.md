@@ -34,4 +34,11 @@ Hjälp alla användare att skanna en QR-kod genom att se till att:
 - [Tillgänglig inloggning med QR-kod (axbom.se)](https://axbom.se/tillganglig-inloggning-med-qr-kod/)
 - Exempel på QR-kod i mörkt läge från Handelsbanken:
 
-![Handelsbanken QR-kod](../assets/images/handelsbanken-qr-kod.jpg)
+<picture>
+  <source srcset="../assets/images/handelsbanken-qr-kod.webp" type="image/webp">
+  <img src="../assets/images/handelsbanken-qr-kod.jpg"
+       alt="Exempel från Handelsbanken som visar QR-kod för inloggning med BankID i mörkt läge med vit ram runt koden"
+       loading="lazy"
+       width="1180"
+       height="1141">
+</picture>
