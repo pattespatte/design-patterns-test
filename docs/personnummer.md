@@ -3,7 +3,7 @@ layout: default
 title: Personnummer
 parent: Designmönster
 status: utkast
-nav_order: 150
+nav_order: 104
 ---
 
 **Fråga användare efter**
