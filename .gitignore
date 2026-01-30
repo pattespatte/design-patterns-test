@@ -1,11 +1,24 @@
+# Jekyll build output
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+# Ruby bundler
 .bundle/
-node_modules/
 vendor/
 Gemfile.lock
+
+# Node.js & npm
+node_modules/
+package-lock.json
+
+# Generated accessibility reports
+accessibility-report/
+
+# macOS system files
 .DS_Store
+
+# Claude Code project files
 .claude/
 CLAUDE.md
