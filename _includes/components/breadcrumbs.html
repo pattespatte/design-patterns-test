@@ -4,7 +4,7 @@
 		{% assign crumbs_size = crumbs | size | minus: 1 %}
 
 		<li class="breadcrumb-nav-list-item">
-			<a href="{{ " /" | relative_url }}">Hem</a>
+			<a href="{{ "/" | relative_url }}">Hem</a>
 		</li>
 
 		{% for crumb in crumbs offset:1 limit:crumbs_size %}
