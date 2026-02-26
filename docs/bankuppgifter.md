@@ -10,7 +10,7 @@ nav_order: 203
 
 # Bankuppgifter
 
-## Använd mönstret när du tycker det behövs
+## Använd mönstret när
 
 Beskrivning.
 
