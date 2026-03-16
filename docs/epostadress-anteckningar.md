@@ -3,7 +3,7 @@
 layout: default
 title: E-postadress
 parent: Designmönster
-status: utkast
+status: opublicerad
 nav_order: 102
 ---
 
