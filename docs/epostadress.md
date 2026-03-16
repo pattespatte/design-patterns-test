@@ -12,7 +12,7 @@ nav_order: 102
 
 ## Använd mönstret när
 
-Fråga bara efter mejladress när det behövs. Kan användas både i e-tjänster och blanketter. 
+Fråga bara efter mejladress när det behövs.
 
 ## Använd inte mönstret när
 
