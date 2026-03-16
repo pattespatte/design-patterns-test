@@ -37,8 +37,8 @@ En del användare kan behöva ett exempel för hur inmatningen kan se ut. Använ
 
 ## Exempel hur inmatning kan se ut
 
-![alt](../assets/images/Personnummer_exempel1_2.png)
-![alt](../assets/images/Personnummer_exempel2_2.png)
+![alt](../assets/images/Personnummer_exempel1_3.png)
+![alt](../assets/images/Personnummer_exempel2_3.png)
 
 ## Referensimplementation
 
