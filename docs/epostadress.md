@@ -12,7 +12,7 @@ nav_order: 102
 
 ## Använd mönstret när
 
-Använd mönstret i alla situationer när du behöver en persons e-post när Mönstret för e-postadress/mejladress kan användas både i e-tjänster och blanketter. Fråga bara efter e-postadress/mejladress när det behövs.
+Fråga bara efter mejladress när det behövs. Kan användas både i e-tjänster och blanketter. 
 
 ## Använd inte mönstret när
 
