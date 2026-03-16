@@ -53,24 +53,7 @@ I det fall (Patrik E kollar upp hur de har löst det, i de fall  man ska fylla i
 
 - I många fall &ndash; t.ex. när en person kontaktar en myndighet på en fråga i ett frågeformulär och då ingen persondata ska lagras &ndash; så kräver vi inte in alla namn utan det är upp till frågeställaren vilka namn denne vill delge. Använd ett fält med rubriken Namn.
 
-### Generellt
-
-- Att inte fråga efter sånt som vi redan vet/har
-- Använda aktivt språk
-- Kolla upp skärmläsare. Om du hämtar ett namn så använd inte editeringsbart fält.
-
-### Namn
-
-Vi diskuterade hur vi frågar efter namn och vi kan se några olika scenarion:
-
-- Har vi namn sedan tidigare så fråga inte om det. Vi hämtar in namn i och med att personen anger personnummer (personnummer är identifierare). Refererar till Success Criterion 3.3.7 Redundant Entry (WCAG 2.2).
-- I vissa fall behöver vi samtliga namn på en person. Det kan handla om att vi vill lagra personuppgifter i en databas. Exempel är när en utländsk person som inte har samordningsnummer eller personnummer i Sverige ska registreras som sökande av tillstånd att vara i Sverige. Använd två fält för namn i dessa fall: förnamn och efternamn.
-- Om vi inte har tillgång till personnummer så är det troligt att vi önskar både för- och efternamn. Då kan vi ställa frågan genom ett inmatningsfält där ledtexten är ”förnamn och efternamn”.
-- Användaren ska inte behöva uppge sitt namn flera gånger i en tjänst.
-- Man kan ange stödtext &ndash; till ett fält som gör att det blir lättare att förstå hur vi vill få in namn t.ex. genom att skriva ”För- och efternamn”.
-- Vi bör utgå från Skatteverkets namnstandard vad gäller förnamn, mellannamn och efternamn. <https://www.skatteverket.se/4.18e1b10334ebe8bc80004056.html>
-
 ### Autocomplete och personuppgifter
 
-- GOV-UK säger att autocomplete ska användas vid fråga om namn.
+- Använd autocomplete vid fråga om namn när det inte finns någon säkerhetsrisk.
 - I vissa fall kan det finnas säkerhetsskäl att inte lägga in autocomplete på fält för personuppgifter. Scenariot kan vara att en person sitter på en lånad dator t.ex. på ett bibliotek och fyller i ett formulär av något slag till en myndighet. Om uppgifter då sparas för autocomplete så kan dessa exponeras när nästa person lånar datorn. Några myndigheter som är representerade i mötet uppger att de går efter den principen.
