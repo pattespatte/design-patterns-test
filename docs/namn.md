@@ -51,7 +51,7 @@ I det fall (Patrik E kollar upp hur de har löst det, i de fall  man ska fylla i
 
 ### Namn för kontaktuppgifter
 
-- I många fall &ndash; t.ex. när en person kontaktar en myndighet på en fråga i ett frågeformulär och då ingen persondata ska lagras &ndash; så kräver vi inte in alla namn utan det är upp till frågeställaren vilka namn denne vill delge. Använd ett fält med rubriken Namn.
+- I många fall &ndash; till exempel när en person kontaktar en myndighet på en fråga i ett frågeformulär och då ingen persondata ska lagras &ndash; så kräver vi inte in alla namn utan det är upp till frågeställaren vilka namn denne vill delge. Använd ett fält med rubriken Namn.
 
 ### Autocomplete och personuppgifter
 
