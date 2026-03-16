@@ -36,6 +36,7 @@ Oavsett vilken variant användare matar in korrigeras det automatiskt till rätt
 En del användare kan behöva ett exempel för hur inmatningen kan se ut. Använd små bokstäver (gemener) i exemplet, så som åååå istället för ÅÅÅÅ.
 
 ## Exempel hur inmatning kan se ut
+
 <br>
 ![alt](../assets/images/Personnummer_exempel1.png)
 ![alt](../assets/images/Personnummer_exempel2.png)
