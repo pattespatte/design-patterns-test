@@ -25,7 +25,7 @@ Mönstret för namn kan användas både i e-tjänster och blanketter. Fråga bar
 
 I situationer när vi vill ha för- och efternamn, men inte är beroende av att veta vilket namn som är förnamn respektive efternamn:
 
-- använd ett fält med rubriken Förnamn och efternamn.
+- använd ett fält med rubriken Förnamn och Efternamn.
 
 ### När vi måste kunna skilja mellan för- och efternamn
 
