@@ -35,13 +35,9 @@ Oavsett vilken variant användare matar in korrigeras det automatiskt till rätt
 
 En del användare kan behöva ett exempel för hur inmatningen kan se ut. Använd små bokstäver (gemener) i exemplet, så som åååå istället för ÅÅÅÅ.
 
-## Exempel
+## Exempel hur inmatning kan se ut
 
-Visa exempel för följande:
 
-- Förlåtande inmatning.
-- Exempel för hur inmatning kan se ut.
-- Användning av gemener vs. versaler.
 
 ## Referensimplementation
 
