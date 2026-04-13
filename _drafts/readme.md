@@ -1,64 +1,78 @@
 ---
 layout: default
-title: Drafts
-published: false      # Will not be built in Github Pages
-status: draft         # Will get "draft" as a label
-parent: ""            # No parent
-nav_exclude: true     # Will not be part of the navigation
-search_exclude: true  # Will not show up in search
+title: Utkast
+published: false      # Kommer inte byggas i Github Pages
+status: utkast        # Får "utkast" som etikett
+parent: ""            # Ingen förälder
+nav_exclude: true     # Ingår inte i navigationen
+search_exclude: true  # Visas inte i sökresultat
 ---
 
-# Hide a page
+# Välj status för sidan
 
-You can prevent pages from being generated. Here are the options:
+## Statustabell
 
-## Option 1: `published: false` (Recommended)
+| Status (svenska) | Status (engelska) | Färg | Etikett | Betydelse |
+|---|---|---|---|---|
+| `utkast` | `draft` | Gul | `label-yellow` | Sidan är ett utkast och under arbete |
+| `granskning` | `review` | Blå | `label-blue` | Sidan är under granskning |
+| `godkänd` | `approved` | Grön | `label-green` | Sidan är godkänd och publicerad |
+| `utgått` | `deprecated` | Röd | `label-red` | Sidan är utgången/ej längre aktuell |
+| *övrigt* | — | Lila | `label-purple` | Allt annat värde får lila etikett (fallback) |
 
-Use Jekyll's built-in `published` front matter:
+Både svenska och engelska värden stöds (de mappar till samma färg). Om du använder något annat värde än de fyra definierade visas en lila etikett som fallback.
+
+---
+
+Du kan förhindra att sidor genereras. Här är alternativen:
+
+## Alternativ 1: `published: false` (Rekommenderas)
+
+Använd Jekylls inbyggda `published` i front matter:
 
 ```yaml
 ---
 layout: default
-title: The title of the page
-parent: The parent page
-published: false  # Page won't be generated at all
+title: Sidans titel
+parent: Föräldrasidan
+published: false  # Sidan genereras inte alls
 nav_order: 4
 ---
 ```
 
-This **completely prevents** the page from being built in production (GitHub Pages).
+Detta **förhindrar helt** att sidan byggs i produktion (GitHub Pages).
 
-## Option 2: Draft Posts (for Blog Posts)
+## Alternativ 2: Utkast (för blogginlägg)
 
-If using posts, place them in `_drafts/` folder:
+Om du använder blogginlägg, placera dem i mappen `_drafts/`:
 
 ```
 _drafts/
-  └── my-draft-post.md
+  └── mitt-utkast.md
 ```
 
-These are excluded from production builds automatically.
+Dessa exkluderas automatiskt från produktionsbyggen.
 
-## Option 3: Hide but Still Build
+## Alternativ 3: Dölj men bygg ändå
 
-If you want the page built but hidden from navigation/search:
+Om du vill att sidan ska byggas men döljas från navigation/sök:
 
 ```yaml
 ---
 layout: default
-title: The title of the page
-parent: The parent page
-nav_exclude: true     # Hidden from navigation
-search_exclude: true  # Hidden from search
+title: Sidans titel
+parent: Föräldrasidan
+nav_exclude: true     # Dold från navigationen
+search_exclude: true  # Dold från sök
 nav_order: 4
 ---
 ```
 
-**Note:** The page is still accessible via direct URL!
+**Obs:** Sidan är fortfarande tillgänglig via direkt-URL!
 
-## Option 4: Environment-Based Publishing
+## Alternativ 4: Miljöbaserad publicering
 
-Create `_layouts/draft.html`:
+Skapa `_layouts/draft.html`:
 
 ```html
 ---
@@ -79,20 +93,20 @@ layout: default
 {% endunless %}
 ```
 
-Then use it:
+Använd sedan layouten:
 
 ```yaml
 ---
 layout: draft
-title: The title of the page
-parent: The parent page
+title: Sidans titel
+parent: Föräldrasidan
 nav_order: 4
 ---
 ```
 
-## Option 5: Custom Status Logic
+## Alternativ 5: Anpassad statuslogik
 
-Create `_layouts/pattern.html`:
+Skapa `_layouts/pattern.html`:
 
 ```html
 ---
@@ -113,80 +127,80 @@ layout: default
 {% endif %}
 ```
 
-Then:
+Använd sedan:
 
 ```yaml
 ---
 layout: default
-title: The title of the page
-parent: The parent page
+title: Sidans titel
+parent: Föräldrasidan
 status: Opublicerad
 nav_order: 4
 ---
 ```
 
-## Recommended Workflow
+## Rekommenderat arbetssätt
 
-### For Truly Unpublished Pages
+### För helt opublicerade sidor
 
 ```yaml
 ---
 layout: default
 title: Adresser (Ej klar)
 parent: Designmönster
-published: false  # Won't build on GitHub Pages
+published: false  # Byggs inte på GitHub Pages
 nav_order: 4
 ---
 ```
 
-### For Draft Pages (visible locally, hidden in navigation)
+### För utkast (synliga lokalt, dolda i navigationen)
 
 ```yaml
 ---
 layout: default
-title: The title of the page
-parent: The parent page
+title: Sidans titel
+parent: Föräldrasidan
 status: Utkast
-nav_exclude: true    # Hidden from sidebar
-search_exclude: true # Hidden from search
+nav_exclude: true    # Dold från sidomenyn
+search_exclude: true # Dold från sök
 nav_order: 4
 ---
 ```
 
-### For Work-in-Progress (visible but marked)
+### För pågående arbete (synligt men markerat)
 
 ```yaml
 ---
 layout: default
-title: The title of the page
-parent: The parent page
+title: Sidans titel
+parent: Föräldrasidan
 status: Utkast
 nav_order: 4
 ---
 ```
 
-## Testing Locally vs Production
+## Testa lokalt mot produktion
 
-**Local development** (shows all pages):
+**Lokal utveckling** (visar alla sidor):
 
 ```bash
 bundle exec jekyll serve --livereload
 ```
 
-**Local production mode** (mimics GitHub Pages):
+**Lokalt produktionsläge** (efterliknar GitHub Pages):
 
 ```bash
 JEKYLL_ENV=production bundle exec jekyll serve
 ```
 
-Pages with `published: false` won't show in production mode.
+Sidor med `published: false` visas inte i produktionsläge.
 
-## Complete Example: Multi-Status System
+## Komplett exempel: Multistatussystem
 
 ### `_config.yml`
 
 ```yaml
-# Define valid statuses
+# Definiera giltiga statusar
 defaults:
   - scope:
       path: "docs"
@@ -202,7 +216,7 @@ defaults:
 
   {% if status == "opublicerad" or status == "unpublished" %}
     {% if jekyll.environment == "production" %}
-      <!-- Hide content in production -->
+      <!-- Dölj innehåll i produktion -->
     {% else %}
       <span class="label label-red">🚫 {{ page.status }}</span>
     {% endif %}
@@ -226,7 +240,7 @@ layout: default
 ---
 
 {% if page.status == "Opublicerad" and jekyll.environment == "production" %}
-  <!-- Don't show content in production -->
+  <!-- Visa inte innehåll i produktion -->
   <div class="flash flash-warn">
     <h2>Sidan är inte tillgänglig</h2>
     <p>Detta innehåll är under utveckling.</p>
@@ -237,61 +251,61 @@ layout: default
 {% endif %}
 ```
 
-### Usage Examples
+### Användningsexempel
 
-**Completely unpublished** (won't build):
+**Helt opublicerad** (byggs inte):
 
 ```yaml
 ---
-title: Secret Page
+title: Hemlig sida
 published: false
 ---
 ```
 
-**Draft** (builds, but hidden):
+**Utkast** (byggs, men dold):
 
 ```yaml
 ---
 layout: default
-title: The title of the page
-parent: The parent page
+title: Sidans titel
+parent: Föräldrasidan
 status: Utkast
 nav_exclude: true
 search_exclude: true
 ---
 ```
 
-**Work in progress** (visible with warning):
+**Pågående arbete** (synlig med varning):
 
 ```yaml
 ---
 layout: default
-title: The title of the page
-parent: The parent page
+title: Sidans titel
+parent: Föräldrasidan
 status: Granskning
 ---
 ```
 
-**Production ready**:
+**Redo för produktion**:
 
 ```yaml
 ---
 layout: default
-title: The title of the page
-parent: The parent page
+title: Sidans titel
+parent: Föräldrasidan
 status: Godkänd
 ---
 ```
 
-## Summary Table
+## Sammanfattningstabell
 
-| Method | Builds? | In Navigation? | In Search? | Accessible by URL? |
-|--------|---------|----------------|------------|-------------------|
-| `published: false` | ❌ No | ❌ No | ❌ No | ❌ No |
-| `nav_exclude: true` | ✅ Yes | ❌ No | ✅ Yes* | ✅ Yes |
-| `search_exclude: true` | ✅ Yes | ✅ Yes* | ❌ No | ✅ Yes |
-| `status: Utkast` | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| In `_drafts/` | ❌ No** | ❌ No | ❌ No | ❌ No |
+| Metod | Byggs? | I navigationen? | I sökresultat? | Tillgänglig via URL? |
+|-------|--------|-----------------|----------------|----------------------|
+| `published: false` | ❌ Nej | ❌ Nej | ❌ Nej | ❌ Nej |
+| `nav_exclude: true` | ✅ Ja | ❌ Nej | ✅ Ja* | ✅ Ja |
+| `search_exclude: true` | ✅ Ja | ✅ Ja* | ❌ Nej | ✅ Ja |
+| `status: Utkast` | ✅ Ja | ✅ Ja | ✅ Ja | ✅ Ja |
+| I `_drafts/` | ❌ Nej** | ❌ Nej | ❌ Nej | ❌ Nej |
 
-*Unless also excluded
-**Only builds with `--drafts` flag
+*Om inte även exkluderat
+**Byggs endast med flaggan `--drafts`

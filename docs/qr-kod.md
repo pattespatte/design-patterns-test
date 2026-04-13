@@ -2,7 +2,7 @@
 layout: default
 title: QR-kod
 parent: Designmönster
-status: utkast
+status: granskning
 nav_order: 130
 ---
 
@@ -24,8 +24,10 @@ Hjälp alla användare att skanna en QR-kod genom att se till att:
 - QR-koden alltid syns i sin helhet
 - QR-koden fungerar även i högkontrastläge med inverterade färger.
   - Vit ram runt själva koden.
-- det finns tillräckligt med tid (minst 3 minuter) innan time-out
-- instruktioner är tydliga och fungerar även för den som använder skärmläsare.
+- Det finns tillräckligt med tid (minst 3 minuter) innan time-out
+- Instruktioner är tydliga och fungerar även för den som använder skärmläsare.
+- Gör det möjligt att klicka för att förstora QR-koden (som en modal)
+- Se till att förstorad QR-kod går att stänga med escape-tangenten, ESC (som modal)
 
 ## Exempel
 
@@ -37,8 +39,8 @@ Hjälp alla användare att skanna en QR-kod genom att se till att:
 <picture>
   <source srcset="../assets/images/handelsbanken-qr-kod.webp" type="image/webp">
   <img src="../assets/images/handelsbanken-qr-kod.jpg"
-       alt="Exempel från Handelsbanken som visar QR-kod för inloggning med BankID i mörkt läge med vit ram runt koden"
-       loading="lazy"
-       width="1180"
-       height="1141">
+    alt="Exempel från Handelsbanken som visar QR-kod för inloggning med BankID i mörkt läge med vit ram runt koden"
+    loading="lazy"
+    width="1180"
+    height="1141">
 </picture>
