@@ -29,13 +29,19 @@ Sättet vi frågar efter datum beror på situationen. Användaren kan behöva fy
 2. ett datum som finns i ett dokument som användaren har till hands, till exempel ett inflyttningsdatum i ett hyreskontrakt eller pass
 3. ungefärliga datum, som "december 2024"
 4. relativa datum, som ”4 dagar från idag” eller ”onsdag förra veckan”
-5. återkommande datum – t.ex. varje torsdag. [behöver denna finnas med?].
+5. återkommande datum – t.ex. varje torsdag.
+
+{: .kommentar}
+> Behöver denna finnas med?
 
 I vissa fall kan du behöva be användaren att välja ett datum från ett givet urval.
 
 ### 1. Ber om ett datum som användaren kommer ihåg
 
-Be om minnesvärda datum, som födelsedatum. [Här har UK GOV en modell som bygger på följande datuminmatningskomponenten vi ska ju inte tala om exakt hur vilken komponent som ska användas hos respektive myndighet – vad kan vi skriva här som hjälper myndigheterna att göra rätt?]
+Be om minnesvärda datum, som födelsedatum.
+
+{: .kommentar}
+> Här har UK GOV en modell som bygger på följande datuminmatningskomponenten vi ska ju inte tala om exakt hur vilken komponent som ska användas hos respektive myndighet – vad kan vi skriva här som hjälper myndigheterna att göra rätt?
 
 <picture>
   <source srcset="../assets/images/datum-boxar.webp" type="image/webp">
@@ -50,9 +56,10 @@ Be om minnesvärda datum, som födelsedatum. [Här har UK GOV en modell som bygg
 
 När du ber om ett datum exakt som det visas på ett pass, kreditkort eller annat dokument, se till att fälten matchar originalets format. Detta gör det lättare för användare att kopiera datumet korrekt.
 
-[Håller vi oss till uppgifter som man i Sverige använder på pass, osv så kan vi ge detta rådet. Går vi utanför till andra länder blir det svårt att leva upp till det då formaten är olika.]
-
-Uppdaterad 2024-11-25 /Patrik E.
+{: .kommentar}
+> Håller vi oss till uppgifter som man i Sverige använder på pass, osv så kan vi ge detta rådet. Går vi utanför till andra länder blir det svårt att leva upp till det då formaten är olika.
+>
+> — 2024-11-25 /Patrik E.
 
 ### 3. Ber om ungefärliga datum
 
@@ -80,8 +87,12 @@ Gör aldrig en kalenderkomponent som är beroende av JavaScript som det enda inm
 
 ### Hur man skriver datum
 
-> Har kommit hit i redigeringen /2024-11-25, Patrik E
+{: .kommentar}
+> Har kommit hit i redigeringen
+>
+> — 2024-11-25 /Patrik E
 
-> Se stilen GOV.UK för att skriva [datum och datumintervall](https://design-system.service.gov.uk/patterns/dates/)].
+{: .kommentar}
+> Se stilen GOV.UK för att skriva [datum och datumintervall](https://design-system.service.gov.uk/patterns/dates/).
 
-> Om du anger ett exempeldatum, använd 13 eller mer för dagen och 9 eller mindre för månaden - till exempel '27 3 2007'. Detta hjälper användare att ange datumet i rätt ordning och visar dem att de inte behöver inkludera inledande nollor.
+Om du anger ett exempeldatum, använd 13 eller mer för dagen och 9 eller mindre för månaden - till exempel '27 3 2007'. Detta hjälper användare att ange datumet i rätt ordning och visar dem att de inte behöver inkludera inledande nollor.
