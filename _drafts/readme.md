@@ -113,7 +113,7 @@ Skapa `_layouts/pattern.html`:
 layout: default
 ---
 
-{% if page.status == "Opublicerad" and jekyll.environment == "production" %}
+{% if page.status == "opublicerad" and jekyll.environment == "production" %}
   <div class="flash flash-error">
     <h2>Sidan är inte publicerad</h2>
     <p>Detta innehåll är fortfarande under utveckling.</p>
@@ -134,7 +134,7 @@ Använd sedan:
 layout: default
 title: Sidans titel
 parent: Föräldrasidan
-status: Opublicerad
+status: opublicerad
 nav_order: 4
 ---
 ```
@@ -239,7 +239,7 @@ defaults:
 layout: default
 ---
 
-{% if page.status == "Opublicerad" and jekyll.environment == "production" %}
+{% if page.status == "opublicerad" and jekyll.environment == "production" %}
   <!-- Visa inte innehåll i produktion -->
   <div class="flash flash-warn">
     <h2>Sidan är inte tillgänglig</h2>

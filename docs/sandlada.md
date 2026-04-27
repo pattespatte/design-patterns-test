@@ -2,7 +2,7 @@
 layout: default
 title: Sandlåda (för test)
 parent: Designmönster
-status: utkast
+status: granskning
 nav_order: 400
 ---
 
