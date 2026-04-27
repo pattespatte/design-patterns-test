@@ -3,7 +3,7 @@ layout: default
 title: Datum
 parent: Designmönster
 status: utkast
-nav_order: 101
+nav_order: 10
 nav_header: Fråga användare efter…
 ---
 

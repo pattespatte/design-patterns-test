@@ -3,7 +3,7 @@ layout: default
 title: Övergripande principer
 parent: Designmönster
 status: utkast
-nav_order: 233
+nav_order: 160
 ---
 
 **Fråga användare efter**

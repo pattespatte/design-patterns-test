@@ -3,7 +3,7 @@ layout: default
 title: Adresser
 parent: Designmönster
 status: utkast
-nav_order: 140
+nav_order: 90
 ---
 
 **Sammanfattning av diskussion 2026-03-06**

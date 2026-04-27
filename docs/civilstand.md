@@ -3,7 +3,7 @@ layout: default
 title: Civilstånd
 parent: Designmönster
 status: utkast
-nav_order: 204
+nav_order: 130
 ---
 
 **Fråga användare efter**

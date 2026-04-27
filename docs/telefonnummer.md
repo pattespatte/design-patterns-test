@@ -3,7 +3,7 @@ layout: default
 title: Telefonnummer
 parent: Designmönster
 status: utkast
-nav_order: 105
+nav_order: 50
 ---
 
 **Fråga användare efter**

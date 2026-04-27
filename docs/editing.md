@@ -17,7 +17,7 @@ Webbplatsen har två lägen:
 **Publikt läge** (standard)
 : Alla sidor visas utan kommentarer. Sidor med status `granskning` eller `opublicerad` döljs från navigationen.
 
-**Granskningsläge** (`?review`)
+**Granskningsläge** (`review`)
 : Lägg till `?review` i webbadressen, till exempel:
 : `https://pattespatte.github.io/design-patterns-test/docs/datum.html?review`
 : Granskningsläget visar kommentarer, en knapp för att visa/dölja kommentarer, och sidor som är under granskning. Läget sparas automatiskt medan du surfar mellan sidor.

@@ -3,7 +3,7 @@ layout: default
 title: QR-kod
 parent: Designmönster
 status: granskning
-nav_order: 130
+nav_order: 60
 ---
 
 **Fråga användare efter**

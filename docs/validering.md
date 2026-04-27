@@ -3,7 +3,7 @@ layout: default
 title: Få reda på vad som är fel
 parent: Designmönster
 status: utkast
-nav_order: 300
+nav_order: 170
 nav_header: Hjälp användare att…
 ---
 
