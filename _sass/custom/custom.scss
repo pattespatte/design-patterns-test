@@ -397,6 +397,7 @@ html.dark {
 // =============================================================================
 
 .kommentar {
+	display: none;
 	position: relative;
 	margin: 1.5rem 0 1.5rem 0.5rem;
 	padding: 1rem 1.25rem 0.75rem;
@@ -509,5 +510,86 @@ html.dark .kommentar {
 @media print {
 	.kommentar {
 		display: none;
+	}
+}
+
+// =============================================================================
+// Review mode – URL parameter ?review
+// =============================================================================
+
+// Show comments in review mode (unless toggle hides them)
+html.review-mode:not(.hide-comments) .kommentar {
+	display: block;
+}
+
+// Nav: hide granskning and opublicerad pages by default
+.nav-list-item[data-status="granskning"],
+.nav-list-item[data-status="opublicerad"] {
+	display: none;
+}
+
+// Review mode: reveal granskning pages (opublicerad stays hidden)
+html.review-mode .nav-list-item[data-status="granskning"] {
+	display: block;
+}
+
+// Review mode toggle button
+.btn.js-toggle-comments {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
+	padding: 8px;
+	margin-left: 0.5rem;
+	background: transparent;
+	border: 1px solid var(--color-border);
+	box-shadow: none;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+
+	&:hover {
+		background: var(--color-grey-lt-000);
+	}
+
+	&:focus {
+		outline: 2px solid #1d70b8;
+		outline-offset: 2px;
+	}
+}
+
+.comment-icon {
+	width: 20px;
+	height: 20px;
+	transition: opacity 0.2s ease;
+	stroke: #27262b;
+}
+
+.btn.js-toggle-comments[aria-pressed="false"] .comment-icon {
+	stroke: #999;
+}
+
+html.dark .btn.js-toggle-comments {
+	border-color: var(--color-grey-dk-100);
+
+	&:hover {
+		background: var(--color-grey-dk-100);
+	}
+
+	.comment-icon {
+		stroke: #fafafa;
+	}
+
+	&[aria-pressed="false"] .comment-icon {
+		stroke: #777;
+	}
+}
+
+@media (max-width: 768px) {
+	.btn.js-toggle-comments {
+		min-width: 44px;
+		min-height: 44px;
+		padding: 8px;
 	}
 }

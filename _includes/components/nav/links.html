@@ -13,7 +13,7 @@ Re-evaluate on theme upgrade.
 	{%- else %}
 	{%- assign li_class = "nav-list-item" %}
 	{%- endif %}
-	<li class="{{ li_class }}">
+	<li class="{{ li_class }}" data-status="{{ p.status }}">
 		{%- if p.nav_header %}
 		<h3>{{ p.nav_header }}</h3>
 		{%- endif %}
@@ -29,7 +29,7 @@ Re-evaluate on theme upgrade.
 			{%- else %}
 			{%- assign child_li_class = "nav-list-item" %}
 			{%- endif %}
-			<li class="{{ child_li_class }}">
+			<li class="{{ child_li_class }}" data-status="{{ child.status }}">
 				{%- if child.nav_header %}
 				<h3>{{ child.nav_header }}</h3>
 				{%- endif %}

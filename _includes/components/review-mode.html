@@ -1,0 +1,84 @@
+<button type="button" class="btn js-toggle-comments" style="display:none" aria-label="Visa/dölj kommentarer" aria-pressed="true">
+	<svg class="comment-icon comment-show" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+	</svg>
+	<svg class="comment-icon comment-hide" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+		<line x1="3" y1="3" x2="21" y2="21"></line>
+	</svg>
+</button>
+
+<script>
+(function () {
+	var toggle = document.querySelector('.js-toggle-comments');
+	var showIcon = document.querySelector('.comment-show');
+	var hideIcon = document.querySelector('.comment-hide');
+
+	if (!toggle || !showIcon || !hideIcon) return;
+
+	function getMode() {
+		var params = new URLSearchParams(window.location.search);
+		if (params.has('review')) {
+			sessionStorage.setItem('mode', 'review');
+			return 'review';
+		}
+		return sessionStorage.getItem('mode') || 'public';
+	}
+
+	function applyMode(mode) {
+		if (mode === 'review') {
+			document.documentElement.classList.add('review-mode');
+			toggle.style.display = 'flex';
+			updateToggle(true);
+		} else {
+			document.documentElement.classList.remove('review-mode');
+			document.documentElement.classList.remove('hide-comments');
+			toggle.style.display = 'none';
+		}
+	}
+
+	function rewriteLinks() {
+		var links = document.querySelectorAll('a[href]');
+		for (var i = 0; i < links.length; i++) {
+			var href = links[i].getAttribute('href');
+			if (!href) continue;
+			if (href.indexOf('://') !== -1 && href.indexOf(window.location.hostname) === -1) continue;
+			if (href.indexOf('#') === 0) continue;
+			if (href.indexOf('?review') !== -1) continue;
+			if (href.indexOf('javascript:') === 0) continue;
+			links[i].setAttribute('href', href + (href.indexOf('?') === -1 ? '?' : '&') + 'review');
+		}
+	}
+
+	function updateToggle(commentsVisible) {
+		if (commentsVisible) {
+			showIcon.style.display = 'block';
+			hideIcon.style.display = 'none';
+			toggle.setAttribute('aria-pressed', 'true');
+			toggle.title = 'Dölj kommentarer';
+		} else {
+			showIcon.style.display = 'none';
+			hideIcon.style.display = 'block';
+			toggle.setAttribute('aria-pressed', 'false');
+			toggle.title = 'Visa kommentarer';
+		}
+	}
+
+	toggle.addEventListener('click', function () {
+		var hiding = document.documentElement.classList.contains('review-mode') && !document.documentElement.classList.contains('hide-comments');
+		if (hiding) {
+			document.documentElement.classList.add('hide-comments');
+			updateToggle(false);
+		} else {
+			document.documentElement.classList.remove('hide-comments');
+			updateToggle(true);
+		}
+	});
+
+	var mode = getMode();
+	applyMode(mode);
+	if (mode === 'review') {
+		rewriteLinks();
+	}
+})();
+</script>
