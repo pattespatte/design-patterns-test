@@ -16,8 +16,18 @@ package-lock.json
 # Generated accessibility reports
 accessibility-report/
 
+# Test and tool artifacts
+.playwright-mcp/
+
 # macOS system files
 .DS_Store
+
+# Editor and IDE
+*.swp
+*.swo
+*~
+.vscode/settings.json
+.idea/
 
 # Claude Code project files
 .claude/

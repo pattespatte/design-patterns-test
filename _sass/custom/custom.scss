@@ -152,7 +152,79 @@ a:hover {
 
 /* <<< Expand accordion like menu */
 
-/* Dark mode toggle styles are now handled inline in header_custom.html */
+/* Dark mode toggle */
+.btn.js-toggle-dark-mode {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
+	padding: 8px;
+	margin-left: 1rem;
+	background: transparent;
+	border: 1px solid var(--color-border);
+	box-shadow: none;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+	position: relative;
+	z-index: 10;
+
+	&:hover {
+		background: var(--color-grey-lt-000);
+	}
+
+	&:focus {
+		outline: 2px solid #1d70b8;
+		outline-offset: 2px;
+	}
+}
+
+.theme-icon {
+	width: 20px;
+	height: 20px;
+	transition: opacity 0.2s ease;
+	stroke: #27262b;
+}
+
+.btn.js-toggle-dark-mode.light-mode .theme-icon {
+	stroke: #27262b;
+}
+
+.btn.js-toggle-dark-mode.dark-mode {
+	border-color: var(--color-grey-dk-100);
+
+	&:hover {
+		background: var(--color-grey-dk-100);
+	}
+
+	.theme-icon {
+		stroke: #fafafa;
+	}
+}
+
+@media (max-width: 768px) {
+	.btn.js-toggle-dark-mode {
+		min-width: 44px;
+		min-height: 44px;
+		padding: 8px;
+		position: fixed;
+		top: 10px;
+		right: 60px;
+		z-index: 100;
+		background: transparent;
+		border: 1px solid var(--color-border);
+	}
+
+	.btn.js-toggle-dark-mode.dark-mode {
+		background: transparent;
+	}
+
+	.theme-icon {
+		width: 20px;
+		height: 20px;
+	}
+}
 
 .site-title {
 	font-weight: 700;

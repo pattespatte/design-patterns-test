@@ -1,7 +1,9 @@
 {%- comment -%}
+Override of just-the-docs v0.10.1 nav/links.html
 Include as: {%- include components/nav/links.html pages=page_array ancestors=ancestors_array all=bool -%}
 Depends on: include.pages, include.ancestors, include.all.
 Results in: HTML for navigation links with optional nav_header.
+Re-evaluate on theme upgrade.
 {%- endcomment -%}
 <ul class="nav-list">
 	{%- for p in include.pages %}
