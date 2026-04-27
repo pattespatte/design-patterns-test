@@ -37,7 +37,12 @@ En del användare kan behöva ett exempel för hur inmatningen kan se ut. Använ
 
 ## Exempel hur inmatning kan se ut
 
+### 0-99 år
+
 ![alt](../assets/images/Personnummer_exempel1_4.png)
+
+### 100 år eller äldre
+
 ![alt](../assets/images/Personnummer_exempel2_4.png)
 
 ## Referensimplementation
