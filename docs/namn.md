@@ -47,7 +47,8 @@ Använd två separata fält med rubrikerna förnamn och efternamn för att hämt
 
 ### När vi efterfrågar namn på personer annan än en själv, till exempel sitt barn, anhörig eller annan person
 
-I det fall (Patrik E kollar upp hur de har löst det, i de fall  man ska fylla i för fler)
+{: .kommentar}
+> Patrik E kollar upp hur de har löst det, i de fall  man ska fylla i för fler
 
 ### Namn för kontaktuppgifter
 
