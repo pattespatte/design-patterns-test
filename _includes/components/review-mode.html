@@ -17,12 +17,7 @@
 	if (!toggle || !showIcon || !hideIcon) return;
 
 	function getMode() {
-		var params = new URLSearchParams(window.location.search);
-		if (params.has('review')) {
-			sessionStorage.setItem('mode', 'review');
-			return 'review';
-		}
-		return sessionStorage.getItem('mode') || 'public';
+		return new URLSearchParams(window.location.search).has('review') ? 'review' : 'public';
 	}
 
 	function applyMode(mode) {
