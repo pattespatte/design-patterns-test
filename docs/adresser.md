@@ -6,11 +6,12 @@ status: utkast
 nav_order: 90
 ---
 
-**Sammanfattning av diskussion 2026-03-06**
-
-- Mönstret "adress" kommer inte att prioriteras just nu.
-- Åsa kompletterar här.
-- Adresser kommer att hämtas från Skatteverket.
+{: .kommentar}
+> **Sammanfattning av diskussion 2026-03-06**
+> 
+> - Mönstret "adress" kommer inte att prioriteras just nu.
+> - Åsa kompletterar här.
+> - Adresser kommer att hämtas från Skatteverket.
 
 **Fråga användare efter**
 

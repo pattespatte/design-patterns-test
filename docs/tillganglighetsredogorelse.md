@@ -6,6 +6,9 @@ parent: Om webbplatsen
 has_children: false
 ---
 
+{: .kommentar}
+> Hela denna tillgänglighetsredogörelse är ett test och behöver göras om. Tillgänglighetsredogörelsen är framtagen maskinellt med hjälp av Playwright med axe-tillägg. Tillgänglighetsredogörelsen innhåller massor av fel.
+
 # Tillgänglighetsredogörelse
 
 Den här webbplatsen drivs av _Arbetsgruppen för statliga designmönster_ och vi vill att så många som möjligt ska kunna använda den. På den här sidan beskriver vi hur webbplatsen uppfyller lagen om tillgänglighet till digital offentlig service, eventuella kända tillgänglighetsproblem och hur du kan rapportera brister till oss.
