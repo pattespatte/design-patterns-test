@@ -3,8 +3,8 @@ title: Statliga designmönster
 description: Designmönster med god tillgänglighet för svenska myndigheter
 
 # Use remote_theme instead of theme to make it compatible with GitHub Pages
-# remote_theme: just-the-docs/just-the-docs@v0.10.1
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs@v0.10.1
+# theme: just-the-docs
 
 url: https://pattespatte.github.io
 baseurl: /design-patterns-test
