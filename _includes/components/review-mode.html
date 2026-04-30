@@ -34,6 +34,7 @@
 
 	function rewriteLinks() {
 		var links = document.querySelectorAll('a[href]');
+		var pathname = window.location.pathname;
 		for (var i = 0; i < links.length; i++) {
 			var href = links[i].getAttribute('href');
 			if (!href) continue;
@@ -41,6 +42,7 @@
 			if (href.indexOf('#') === 0) continue;
 			if (href.indexOf('?review') !== -1) continue;
 			if (href.indexOf('javascript:') === 0) continue;
+			if (href === pathname || href === pathname + '/' || href === pathname.replace(/\/$/, '')) continue;
 			links[i].setAttribute('href', href + (href.indexOf('?') === -1 ? '?' : '&') + 'review');
 		}
 	}
