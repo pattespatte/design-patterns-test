@@ -43,3 +43,5 @@ Exempel på QR-kod i mörkt läge från Handelsbanken:
 ### Forskning/användartestning av mönstret
 - [Tillgänglig inloggning med QR-kod (axbom.se)](https://axbom.se/tillganglig-inloggning-med-qr-kod/)
 - 
+### Utvecklar stöd på bankit.com
+(https://support.bankid.com/sv/anvanda-mobilt-bankid/skanna-qr-kod)
