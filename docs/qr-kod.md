@@ -41,7 +41,7 @@ Exempel på QR-kod i mörkt läge från Handelsbanken:
     height="1141">
 </picture>
 
-##Exempel på stödtext
+## Exempel på stödtext
 Här loggar du in med BankId på en annan enhet, till exempel din mobiltelefon eller läsplatta. Om ditt BankID finns på den enhet du använder nu, logga in med BankID på den här enheten.
 
 BankID med QR-kod
