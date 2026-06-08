@@ -16,7 +16,7 @@ nav_order: 60
 
 ## Använd inte mönstret när (kan vi ta bort rubrik när det inte är relevant)
 
-## Mönster för QR-kod
+## Så fungerar mönstret
 Hjälp alla användare att skanna en QR-kod genom att se till att:
 
 - Att QR-koden inte döljs när sidan är förstorad till 400 procent 
