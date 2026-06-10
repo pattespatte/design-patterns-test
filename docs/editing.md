@@ -1,105 +1,102 @@
 ---
 layout: default
-title: Så här redigerar du
+title: Redigera innehåll
 parent: Om webbplatsen
-status: granskning
-nav_order: 2
+nav_order: 1
 ---
 
-# Så här redigerar du
+# Redigera innehåll
 
-Den här guiden beskriver hur du arbetar med designmönstren — från kommentarer och granskningsläge till sidstatus och publicering.
+Du kan redigera alla sidor direkt i GitHub — du behöver ingen särskild mjukvara.
 
-## Granskningsläge (review mode)
+## Redigera en befintlig sida
 
-Webbplatsen har två lägen:
+1. Gå till [docs-mappen på GitHub](https://github.com/pattespatte/design-patterns-test/tree/main/docs)
+2. Klicka på filen du vill ändra
+3. Klicka på pennikonen ✏️ högst upp till höger i filvyn
+4. Gör dina ändringar
+5. Spara enligt anvisningen nedan
 
-**Publikt läge** (standard)
-: Alla sidor visas utan kommentarer. Sidor med status `granskning` eller `opublicerad` döljs från navigationen.
+<!-- TODO: Skärmdump som visar pennikonen -->
 
-**Granskningsläge** (`review`)
-: Lägg till `?review` i webbadressen, till exempel:
-: `https://pattespatte.github.io/design-patterns-test/docs/datum.html?review`
-: Granskningsläget visar kommentarer, en knapp för att visa/dölja kommentarer, och sidor som är under granskning. Läget sparas automatiskt medan du surfar mellan sidor.
+## Spara dina ändringar (commit)
 
-Läget försvinner när du stänger webbläsarfliken.
+När du har gjort klart dina ändringar:
 
-## Kommentarer (kommentar)
+1. Rulla ned till rutan **Commit changes** längst ner på sidan
+2. Skriv en kort beskrivning av vad du ändrade, till exempel "Uppdaterat text om namn"
+3. Välj **Commit directly to the `main` branch**
+4. Klicka på knappen **Commit changes**
 
-Använd kommentarer för att lämna redaktionella anteckningar — frågor, osäkerheter eller påminnelser till andra skribenter.
+Ändringen publiceras automatiskt på webbplatsen inom några minuter.
 
-### Skriva en kommentar
+<!-- TODO: Skärmdump som visar commit-rutan -->
 
-Använd ett blockcitat med klassen `.kommentar`:
+## Ändra status på en sida
 
-```markdown
-{: .kommentar}
-> Här behöver vi kolla med juridik om detta stämmer.
+Varje sida har ett block med inställningar högst upp i filen. Blocket kallas front matter och omges av tre streck `---`.
+
+### Gör en dold sida synlig
+
+Leta efter raden `published: false` och ändra den till `published: true`:
+
+```yaml
+published: true
 ```
 
-### Kommentar med författare
+Du kan också ta bort hela raden `published: false` — då blir sidan synlig automatiskt.
 
-Lägg till en tom rad och en attributionsrad med `—`:
+### Ändra sidans status
 
-```markdown
-{: .kommentar}
-> Detta gäller bara för svenska pass. Andra länders format kan skilja sig.
->
-> — 2024-11-25 /Patrik E.
+Leta efter raden som börjar med `status:` och ändra värdet:
+
+```yaml
+status: utkast
 ```
 
-Attributionsraden (datum och namn) visas automatiskt i kursiv stil, mindre text och högerjusterad.
+Tillgängliga statusar:
 
-### Så ser kommentarerna ut
-
-Kommentarerna visas som gula post-it-lappar med viket hörn. I mörkt läge får de en mörk olivfärg. De döljs automatiskt vid utskrift.
-
-## Sidstatus
-
-Varje sida har en `status` i front matter som visas som en färgad etikett:
-
-| Status | Färg | Betydelse |
-|--------|------|-----------|
+| Status | Etikett | Använd när |
+|--------|---------|------------|
 | `utkast` | Gul | Sidan är under arbete |
-| `granskning` | Blå | Sidan är under granskning |
-| `godkänd` | Grön | Sidan är godkänd och publicerad |
-| `utgått` | Röd | Sidan är ej längre aktuell |
+| `granskning` | Blå | Sidan är redo för granskning |
+| `godkänd` | Grön | Sidan är godkänd |
+| `utgått` | Röd | Sidan är inte längre aktuell |
 
-**Synlighet i navigationen:**
+<!-- TODO: Skärmdump som visar var front matter finns -->
 
-| Status | Publikt läge | Granskningsläge |
-|--------|-------------|-----------------|
-| `utkast` | Synlig | Synlig |
-| `granskning` | **Dold** | Synlig |
-| `godkänd` | Synlig | Synlig |
-| `opublicerad` | **Dold** | **Dold** |
+## Lägga in en bild
 
-## Dölja sidor
+### Steg 1: Ladda upp bildfilen
 
-### Dölja från navigationen
+1. Gå till mappen [assets/images](https://github.com/pattespatte/design-patterns-test/tree/main/assets/images) på GitHub
+2. Klicka på **Add file** och välj **Upload files**
+3. Dra in din bild eller klicka för att bläddra
+4. Använd ett beskrivande filnamn med små bokstäver, till exempel `namn-exempel.png`
+5. Spara uppladdningen (commit)
 
-```yaml
----
-nav_exclude: true
-search_exclude: true
----
+### Steg 2: Lägg in bilden i texten
+
+I din markdown-fil skriver du:
+
+```markdown
+![Beskrivande text om vad bilden visar](/design-patterns-test/assets/images/din-bild.png)
 ```
 
-Sidan byggs fortfarande och är tillgänglig via direktlänk.
+Byt ut `din-bild.png` mot filnamnet du laddade upp. Texten inom hakparenteserna är viktig för tillgängligheten — beskriv vad bilden visar.
 
-### Förhindra att sidan byggs
+<!-- TODO: Skärmdump som visar uppladdning och bildkod -->
 
-```yaml
----
-published: false
----
-```
+## Skapa en ny sida
 
-Sidan byggs inte alls — varken lokalt eller på GitHub Pages.
+1. Gå till [docs-mappen](https://github.com/pattespatte/design-patterns-test/tree/main/docs) på GitHub
+2. Klicka på **Add file** och välj **Create new file**
+3. Skriv filnamnet — använd små bokstäver och bindestreck, till exempel `nytt-mönster.md`
+4. Kopiera mallen nedan och klistra in
+5. Anpassa titel, förälder och innehåll
+6. Spara (commit)
 
-## Sidans struktur
-
-Varje designmönster följer samma struktur:
+### Mall för nytt designmönster
 
 ```markdown
 ---
@@ -116,17 +113,58 @@ nav_order: 150
 
 ## Använd mönstret när
 
-Beskrivning av när mönstret är lämpligt.
+Beskriv när mönstret passar.
 
 ## Använd inte mönstret när
 
-Beskrivning av när mönstret inte bör användas.
+Beskriv när mönstret inte passar.
 
 ## Så fungerar mönstret
 
-Detaljerad beskrivning av hur mönstret fungerar.
+Beskriv hur mönstret fungerar.
+
+## Exempel
+
+Lägg till exempel om det finns.
+
+## Referenser
+
+- Länkar till källor och standarder
 ```
 
-## Status för den här sidan
+Välj `nav_order` utifrån var sidan ska hamna i menyn — ett tal mellan 100 och 900 bestämmer ordningen.
 
-Denna guide har status `granskning` och syns därför bara i granskningsläge.
+<!-- TODO: Skärmdump som visar skapande av ny fil -->
+
+## Formatera text
+
+Använd markdown för att formatera:
+
+| Du skriver | Blir |
+|------------|------|
+| `**fetstil**` | **fetstil** |
+| `*kursiv stil*` | *kursiv stil* |
+| `# Rubrik` | Stor rubrik |
+| `## Rubrik` | Mindre rubrik |
+| `- listpunkt` | Punktlista |
+| `1. första` | Numrerad lista |
+| `[länktext](https://...)` | Klickbar länk |
+
+## Granskningsläge
+
+Lägg till `?review` i webbadressen för att se sidor under granskning:
+
+`https://pattespatte.github.io/design-patterns-test/docs/datum.html?review`
+
+I granskningsläget ser du kommentarer och sidor som har status `granskning`.
+
+### Lämna en kommentar
+
+Använd detta format för att skriva en kommentar till andra skribenter:
+
+```markdown
+{: .kommentar}
+> Här behöver vi kolla med juridik om detta stämmer.
+```
+
+Kommentarer visas som gula post-it-lappar i granskningsläget.
