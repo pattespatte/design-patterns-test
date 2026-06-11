@@ -17,7 +17,7 @@ Du kan redigera alla sidor direkt i GitHub — du behöver ingen särskild mjukv
 4. Gör dina ändringar
 5. Spara enligt anvisningen nedan
 
-<!-- TODO: Skärmdump som visar pennikonen -->
+![Pennikonen för att redigera filen i GitHub](/design-patterns-test/assets/images/redigera-pennikon.webp)
 
 ## Spara dina ändringar (commit)
 
@@ -30,7 +30,7 @@ När du har gjort klart dina ändringar:
 
 Ändringen publiceras automatiskt på webbplatsen inom några minuter.
 
-<!-- TODO: Skärmdump som visar commit-rutan -->
+![Rutan för att spara ändringar med commit](/design-patterns-test/assets/images/redigera-commit-ruta.webp)
 
 ## Ändra status på en sida
 
@@ -63,7 +63,7 @@ Tillgängliga statusar:
 | `godkänd` | Grön | Sidan är godkänd |
 | `utgått` | Röd | Sidan är inte längre aktuell |
 
-<!-- TODO: Skärmdump som visar var front matter finns -->
+![Exempel på front matter högst upp i en fil](/design-patterns-test/assets/images/redigera-front-matter.webp)
 
 ## Lägga in en bild
 
@@ -85,7 +85,7 @@ I din markdown-fil skriver du:
 
 Byt ut `din-bild.png` mot filnamnet du laddade upp. Texten inom hakparenteserna är viktig för tillgängligheten — beskriv vad bilden visar.
 
-<!-- TODO: Skärmdump som visar uppladdning och bildkod -->
+![Uppladdning av bildfil och bildkod i markdown](/design-patterns-test/assets/images/redigera-bilduppladdning.webp)
 
 ## Skapa en ny sida
 
@@ -134,7 +134,7 @@ Lägg till exempel om det finns.
 
 Välj `nav_order` utifrån var sidan ska hamna i menyn — ett tal mellan 100 och 900 bestämmer ordningen.
 
-<!-- TODO: Skärmdump som visar skapande av ny fil -->
+![Skapande av ny fil i docs-mappen](/design-patterns-test/assets/images/redigera-skapa-ny-fil.webp)
 
 ## Formatera text
 

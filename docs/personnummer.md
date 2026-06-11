@@ -39,11 +39,11 @@ En del användare kan behöva ett exempel för hur inmatningen kan se ut. Använ
 
 ### 0-99 år
 
-![Exempel på inmatning av personnummer för åldrar 0–99 år](../assets/images/Personnummer_exempel1_4.png)
+![Exempel på inmatning av personnummer för åldrar 0–99 år](../assets/images/personnummer-exempel-1-4.webp)
 
 ### 100 år eller äldre
 
-![Exempel på inmatning av personnummer för åldrar 100 år eller äldre](../assets/images/Personnummer_exempel2_4.png)
+![Exempel på inmatning av personnummer för åldrar 100 år eller äldre](../assets/images/personnummer-exempel-2-4.webp)
 
 ## Referensimplementation
 
