@@ -154,7 +154,7 @@ Använd markdown för att formatera:
 
 Lägg till `?review` i webbadressen för att se sidor under granskning:
 
-`https://pattespatte.github.io/design-patterns-test/docs/datum.html?review`
+<https://pattespatte.github.io/design-patterns-test/docs/datum.html?review>
 
 I granskningsläget ser du kommentarer och sidor som har status `granskning`.
 

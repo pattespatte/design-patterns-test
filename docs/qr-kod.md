@@ -44,7 +44,8 @@ Exempel på QR-kod i mörkt läge från Handelsbanken:
 ## Bra exempel på stödtext
 Här loggar du in med BankId på en annan enhet, till exempel din mobiltelefon eller läsplatta. Om ditt BankID finns på den enhet du använder nu, logga in med BankID på den här enheten.
 
-<b>BankID med QR-kod</b><br>
+### BankID med QR-kod
+
 Så här gör du:
 - Öppna appen för BankID.
 - Tryck på QR-symbolen i appen för BankID.
@@ -54,7 +55,9 @@ Så här gör du:
 Efter att du väljer att visa QR-koden har du 30 sekunder på dig att skanna den. Sedan avbryts inloggningen på grund av säkerhetsskäl. Du kan då prova igen.
 
 ### Forskning/användartestning av mönstret
+
 - [Tillgänglig inloggning med QR-kod (axbom.se)](https://axbom.se/tillganglig-inloggning-med-qr-kod/)
 - 
 ### Utvecklarstöd på bankit.com
-(https://support.bankid.com/sv/anvanda-mobilt-bankid/skanna-qr-kod)
+
+- [Skanna QR-kod (BankID)](https://support.bankid.com/sv/anvanda-mobilt-bankid/skanna-qr-kod)
