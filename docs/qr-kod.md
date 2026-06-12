@@ -17,6 +17,7 @@ nav_order: 60
 ## Använd inte mönstret när (kan vi ta bort rubrik när det inte är relevant)
 
 ## Så fungerar mönstret
+
 Hjälp alla användare att skanna en QR-kod genom att se till att:
 
 - Att QR-koden inte döljs när sidan är förstorad till 400 procent 
@@ -30,6 +31,7 @@ Hjälp alla användare att skanna en QR-kod genom att se till att:
 - Se till att förstorad QR-kod går att stänga med escape-tangenten, ESC (som modal)
 
 ## Exempel
+
 Exempel på QR-kod i mörkt läge från Handelsbanken:
 
 <picture>
@@ -42,11 +44,13 @@ Exempel på QR-kod i mörkt läge från Handelsbanken:
 </picture>
 
 ## Bra exempel på stödtext
+
 Här loggar du in med BankId på en annan enhet, till exempel din mobiltelefon eller läsplatta. Om ditt BankID finns på den enhet du använder nu, logga in med BankID på den här enheten.
 
 ### BankID med QR-kod
 
 Så här gör du:
+
 - Öppna appen för BankID.
 - Tryck på QR-symbolen i appen för BankID.
 - ikta kameran mot QR-koden.
@@ -57,7 +61,7 @@ Efter att du väljer att visa QR-koden har du 30 sekunder på dig att skanna den
 ### Forskning/användartestning av mönstret
 
 - [Tillgänglig inloggning med QR-kod (axbom.se)](https://axbom.se/tillganglig-inloggning-med-qr-kod/)
-- 
+
 ### Utvecklarstöd på bankit.com
 
 - [Skanna QR-kod (BankID)](https://support.bankid.com/sv/anvanda-mobilt-bankid/skanna-qr-kod)
