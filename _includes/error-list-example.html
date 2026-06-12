@@ -1,0 +1,144 @@
+<div id="fk-error-list-demo" class="example fk-error-list-example">
+
+  <p class="fk-demo-note">Det här är ett interaktivt exempel. Tryck på <strong>Skicka</strong> utan att fylla i fälten för att se felmeddelandena.</p>
+
+  {%- comment -%} Error summary box – hidden until validation triggers it {%- endcomment -%}
+  <div class="fk-error-list" id="fk-error-summary" role="alert" aria-atomic="true" tabindex="-1" style="display:none">
+    <div class="fk-error-list__header">
+      <svg class="fk-error-list__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
+        <path d="M8 1a1 1 0 0 1 .857.486l7 12A1 1 0 0 1 15 14.5H1a1 1 0 0 1-.857-1.514l7-12A1 1 0 0 1 8 1zm0 3.5a.75.75 0 0 0-.75.75v3.5a.75.75 0 0 0 1.5 0v-3.5A.75.75 0 0 0 8 4.5zm0 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg>
+      <span class="fk-error-list__title">Kolla på felen nedan</span>
+    </div>
+    <ul class="fk-error-list__list">
+      <li>
+        <a class="fk-error-list__link" href="#fornamn">
+          <span class="fk-error-list__bullet" aria-hidden="true">&#x2022;</span>
+          <span>Du måste ange ett förnamn</span>
+        </a>
+      </li>
+      <li>
+        <a class="fk-error-list__link" href="#efternamn">
+          <span class="fk-error-list__bullet" aria-hidden="true">&#x2022;</span>
+          <span>Du måste ange ett efternamn</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  {%- comment -%} Form {%- endcomment -%}
+  <form id="fk-error-form" novalidate>
+    <div class="fk-form-group">
+      <label class="fk-form-label" for="fornamn">Förnamn</label>
+      <input class="fk-form-input" type="text" id="fornamn" name="fornamn" autocomplete="given-name" aria-describedby="fornamn-error">
+      <span class="fk-error-message" id="fornamn-error" role="alert" style="display:none"></span>
+    </div>
+    <div class="fk-form-group">
+      <label class="fk-form-label" for="efternamn">Efternamn</label>
+      <input class="fk-form-input" type="text" id="efternamn" name="efternamn" autocomplete="family-name" aria-describedby="efternamn-error">
+      <span class="fk-error-message" id="efternamn-error" role="alert" style="display:none"></span>
+    </div>
+    <button type="submit" class="fk-form-btn">Skicka</button>
+  </form>
+
+  {%- comment -%} Code display {%- endcomment -%}
+  <details class="fk-code-toggle">
+    <summary>Visa kod</summary>
+    <pre class="fk-code-block"><code>&lt;div class="error-list" role="alert" tabindex="-1"&gt;
+  &lt;div class="error-list__header"&gt;
+    &lt;svg aria-hidden="true" ...&gt;...&lt;/svg&gt;
+    &lt;span&gt;Kolla på felen nedan&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#fornamn"&gt;Du måste ange ett förnamn&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#efternamn"&gt;Du måste ange ett efternamn&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;label for="fornamn"&gt;Förnamn&lt;/label&gt;
+&lt;input type="text" id="fornamn" aria-describedby="fornamn-error"&gt;
+&lt;span id="fornamn-error" role="alert"&gt;&lt;/span&gt;
+
+&lt;label for="efternamn"&gt;Efternamn&lt;/label&gt;
+&lt;input type="text" id="efternamn" aria-describedby="efternamn-error"&gt;
+&lt;span id="efternamn-error" role="alert"&gt;&lt;/span&gt;</code></pre>
+  </details>
+</div>
+
+<script>
+(function () {
+  var container = document.getElementById('fk-error-list-demo');
+  if (!container) return;
+
+  var form = container.querySelector('#fk-error-form');
+  var errorSummary = container.querySelector('#fk-error-summary');
+  var submitBtn = container.querySelector('.fk-form-btn');
+
+  var fields = [
+    { input: container.querySelector('#fornamn'), error: container.querySelector('#fornamn-error'), message: 'Du måste ange ett förnamn' },
+    { input: container.querySelector('#efternamn'), error: container.querySelector('#efternamn-error'), message: 'Du måste ange ett efternamn' }
+  ];
+
+  function showError(field) {
+    field.input.classList.add('fk-form-input--error');
+    field.error.textContent = field.message;
+    field.error.style.display = 'block';
+    field.input.setAttribute('aria-invalid', 'true');
+  }
+
+  function clearError(field) {
+    field.input.classList.remove('fk-form-input--error');
+    field.error.textContent = '';
+    field.error.style.display = 'none';
+    field.input.removeAttribute('aria-invalid');
+  }
+
+  function hasErrors() {
+    return fields.some(function (f) { return !f.input.value.trim(); });
+  }
+
+  // Submit handler
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var anyError = false;
+
+    fields.forEach(function (field) {
+      if (!field.input.value.trim()) {
+        showError(field);
+        anyError = true;
+      } else {
+        clearError(field);
+      }
+    });
+
+    if (anyError) {
+      errorSummary.style.display = 'block';
+      errorSummary.focus();
+    } else {
+      errorSummary.style.display = 'none';
+    }
+  });
+
+  // Error link click → focus target input
+  errorSummary.querySelectorAll('.fk-error-list__link').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var targetId = this.getAttribute('href').slice(1);
+      var target = document.getElementById(targetId);
+      if (target) target.focus();
+    });
+  });
+
+  // Clear errors on input
+  fields.forEach(function (field) {
+    field.input.addEventListener('input', function () {
+      if (this.value.trim()) {
+        clearError(field);
+        if (!hasErrors()) {
+          errorSummary.style.display = 'none';
+        }
+      }
+    });
+  });
+})();
+</script>

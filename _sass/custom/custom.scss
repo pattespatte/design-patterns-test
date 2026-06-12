@@ -593,3 +593,288 @@ html.dark .btn.js-toggle-comments {
 		padding: 8px;
 	}
 }
+
+// =============================================================================
+// FK Fellista exempel – Error list component example
+// =============================================================================
+
+.fk-error-list-example {
+
+	// Demo note
+	.fk-demo-note {
+		margin: 0 0 1rem;
+		font-size: 0.9375em;
+		color: $body-text-color;
+		font-style: italic;
+	}
+
+	// Error summary box
+	.fk-error-list {
+		border-left: 4px solid #ca1515;
+		padding: 1rem 1rem 0.75rem 1rem;
+		margin-bottom: 1.5rem;
+		background-color: rgba(202, 21, 21, 0.05);
+		border-radius: 2px;
+
+		&:focus {
+			outline: 3px solid #1d70b8;
+			outline-offset: 2px;
+		}
+	}
+
+	.fk-error-list__header {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.fk-error-list__icon {
+		width: 16px;
+		height: 16px;
+		color: #ca1515;
+		flex-shrink: 0;
+	}
+
+	.fk-error-list__title {
+		font-weight: 600;
+		font-size: 1rem;
+		color: #ca1515;
+	}
+
+	.fk-error-list__list {
+		list-style: none;
+		padding-left: 0;
+		margin: 0;
+	}
+
+	.fk-error-list__list li {
+		margin: 0;
+	}
+
+	.fk-error-list__link {
+		display: inline-flex;
+		align-items: baseline;
+		gap: 0.25rem;
+		color: #ca1515 !important;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		line-height: 2;
+		font-size: 1rem;
+		padding: 0.125rem 0;
+		min-height: 44px;
+		box-sizing: border-box;
+
+		&:hover {
+			color: darken(#ca1515, 10%) !important;
+		}
+
+		&:focus {
+			outline: 3px solid #1d70b8;
+			outline-offset: 2px;
+			text-decoration: none;
+		}
+	}
+
+	.fk-error-list__bullet {
+		color: #ca1515;
+	}
+
+	// Form groups
+	.fk-form-group {
+		margin-bottom: 1.5rem;
+	}
+
+	.fk-form-label {
+		display: block;
+		font-weight: 600;
+		font-size: 1rem;
+		color: $body-text-color;
+		margin-bottom: 0.25rem;
+	}
+
+	.fk-form-input {
+		display: block;
+		border: 2px solid #8d8e91;
+		border-radius: 4px;
+		padding: 0 0.75rem;
+		font-size: 1rem;
+		height: 2.5rem;
+		width: 100%;
+		max-width: 20rem;
+		background-color: #fff;
+		color: #1b1e23;
+		font-family: inherit;
+		box-sizing: border-box;
+
+		&:focus {
+			outline: 3px solid #1d70b8;
+			outline-offset: 2px;
+			border-color: #1d70b8;
+		}
+
+		&.fk-form-input--error {
+			border-color: #ca1515;
+
+			&:focus {
+				border-color: #ca1515;
+				outline-color: #ca1515;
+			}
+		}
+	}
+
+	.fk-error-message {
+		display: block;
+		color: #ca1515;
+		font-size: 0.9375rem;
+		margin-top: 0.25rem;
+	}
+
+	// Submit button
+	.fk-form-btn {
+		display: inline-block;
+		padding: 0.5rem 1.5rem;
+		font-size: 1rem;
+		font-weight: 600;
+		font-family: inherit;
+		color: #fff;
+		background-color: #1d70b8;
+		border: 2px solid transparent;
+		border-radius: 4px;
+		cursor: pointer;
+		min-height: 44px;
+
+		&:hover {
+			background-color: darken(#1d70b8, 10%);
+		}
+
+		&:focus {
+			outline: 3px solid #1d70b8;
+			outline-offset: 2px;
+		}
+
+		&:active {
+			background-color: darken(#1d70b8, 15%);
+		}
+	}
+
+	// Code display toggle
+	.fk-code-toggle {
+		margin-top: 1.5rem;
+
+		summary {
+			cursor: pointer;
+			font-size: 0.9375em;
+			color: $body-text-color;
+			padding: 0.5rem 0;
+			min-height: 44px;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+
+			&:hover {
+				color: #1d70b8;
+			}
+
+			&:focus {
+				outline: 3px solid #1d70b8;
+				outline-offset: 2px;
+			}
+		}
+	}
+
+	.fk-code-block {
+		background-color: rgba(0, 0, 0, 0.05);
+		border: 1px solid $grey-lt-300;
+		border-radius: 4px;
+		padding: 1rem;
+		overflow-x: auto;
+		font-size: 0.875em;
+		line-height: 1.5;
+		color: $body-text-color;
+
+		code {
+			font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+			background: none;
+			padding: 0;
+		}
+	}
+}
+
+// Dark mode overrides for FK error list example
+html.dark .fk-error-list-example {
+
+	.fk-error-list {
+		background-color: rgba(255, 107, 107, 0.1);
+		border-left-color: #ff6b6b;
+	}
+
+	.fk-error-list__icon {
+		color: #ff6b6b;
+	}
+
+	.fk-error-list__title {
+		color: #ff6b6b;
+	}
+
+	.fk-error-list__link {
+		color: #ff6b6b !important;
+
+		&:hover {
+			color: lighten(#ff6b6b, 10%) !important;
+		}
+
+		&:focus {
+			outline-color: #5e9ce6;
+		}
+	}
+
+	.fk-error-list__bullet {
+		color: #ff6b6b;
+	}
+
+	.fk-form-input {
+		background-color: #2d2d2d;
+		color: #e0e0e0;
+		border-color: #666;
+
+		&:focus {
+			outline-color: #5e9ce6;
+			border-color: #5e9ce6;
+		}
+
+		&.fk-form-input--error {
+			border-color: #ff6b6b;
+
+			&:focus {
+				border-color: #ff6b6b;
+				outline-color: #ff6b6b;
+			}
+		}
+	}
+
+	.fk-error-message {
+		color: #ff6b6b;
+	}
+
+	.fk-form-btn {
+		background-color: #5e9ce6;
+		color: #1a1a1a;
+
+		&:hover {
+			background-color: lighten(#5e9ce6, 5%);
+		}
+
+		&:focus {
+			outline-color: #5e9ce6;
+		}
+	}
+
+	.fk-code-block {
+		background-color: rgba(255, 255, 255, 0.05);
+
+		code {
+			color: #e0e0e0;
+		}
+	}
+}
