@@ -11,32 +11,30 @@
       <span class="fk-error-list__title">Kolla på felen nedan</span>
     </div>
     <ul class="fk-error-list__list">
-      <li>
-        <a class="fk-error-list__link" href="#fornamn">
-          <span class="fk-error-list__bullet" aria-hidden="true">&#x2022;</span>
-          <span>Du måste ange ett förnamn</span>
-        </a>
-      </li>
-      <li>
-        <a class="fk-error-list__link" href="#efternamn">
-          <span class="fk-error-list__bullet" aria-hidden="true">&#x2022;</span>
-          <span>Du måste ange ett efternamn</span>
-        </a>
-      </li>
+      {%- comment -%} List items injected dynamically by the script below {%- endcomment -%}
     </ul>
+  </div>
+
+  {%- comment -%} Position toggle {%- endcomment -%}
+  <div class="fk-demo-controls">
+    <label class="fk-toggle">
+      <input type="checkbox" id="fk-error-position-toggle">
+      <span>Visa felmeddelandet under fältet</span>
+    </label>
+    <p class="fk-demo-hint">Rekommendation: placera felmeddelandet ovanför fältet (standard). Markera rutan om du vill se hur det ser ut under fältet.</p>
   </div>
 
   {%- comment -%} Form {%- endcomment -%}
   <form id="fk-error-form" novalidate>
     <div class="fk-form-group">
       <label class="fk-form-label" for="fornamn">Förnamn</label>
-      <input class="fk-form-input" type="text" id="fornamn" name="fornamn" autocomplete="given-name" aria-describedby="fornamn-error">
       <span class="fk-error-message" id="fornamn-error" role="alert" style="display:none"></span>
+      <input class="fk-form-input" type="text" id="fornamn" name="fornamn" autocomplete="given-name" aria-describedby="fornamn-error">
     </div>
     <div class="fk-form-group">
       <label class="fk-form-label" for="efternamn">Efternamn</label>
-      <input class="fk-form-input" type="text" id="efternamn" name="efternamn" autocomplete="family-name" aria-describedby="efternamn-error">
       <span class="fk-error-message" id="efternamn-error" role="alert" style="display:none"></span>
+      <input class="fk-form-input" type="text" id="efternamn" name="efternamn" autocomplete="family-name" aria-describedby="efternamn-error">
     </div>
     <button type="submit" class="fk-form-btn">Skicka</button>
   </form>
@@ -50,18 +48,18 @@
     &lt;span&gt;Kolla på felen nedan&lt;/span&gt;
   &lt;/div&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href="#fornamn"&gt;Du måste ange ett förnamn&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#efternamn"&gt;Du måste ange ett efternamn&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#fornamn"&gt;Fyll i ditt förnamn&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#efternamn"&gt;Fyll i ditt efternamn&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
 
 &lt;label for="fornamn"&gt;Förnamn&lt;/label&gt;
+&lt;span id="fornamn-error" role="alert"&gt;Fyll i ditt förnamn&lt;/span&gt;
 &lt;input type="text" id="fornamn" aria-describedby="fornamn-error"&gt;
-&lt;span id="fornamn-error" role="alert"&gt;&lt;/span&gt;
 
 &lt;label for="efternamn"&gt;Efternamn&lt;/label&gt;
-&lt;input type="text" id="efternamn" aria-describedby="efternamn-error"&gt;
-&lt;span id="efternamn-error" role="alert"&gt;&lt;/span&gt;</code></pre>
+&lt;span id="efternamn-error" role="alert"&gt;Fyll i ditt efternamn&lt;/span&gt;
+&lt;input type="text" id="efternamn" aria-describedby="efternamn-error"&gt;</code></pre>
   </details>
 </div>
 
@@ -75,8 +73,8 @@
   var submitBtn = container.querySelector('.fk-form-btn');
 
   var fields = [
-    { input: container.querySelector('#fornamn'), error: container.querySelector('#fornamn-error'), message: 'Du måste ange ett förnamn' },
-    { input: container.querySelector('#efternamn'), error: container.querySelector('#efternamn-error'), message: 'Du måste ange ett efternamn' }
+    { input: container.querySelector('#fornamn'), error: container.querySelector('#fornamn-error'), message: 'Fyll i ditt förnamn' },
+    { input: container.querySelector('#efternamn'), error: container.querySelector('#efternamn-error'), message: 'Fyll i ditt efternamn' }
   ];
 
   function showError(field) {
@@ -97,21 +95,37 @@
     return fields.some(function (f) { return !f.input.value.trim(); });
   }
 
+  var summaryList = errorSummary.querySelector('.fk-error-list__list');
+
+  // Build the summary list from the fields that are actually empty.
+  function buildSummaryList(errorFields) {
+    summaryList.innerHTML = errorFields.map(function (f) {
+      var id = f.input.id;
+      return '<li>' +
+        '<a class="fk-error-list__link" href="#' + id + '">' +
+          '<span class="fk-error-list__bullet" aria-hidden="true">•</span>' +
+          '<span class="fk-error-list__text">' + f.message + '</span>' +
+        '</a>' +
+      '</li>';
+    }).join('');
+  }
+
   // Submit handler
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var anyError = false;
+    var errorFields = [];
 
     fields.forEach(function (field) {
       if (!field.input.value.trim()) {
         showError(field);
-        anyError = true;
+        errorFields.push(field);
       } else {
         clearError(field);
       }
     });
 
-    if (anyError) {
+    if (errorFields.length) {
+      buildSummaryList(errorFields);
       errorSummary.style.display = 'block';
       errorSummary.focus();
     } else {
@@ -119,14 +133,14 @@
     }
   });
 
-  // Error link click → focus target input
-  errorSummary.querySelectorAll('.fk-error-list__link').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      var targetId = this.getAttribute('href').slice(1);
-      var target = document.getElementById(targetId);
-      if (target) target.focus();
-    });
+  // Error link click → focus target input (event delegation, since the list is rebuilt on submit)
+  errorSummary.addEventListener('click', function (e) {
+    var link = e.target.closest('.fk-error-list__link');
+    if (!link) return;
+    e.preventDefault();
+    var targetId = link.getAttribute('href').slice(1);
+    var target = document.getElementById(targetId);
+    if (target) target.focus();
   });
 
   // Clear errors on input
@@ -140,5 +154,16 @@
       }
     });
   });
+
+  // Position toggle: error message above (default) or below the input
+  var toggle = container.querySelector('#fk-error-position-toggle');
+  if (toggle) {
+    toggle.addEventListener('change', function () {
+      var below = toggle.checked;
+      form.querySelectorAll('.fk-form-group').forEach(function (group) {
+        group.classList.toggle('fk-error-below', below);
+      });
+    });
+  }
 })();
 </script>

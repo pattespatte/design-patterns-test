@@ -608,6 +608,33 @@ html.dark .btn.js-toggle-comments {
 		font-style: italic;
 	}
 
+	// Demo controls (position toggle)
+	.fk-demo-controls {
+		margin-bottom: 1.25rem;
+	}
+
+	.fk-toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.9375rem;
+		cursor: pointer;
+		min-height: 44px;
+
+		input[type="checkbox"] {
+			width: 1.125rem;
+			height: 1.125rem;
+			cursor: pointer;
+		}
+	}
+
+	.fk-demo-hint {
+		margin: 0.25rem 0 0;
+		font-size: 0.875rem;
+		color: $body-text-color;
+		font-style: italic;
+	}
+
 	// Error summary box
 	.fk-error-list {
 		border-left: 4px solid #ca1515;
@@ -657,8 +684,6 @@ html.dark .btn.js-toggle-comments {
 		align-items: baseline;
 		gap: 0.25rem;
 		color: #ca1515 !important;
-		text-decoration: underline;
-		text-underline-offset: 2px;
 		line-height: 2;
 		font-size: 1rem;
 		padding: 0.125rem 0;
@@ -672,17 +697,54 @@ html.dark .btn.js-toggle-comments {
 		&:focus {
 			outline: 3px solid #1d70b8;
 			outline-offset: 2px;
-			text-decoration: none;
+
+			.fk-error-list__text {
+				text-decoration: none;
+			}
 		}
+	}
+
+	// Only the message text is underlined – the bullet stays plain.
+	.fk-error-list__text {
+		text-decoration: underline;
+		text-underline-offset: 2px;
 	}
 
 	.fk-error-list__bullet {
 		color: #ca1515;
+		text-decoration: none;
 	}
 
 	// Form groups
 	.fk-form-group {
+		display: flex;
+		flex-direction: column;
 		margin-bottom: 1.5rem;
+
+		> .fk-form-label {
+			order: 1;
+		}
+
+		> .fk-error-message {
+			order: 2;
+			margin: 0 0 0.25rem;
+		}
+
+		> .fk-form-input {
+			order: 3;
+		}
+
+		// Toggle state: error message below the input
+		&.fk-error-below {
+			> .fk-error-message {
+				order: 3;
+				margin: 0.25rem 0 0;
+			}
+
+			> .fk-form-input {
+				order: 2;
+			}
+		}
 	}
 
 	.fk-form-label {
@@ -831,6 +893,7 @@ html.dark .fk-error-list-example {
 
 	.fk-error-list__bullet {
 		color: #ff6b6b;
+		text-decoration: none;
 	}
 
 	.fk-form-input {

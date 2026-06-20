@@ -26,9 +26,3 @@ Beskrivning.
 ## Så fungerar mönstret
 
 Beskrivning.
-
-## Exempel
-
-{% include error-list-example.html %}
-
-Exemplet ovan är inspirerat av [Fellista](https://designsystem.forsakringskassan.se/latest/components/validation/ferrorlist.html) från Försäkringskassans designsystem.
