@@ -24,7 +24,7 @@ Varje mönster innehåller:
 
 ## Kom igång
 
-Utforska våra [designmönster](/design-patterns-test/docs/) eller läs mer [om projektet](/design-patterns-test/om-projektet).
+Utforska våra [designmönster](/design-patterns-test/docs/) eller läs mer [om webbplatsen](/design-patterns-test/docs/om-webbplatsen).
 
 ---
 

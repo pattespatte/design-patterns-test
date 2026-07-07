@@ -103,7 +103,7 @@ Myndigheten för digital förvaltning (Digg) har tillsynsansvar för lagen om ti
 - **E-post:** <tillganglighet@digg.se>
 - **Telefon:** 08-578 28 500
 
-Mer information om Diggs tillsynsverksamhet finns på [digg.se/tillsyn](https://www.digg.se/analys-och-uppfoljning/tillsyn-av-dos-lagen).
+Mer information om Diggs tillsynsverksamhet finns på [digg.se/tillsyn](https://www.digg.se/analys-och-uppfoljning/lagen-om-tillganglighet-till-digital-offentlig-service-dos-lagen).
 
 ## Teknisk information om webbplatsens tillgänglighet
 
