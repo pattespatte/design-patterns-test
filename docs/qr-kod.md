@@ -14,7 +14,10 @@ nav_order: 60
 
 - Användaren ska logga in med BankID. Det är obligatoriskt med QR-kod för mobild BankID.
 
-## Använd inte mönstret när (kan vi ta bort rubrik när det inte är relevant)
+## Använd inte mönstret när
+
+{: .kommentar}
+> Kan vi ta bort rubrik när det inte är relevant?
 
 ## Så fungerar mönstret
 
