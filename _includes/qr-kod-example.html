@@ -1,0 +1,129 @@
+<div id="fk-qr-demo" class="example fk-qr-example">
+
+	<p class="fk-demo-note">Det här är ett förenklat exempel på en inloggning med QR-kod. Prova att växla mellan ljust och mörkt läge med knappen – QR-koden behåller sin vita ram i båda lägena.</p>
+
+	{%- comment -%} Theme toggle: switches the whole page between light and dark mode {%- endcomment -%}
+	<div class="fk-qr-controls">
+		<button type="button" class="fk-qr-theme-toggle js-qr-theme-toggle">
+			<svg class="fk-qr-theme-icon fk-qr-theme-icon--moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</svg>
+			<svg class="fk-qr-theme-icon fk-qr-theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+				<circle cx="12" cy="12" r="5"></circle>
+				<line x1="12" y1="1" x2="12" y2="3"></line>
+				<line x1="12" y1="21" x2="12" y2="23"></line>
+				<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+				<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+				<line x1="1" y1="12" x2="3" y2="12"></line>
+				<line x1="21" y1="12" x2="23" y2="12"></line>
+				<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+				<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+			</svg>
+			<span class="fk-qr-theme-label">Visa sidan i mörkt läge</span>
+		</button>
+	</div>
+
+	{%- comment -%} Förenklad inloggningspanel {%- endcomment -%}
+	<div class="fk-qr-panel" role="group" aria-label="Exempel på inloggning med QR-kod">
+		<p class="fk-qr-title">Logga in</p>
+
+		<div class="fk-qr-app">
+			<img class="fk-qr-app-icon" src="{{ '/assets/images/bankid-ikon.svg' | relative_url }}" alt="" width="39" height="63">
+			<p class="fk-qr-app-name">Mobilt BankID</p>
+		</div>
+
+		<details class="fk-qr-accordion">
+			<summary>Så loggar du in</summary>
+			<ol class="fk-qr-steps">
+				<li>Öppna BankID-appen på den enhet där du har ditt BankID.</li>
+				<li>Tryck på QR-symbolen i appen.</li>
+				<li>Rikta kameran mot QR-koden på skärmen.</li>
+				<li>Följ instruktionerna i appen för att logga in.</li>
+			</ol>
+		</details>
+
+		<p class="fk-qr-instruction"><strong>Öppna BankID-appen.</strong> Klicka på QR-ikonen i BankID-appen. Rikta kameran mot QR-koden som visas här på skärmen.</p>
+
+		<div class="fk-qr-code">
+			<img src="{{ '/assets/images/qr-kod-exempel.svg' | relative_url }}" alt="QR-kod för inloggning med Mobilt BankID" width="208" height="208">
+		</div>
+
+		<button type="button" class="fk-qr-cancel">Avbryt</button>
+	</div>
+
+	{%- comment -%} Code display {%- endcomment -%}
+	<details class="fk-code-toggle">
+		<summary>Visa kod</summary>
+		<pre class="fk-code-block"><code>&lt;div class="qr-login"&gt;
+  &lt;p class="qr-title"&gt;Logga in&lt;/p&gt;
+
+  &lt;img class="qr-icon" src="bankid-ikon.svg" alt=""&gt;
+  &lt;p class="qr-app-name"&gt;Mobilt BankID&lt;/p&gt;
+
+  &lt;details class="qr-how"&gt;
+    &lt;summary&gt;Så loggar du in&lt;/summary&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Öppna BankID-appen på den enhet där du har ditt BankID.&lt;/li&gt;
+      &lt;li&gt;Tryck på QR-symbolen i appen.&lt;/li&gt;
+      &lt;li&gt;Rikta kameran mot QR-koden på skärmen.&lt;/li&gt;
+      &lt;li&gt;Följ instruktionerna i appen för att logga in.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/details&gt;
+
+  &lt;p&gt;&lt;strong&gt;Öppna BankID-appen.&lt;/strong&gt; Klicka på QR-ikonen i
+    BankID-appen. Rikta kameran mot QR-koden som visas här på skärmen.&lt;/p&gt;
+
+  &lt;img class="qr-code" src="qr-kod-exempel.svg"
+    alt="QR-kod för inloggning med Mobilt BankID"&gt;
+
+  &lt;button type="button"&gt;Avbryt&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+	</details>
+</div>
+
+<script>
+(function () {
+	var container = document.getElementById('fk-qr-demo');
+	if (!container) return;
+
+	var toggle = container.querySelector('.js-qr-theme-toggle');
+	var label = container.querySelector('.fk-qr-theme-label');
+	if (!toggle || !label) return;
+
+	function isDark() {
+		return document.documentElement.classList.contains('dark');
+	}
+
+	// Hold the button label in sync with the page theme, no matter what toggled it.
+	function updateLabel() {
+		label.textContent = isDark() ? 'Visa sidan i ljust läge' : 'Visa sidan i mörkt läge';
+	}
+
+	if (typeof MutationObserver !== 'undefined') {
+		new MutationObserver(updateLabel).observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class']
+		});
+	}
+	updateLabel();
+
+	toggle.addEventListener('click', function () {
+		var headerToggle = document.querySelector('.js-toggle-dark-mode');
+		if (headerToggle && headerToggle !== toggle) {
+			// Reuse the site's own toggle: it updates icons, localStorage and jtd.setTheme.
+			headerToggle.click();
+			return;
+		}
+
+		// Fallback when the header toggle is missing.
+		var dark = !isDark();
+		document.documentElement.classList.toggle('dark', dark);
+		try {
+			localStorage.setItem('theme', dark ? 'dark' : 'light');
+		} catch (e) { /* localStorage can be unavailable in privacy modes */ }
+		if (typeof jtd !== 'undefined' && jtd.setTheme) {
+			jtd.setTheme(dark ? 'dark' : 'light');
+		}
+	});
+})();
+</script>

@@ -599,7 +599,8 @@ html.dark .btn.js-toggle-comments {
 // =============================================================================
 
 .fk-error-list-example,
-.fk-error-message-example {
+.fk-error-message-example,
+.fk-qr-example {
 
 	// Demo note
 	.fk-demo-note {
@@ -1017,7 +1018,8 @@ html.dark .btn.js-toggle-comments {
 
 // Dark mode overrides for FK error list example
 html.dark .fk-error-list-example,
-html.dark .fk-error-message-example {
+html.dark .fk-error-message-example,
+html.dark .fk-qr-example {
 
 	.fk-error-list {
 		background-color: rgba(255, 107, 107, 0.1);
@@ -1137,6 +1139,261 @@ html.dark .fk-error-message-example {
 		.fk-form-checkbox input {
 			border-color: #ff6b6b;
 			box-shadow: inset 0 0 0 1px #ff6b6b;
+		}
+	}
+}
+
+// =============================================================================
+// FK QR-kod exempel – QR code login example
+// =============================================================================
+
+.fk-qr-example {
+
+	// Blue used by the corner brackets around the QR code (BankID blue in light
+	// mode, a lighter blue in dark mode).
+	--fk-qr-corner: #1d70b8;
+
+	// Theme toggle for the whole page
+	.fk-qr-controls {
+		margin-bottom: 1.25rem;
+	}
+
+	.fk-qr-theme-toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 1rem;
+		min-height: 44px;
+		box-sizing: border-box;
+		font-family: inherit;
+		font-size: 0.9375rem;
+		font-weight: 600;
+		color: #1b1e23;
+		background-color: #fff;
+		border: 2px solid #1d70b8;
+		border-radius: 4px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #eef4fb;
+		}
+
+		&:focus {
+			outline: 3px solid #1d70b8;
+			outline-offset: 2px;
+		}
+	}
+
+	// Moon is shown in light mode and sun in dark mode, mirroring the label text
+	.fk-qr-theme-icon--sun {
+		display: none;
+	}
+
+	// Mock login panel
+	.fk-qr-panel {
+		box-sizing: border-box;
+		max-width: 24rem;
+		margin: 0 auto;
+		padding: 1rem 1.25rem 1.5rem;
+		background-color: #fff;
+		border: 1px solid #8d8e91;
+		border-radius: 8px;
+		color: #1b1e23;
+	}
+
+	.fk-qr-title {
+		margin: 0 0 1rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid #d5d7da;
+		font-size: 1.125rem;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.fk-qr-app {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.fk-qr-app-icon {
+		width: 39px;
+		height: 63px;
+	}
+
+	.fk-qr-app-name {
+		margin: 0;
+		font-weight: 700;
+	}
+
+	// Accordion ("Så loggar du in")
+	.fk-qr-accordion {
+		margin-bottom: 1rem;
+		border: 1px solid #d5d7da;
+		border-radius: 4px;
+
+		summary {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			padding: 0.5rem 0.75rem;
+			min-height: 44px;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: 600;
+			color: #0079b0;
+			list-style: none;
+
+			&::-webkit-details-marker {
+				display: none;
+			}
+
+			&::after {
+				content: "▾";
+				margin-left: auto;
+			}
+
+			&:hover {
+				text-decoration: underline;
+				text-underline-offset: 2px;
+			}
+
+			&:focus {
+				outline: 3px solid #1d70b8;
+				outline-offset: -3px;
+			}
+		}
+
+		&[open] summary::after {
+			transform: rotate(180deg);
+		}
+	}
+
+	.fk-qr-steps {
+		margin: 0;
+		padding: 0.25rem 0.75rem 0.75rem 2.25rem;
+	}
+
+	.fk-qr-instruction {
+		margin: 0 0 1rem;
+		font-size: 0.9375rem;
+	}
+
+	// QR code with blue corner brackets – the white frame is part of the SVG,
+	// so the code stays scannable in dark mode too.
+	.fk-qr-code {
+		box-sizing: border-box;
+		width: 15rem;
+		margin: 0 auto 1.5rem;
+		padding: 0.875rem;
+		background-image:
+			linear-gradient(var(--fk-qr-corner), var(--fk-qr-corner)),
+			linear-gradient(var(--fk-qr-corner), var(--fk-qr-corner)),
+			linear-gradient(var(--fk-qr-corner), var(--fk-qr-corner)),
+			linear-gradient(var(--fk-qr-corner), var(--fk-qr-corner)),
+			linear-gradient(var(--fk-qr-corner), var(--fk-qr-corner)),
+			linear-gradient(var(--fk-qr-corner), var(--fk-qr-corner)),
+			linear-gradient(var(--fk-qr-corner), var(--fk-qr-corner)),
+			linear-gradient(var(--fk-qr-corner), var(--fk-qr-corner));
+		background-size: 28px 4px, 4px 28px, 28px 4px, 4px 28px, 28px 4px, 4px 28px, 28px 4px, 4px 28px;
+		background-position: 0 0, 0 0, 100% 0, 100% 0, 0 100%, 0 100%, 100% 100%, 100% 100%;
+		background-repeat: no-repeat;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	// Cancel button
+	.fk-qr-cancel {
+		display: block;
+		width: 100%;
+		padding: 0.5rem 1.5rem;
+		min-height: 44px;
+		box-sizing: border-box;
+		font-family: inherit;
+		font-size: 1rem;
+		font-weight: 600;
+		color: #1b1e23;
+		background-color: #fff;
+		border: 2px solid #1b1e23;
+		border-radius: 4px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #f2f2f2;
+		}
+
+		&:focus {
+			outline: 3px solid #1d70b8;
+			outline-offset: 2px;
+		}
+	}
+}
+
+// Dark mode overrides specific to the QR code example
+html.dark .fk-qr-example {
+	--fk-qr-corner: #5e9ce6;
+
+	.fk-qr-theme-toggle {
+		color: #e0e0e0;
+		background-color: #2d2d2d;
+		border-color: #5e9ce6;
+
+		&:hover {
+			background-color: #3a3a3a;
+		}
+
+		&:focus {
+			outline-color: #5e9ce6;
+		}
+	}
+
+	.fk-qr-theme-icon--moon {
+		display: none;
+	}
+
+	.fk-qr-theme-icon--sun {
+		display: block;
+	}
+
+	.fk-qr-panel {
+		background-color: #0d0d0f;
+		border-color: #666;
+		color: #f0f0f0;
+	}
+
+	.fk-qr-title {
+		border-bottom-color: #444;
+	}
+
+	.fk-qr-accordion {
+		border-color: #444;
+
+		summary {
+			color: #5e9ce6;
+
+			&:focus {
+				outline-color: #5e9ce6;
+			}
+		}
+	}
+
+	.fk-qr-cancel {
+		color: #fff;
+		background-color: transparent;
+		border-color: #fff;
+
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.12);
+		}
+
+		&:focus {
+			outline-color: #5e9ce6;
 		}
 	}
 }
