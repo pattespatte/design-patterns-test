@@ -453,6 +453,11 @@ html.dark {
 	}
 }
 
+// Publik notis – .kommentar som ska visas alltid, inte bara i granskningsläget
+.kommentar.publik {
+	display: block;
+}
+
 // Dark mode kommentar
 html.dark .kommentar {
 	background-color: #3d3920;
