@@ -12,7 +12,7 @@ nav_order: 60
 
 ## Använd mönstret när
 
-- Användaren ska logga in med Mobilt BankID på en annan enhet, till exempel en dator. Det är obligatoriskt med QR-kod vid inloggning med Mobilt BankID på en annan enhet.
+- Användaren ska logga in med Mobilt BankID på en annan enhet, till exempel en dator. Då är QR-kod obligatorisk.
 
 ## Använd inte mönstret när
 
@@ -30,8 +30,8 @@ Hjälp alla användare att skanna en QR-kod genom att se till att:
   - Vit ram runt själva koden
 - Det finns tillräckligt med tid (minst 3 minuter) innan time-out
 - Instruktionerna är tydliga och fungerar även för den som använder skärmläsare
-- Det är möjligt att klicka för att förstora QR-koden (som en modal)
-- Den förstorade QR-koden går att stänga med escape-tangenten, ESC (som modal)
+- Användaren kan klicka för att förstora QR-koden (i en modal)
+- Den förstorade QR-koden går att stänga med escape-tangenten (ESC)
 
 ## Exempel
 
@@ -52,7 +52,7 @@ Så här gör du:
 - Rikta kameran mot QR-koden.
 - Följ instruktionerna i appen för att logga in.
 
-Efter att du väljer att visa QR-koden har du minst 3 minuter på dig att skanna den. Sedan avbryts inloggningen av säkerhetsskäl. Du kan då prova igen.
+När du har valt att visa QR-koden har du minst 3 minuter på dig att skanna den. Sedan avbryts inloggningen av säkerhetsskäl. Du kan då prova igen.
 
 ### Forskning/användartestning av mönstret
 

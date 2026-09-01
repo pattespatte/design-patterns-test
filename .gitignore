@@ -32,3 +32,6 @@ accessibility-report/
 # Claude Code project files
 .claude/
 CLAUDE.md
+
+# ZCode project files
+.zcode/

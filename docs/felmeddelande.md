@@ -34,8 +34,8 @@ Felmeddelandet visas ovanför fältet som det gäller och inleds med en varnings
 Skriv felmeddelandet så att det:
 
 - talar om vad användaren behöver göra, till exempel ”Skriv en giltig e-postadress”
-- är kort och går att förstå utan omväg
-- inte förebrår eller pekar ut användaren
+- är kort och går att förstå direkt
+- inte skyller på eller pekar ut användaren
 
 Följ dessa riktlinjer:
 
@@ -44,7 +44,7 @@ Följ dessa riktlinjer:
 - Markera fältet med röd färg och tjockare ram så att användaren ser vilket fält som är felaktigt.
 - Validera först när användaren skickar in formuläret, så att det går att stega sig igenom formuläret utan att felmeddelanden visas.
 - Ta bort felmeddelandet så snart användaren har rättat fältet.
-- Vid flera fel sammanfattas felen högst upp på sidan och fokus sätts på sammanfattningen, som innehåller länkar till de fält som är felaktiga. Då behöver användaren inte scrolla upp till meddelanderutan. Se mönstret Fellista.
+- Sammanfatta flera fel högst upp på sidan och sätt fokus på sammanfattningen, som innehåller länkar till de fält som är felaktiga. Då behöver användaren inte scrolla upp till meddelanderutan. Se [mönstret Fellista](./fellista.md).
 
 ## Exempel
 
