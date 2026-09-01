@@ -13,11 +13,9 @@ status: utkast
 
 Den här webbplatsen drivs av _Arbetsgruppen för statliga designmönster_ och vi vill att så många som möjligt ska kunna använda den. På den här sidan beskriver vi hur webbplatsen uppfyller lagen om tillgänglighet till digital offentlig service, eventuella kända tillgänglighetsproblem och hur du kan rapportera brister till oss.
 
-Gå direkt till webbplatsens startsida: <https://pattespatte.github.io/design-patterns-test/>
-
 ## Hur tillgänglig är webbplatsen?
 
-Vi är medvetna om att delar av webbplatsen inte är helt tillgängliga. Se avsnittet om innehåll som inte är tillgängligt nedan för mer information.
+Vi är medvetna om att delar av webbplatsen inte är helt tillgängliga. Se <a href="#innehåll-som-inte-är-tillgängligt">avsnittet om innehåll som inte är tillgängligt</a> nedan för mer information.
 
 ## Vad kan du göra om du inte kan använda delar av webbplatsen?
 
