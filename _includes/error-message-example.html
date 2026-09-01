@@ -1,0 +1,235 @@
+<div id="fk-error-message-demo" class="example fk-error-message-example">
+
+  <p class="fk-demo-note">Det här är ett interaktivt exempel. Tryck på <strong>Skicka</strong> utan att fylla i formuläret för att se felmeddelandena.</p>
+
+  {%- comment -%} Error summary box – hidden until validation triggers it {%- endcomment -%}
+  <div class="fk-error-list fk-error-summary" id="fk-em-summary" role="alert" aria-atomic="true" tabindex="-1" style="display:none">
+    <div class="fk-error-list__header">
+      <svg class="fk-error-list__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
+        <path d="M8 1a1 1 0 0 1 .857.486l7 12A1 1 0 0 1 15 14.5H1a1 1 0 0 1-.857-1.514l7-12A1 1 0 0 1 8 1zm0 3.5a.75.75 0 0 0-.75.75v3.5a.75.75 0 0 0 1.5 0v-3.5A.75.75 0 0 0 8 4.5zm0 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg>
+      <span class="fk-error-list__title">Rätta följande fel innan du skickar formuläret</span>
+    </div>
+    <ul class="fk-error-list__list">
+      {%- comment -%} List items injected dynamically by the script below {%- endcomment -%}
+    </ul>
+  </div>
+
+  {%- comment -%} Icon position toggle {%- endcomment -%}
+  <div class="fk-demo-controls">
+    <label class="fk-toggle">
+      <input type="checkbox" id="fk-em-icon-toggle">
+      <span>Visa ikonen efter texten</span>
+    </label>
+    <p class="fk-demo-hint">Rekommendation: placera ikonen före felmeddelandetexten (standard). Markera rutan om du vill se hur det ser ut med ikonen efter texten.</p>
+  </div>
+
+  {%- comment -%} Form {%- endcomment -%}
+  <form id="fk-em-form" novalidate>
+    <div class="fk-form-group">
+      <label class="fk-form-label" for="fk-em-namn">Förnamn och Efternamn <span class="fk-required" aria-hidden="true">*</span></label>
+      <span class="fk-error-message" id="fk-em-namn-error" style="display:none">
+        <svg class="fk-error-message__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
+          <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 1 0 8 0Zm0 3a.9.9 0 0 1 .9.9v4.2a.9.9 0 0 1-1.8 0V3.9A.9.9 0 0 1 8 3Zm0 9.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
+        </svg>
+        <span class="fk-error-message__text">Skriv förnamn och efternamn</span>
+      </span>
+      <div class="fk-input-wrap">
+        <input class="fk-form-input" type="text" id="fk-em-namn" name="namn" autocomplete="name" required aria-describedby="fk-em-namn-error">
+        <svg class="fk-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
+          <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 1 0 8 0Zm0 3a.9.9 0 0 1 .9.9v4.2a.9.9 0 0 1-1.8 0V3.9A.9.9 0 0 1 8 3Zm0 9.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="fk-form-group">
+      <label class="fk-form-label" for="fk-em-epost">E-postadress <span class="fk-required" aria-hidden="true">*</span></label>
+      <span class="fk-form-hint" id="fk-em-epost-hint">Vi behöver din e-post så att vi kan logga in dig</span>
+      <span class="fk-error-message" id="fk-em-epost-error" style="display:none">
+        <svg class="fk-error-message__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
+          <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 1 0 8 0Zm0 3a.9.9 0 0 1 .9.9v4.2a.9.9 0 0 1-1.8 0V3.9A.9.9 0 0 1 8 3Zm0 9.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
+        </svg>
+        <span class="fk-error-message__text">Skriv en giltig e-postadress</span>
+      </span>
+      <div class="fk-input-wrap">
+        <input class="fk-form-input" type="email" id="fk-em-epost" name="epost" autocomplete="email" required aria-describedby="fk-em-epost-hint fk-em-epost-error">
+        <svg class="fk-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
+          <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 1 0 8 0Zm0 3a.9.9 0 0 1 .9.9v4.2a.9.9 0 0 1-1.8 0V3.9A.9.9 0 0 1 8 3Zm0 9.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="fk-form-group">
+      <label class="fk-form-label" for="fk-em-telefon">Telefonnummer</label>
+      <input class="fk-form-input" type="tel" id="fk-em-telefon" name="telefon" autocomplete="tel">
+    </div>
+    <fieldset class="fk-form-group fk-form-fieldset">
+      <legend class="fk-form-label">Vilken är din folkbokföringsstatus? <span class="fk-required" aria-hidden="true">*</span></legend>
+      <span class="fk-form-hint" id="fk-em-status-hint">Välj det alternativ eller de alternativ som gäller för dig.</span>
+      <span class="fk-error-message" id="fk-em-status-error" style="display:none">
+        <svg class="fk-error-message__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
+          <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 1 0 8 0Zm0 3a.9.9 0 0 1 .9.9v4.2a.9.9 0 0 1-1.8 0V3.9A.9.9 0 0 1 8 3Zm0 9.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
+        </svg>
+        <span class="fk-error-message__text">Välj minst ett alternativ</span>
+      </span>
+      <div class="fk-form-checkboxes">
+        <label class="fk-form-checkbox">
+          <input type="checkbox" name="folkbokforingsstatus" id="fk-em-status-sverige" value="folkbokford-i-sverige" aria-describedby="fk-em-status-hint fk-em-status-error">
+          Folkbokförd i Sverige
+        </label>
+        <label class="fk-form-checkbox">
+          <input type="checkbox" name="folkbokforingsstatus" id="fk-em-status-utomlands" value="bosatt-utomlands" aria-describedby="fk-em-status-hint fk-em-status-error">
+          Bosatt utomlands
+        </label>
+        <label class="fk-form-checkbox">
+          <input type="checkbox" name="folkbokforingsstatus" id="fk-em-status-tillfalligt" value="tillfalligt-bosatt-i-sverige" aria-describedby="fk-em-status-hint fk-em-status-error">
+          Tillfälligt bosatt i Sverige
+        </label>
+      </div>
+    </fieldset>
+    <button type="submit" class="fk-form-btn">Skicka</button>
+  </form>
+
+  {%- comment -%} Code display {%- endcomment -%}
+  <details class="fk-code-toggle">
+    <summary>Visa kod</summary>
+    <pre class="fk-code-block"><code>&lt;div class="error-summary" role="alert" tabindex="-1"&gt;
+  &lt;div class="error-summary__header"&gt;
+    &lt;svg aria-hidden="true" ...&gt;...&lt;/svg&gt;
+    &lt;span&gt;Rätta följande fel innan du skickar formuläret&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#namn"&gt;Skriv förnamn och efternamn&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#epost"&gt;Skriv en giltig e-postadress&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#status-1"&gt;Välj minst ett alternativ&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;label for="epost"&gt;E-postadress *&lt;/label&gt;
+&lt;span class="hint" id="epost-hint"&gt;Vi behöver din e-post så att vi kan logga in dig&lt;/span&gt;
+&lt;span class="error-message" id="epost-error"&gt;
+  &lt;svg aria-hidden="true" ...&gt;...&lt;/svg&gt;
+  Skriv en giltig e-postadress
+&lt;/span&gt;
+&lt;input type="email" id="epost" aria-describedby="epost-hint epost-error" aria-invalid="true"&gt;</code></pre>
+  </details>
+</div>
+
+<script>
+(function () {
+  var container = document.getElementById('fk-error-message-demo');
+  if (!container) return;
+
+  var form = container.querySelector('#fk-em-form');
+  var summary = container.querySelector('#fk-em-summary');
+  var summaryList = summary.querySelector('.fk-error-list__list');
+
+  var nameInput = container.querySelector('#fk-em-namn');
+  var emailInput = container.querySelector('#fk-em-epost');
+  var statusChecks = Array.prototype.slice.call(container.querySelectorAll('input[name="folkbokforingsstatus"]'));
+
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  var fields = [
+    {
+      input: nameInput,
+      group: nameInput.closest('.fk-form-group'),
+      error: container.querySelector('#fk-em-namn-error'),
+      message: 'Skriv förnamn och efternamn',
+      isValid: function () { return nameInput.value.trim() !== ''; }
+    },
+    {
+      input: emailInput,
+      group: emailInput.closest('.fk-form-group'),
+      error: container.querySelector('#fk-em-epost-error'),
+      message: 'Skriv en giltig e-postadress',
+      isValid: function () { return EMAIL_RE.test(emailInput.value.trim()); }
+    },
+    {
+      input: statusChecks[0],
+      group: statusChecks[0].closest('.fk-form-group'),
+      error: container.querySelector('#fk-em-status-error'),
+      message: 'Välj minst ett alternativ',
+      inputs: statusChecks,
+      isValid: function () { return statusChecks.some(function (c) { return c.checked; }); }
+    }
+  ];
+
+  function showError(field) {
+    field.group.classList.add('fk-has-error');
+    field.error.style.display = 'flex';
+    field.input.setAttribute('aria-invalid', 'true');
+    field.inError = true;
+  }
+
+  function clearError(field) {
+    field.group.classList.remove('fk-has-error');
+    field.error.style.display = 'none';
+    field.input.removeAttribute('aria-invalid');
+    field.inError = false;
+  }
+
+  // Rebuild the summary list from the fields that currently have errors.
+  function updateSummary() {
+    var errorFields = fields.filter(function (f) { return f.inError; });
+    if (!errorFields.length) {
+      summary.style.display = 'none';
+      return;
+    }
+    summaryList.innerHTML = errorFields.map(function (f) {
+      return '<li>' +
+        '<a class="fk-error-list__link" href="#' + f.input.id + '">' +
+          '<span class="fk-error-list__bullet" aria-hidden="true">•</span>' +
+          '<span class="fk-error-list__text">' + f.message + '</span>' +
+        '</a>' +
+      '</li>';
+    }).join('');
+    summary.style.display = 'block';
+  }
+
+  // Validate on submit only – the form must be walkable without error messages.
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var hasErrors = false;
+
+    fields.forEach(function (field) {
+      if (!field.isValid()) {
+        showError(field);
+        hasErrors = true;
+      } else {
+        clearError(field);
+      }
+    });
+
+    updateSummary();
+    if (hasErrors) summary.focus();
+  });
+
+  // Errors clear as soon as the user fixes the field, but never appear mid-typing.
+  fields.forEach(function (field) {
+    (field.inputs || [field.input]).forEach(function (input) {
+      input.addEventListener(input.type === 'checkbox' ? 'change' : 'input', function () {
+        if (field.inError && field.isValid()) {
+          clearError(field);
+          updateSummary();
+        }
+      });
+    });
+  });
+
+  // Error link click → focus target field (event delegation, since the list is rebuilt on submit)
+  summary.addEventListener('click', function (e) {
+    var link = e.target.closest('.fk-error-list__link');
+    if (!link) return;
+    e.preventDefault();
+    var target = document.getElementById(link.getAttribute('href').slice(1));
+    if (target) target.focus();
+  });
+
+  // Icon position toggle: before (default) or after the message text
+  var iconToggle = container.querySelector('#fk-em-icon-toggle');
+  if (iconToggle) {
+    iconToggle.addEventListener('change', function () {
+      form.classList.toggle('fk-icon-after', iconToggle.checked);
+    });
+  }
+})();
+</script>
