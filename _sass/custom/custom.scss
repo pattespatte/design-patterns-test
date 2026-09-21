@@ -924,28 +924,6 @@ html.dark .btn.js-toggle-comments {
 		order: 2;
 	}
 
-	// Text input with room reserved for the inline error icon
-	.fk-input-wrap {
-		position: relative;
-		max-width: 20rem;
-
-		.fk-form-input {
-			padding-right: 2.5rem;
-		}
-	}
-
-	.fk-input-icon {
-		position: absolute;
-		top: 50%;
-		right: 0.625rem;
-		transform: translateY(-50%);
-		width: 1.125rem;
-		height: 1.125rem;
-		color: #ca1515;
-		pointer-events: none;
-		opacity: 0; // shown with the group's error state
-	}
-
 	// Checkboxes
 	.fk-form-checkboxes {
 		display: flex;
@@ -1001,10 +979,6 @@ html.dark .btn.js-toggle-comments {
 				outline: 3px solid #1d70b8;
 				outline-offset: 2px;
 			}
-		}
-
-		.fk-input-icon {
-			opacity: 1;
 		}
 
 		.fk-form-checkbox input {
@@ -1108,10 +1082,6 @@ html.dark .fk-error-message-example {
 	.fk-error-summary {
 		border-color: #ff6b6b;
 		background-color: rgba(255, 107, 107, 0.08);
-	}
-
-	.fk-input-icon {
-		color: #ff6b6b;
 	}
 
 	.fk-form-checkbox {
@@ -1370,6 +1340,13 @@ html.dark .fk-qr-example {
 		background-color: #0d0d0f;
 		border-color: #666;
 		color: #f0f0f0;
+	}
+
+	// The BankID icon is a two-tone blue asset loaded via <img>, so its fills
+	// cannot be themed. Flatten it to a white silhouette to keep the contrast
+	// against the dark panel.
+	.fk-qr-app-icon {
+		filter: brightness(0) invert(1);
 	}
 
 	.fk-qr-title {

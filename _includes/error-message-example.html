@@ -30,32 +30,22 @@
       <label class="fk-form-label" for="fk-em-namn">Förnamn och Efternamn <span class="fk-required" aria-hidden="true">*</span></label>
       <span class="fk-error-message" id="fk-em-namn-error" style="display:none">
         <svg class="fk-error-message__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
-          <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 1 0 8 0Zm0 3a.9.9 0 0 1 .9.9v4.2a.9.9 0 0 1-1.8 0V3.9A.9.9 0 0 1 8 3Zm0 9.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
+          <path d="M8 1a1 1 0 0 1 .857.486l7 12A1 1 0 0 1 15 14.5H1a1 1 0 0 1-.857-1.514l7-12A1 1 0 0 1 8 1zm0 3.5a.75.75 0 0 0-.75.75v3.5a.75.75 0 0 0 1.5 0v-3.5A.75.75 0 0 0 8 4.5zm0 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
         </svg>
         <span class="fk-error-message__text">Skriv förnamn och efternamn</span>
       </span>
-      <div class="fk-input-wrap">
-        <input class="fk-form-input" type="text" id="fk-em-namn" name="namn" autocomplete="name" required aria-describedby="fk-em-namn-error">
-        <svg class="fk-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
-          <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 1 0 8 0Zm0 3a.9.9 0 0 1 .9.9v4.2a.9.9 0 0 1-1.8 0V3.9A.9.9 0 0 1 8 3Zm0 9.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
-        </svg>
-      </div>
+      <input class="fk-form-input" type="text" id="fk-em-namn" name="namn" autocomplete="name" required aria-describedby="fk-em-namn-error">
     </div>
     <div class="fk-form-group">
       <label class="fk-form-label" for="fk-em-epost">E-postadress <span class="fk-required" aria-hidden="true">*</span></label>
       <span class="fk-form-hint" id="fk-em-epost-hint">Vi behöver din e-post så att vi kan logga in dig</span>
       <span class="fk-error-message" id="fk-em-epost-error" style="display:none">
         <svg class="fk-error-message__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
-          <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 1 0 8 0Zm0 3a.9.9 0 0 1 .9.9v4.2a.9.9 0 0 1-1.8 0V3.9A.9.9 0 0 1 8 3Zm0 9.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
+          <path d="M8 1a1 1 0 0 1 .857.486l7 12A1 1 0 0 1 15 14.5H1a1 1 0 0 1-.857-1.514l7-12A1 1 0 0 1 8 1zm0 3.5a.75.75 0 0 0-.75.75v3.5a.75.75 0 0 0 1.5 0v-3.5A.75.75 0 0 0 8 4.5zm0 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
         </svg>
         <span class="fk-error-message__text">Skriv en giltig e-postadress</span>
       </span>
-      <div class="fk-input-wrap">
-        <input class="fk-form-input" type="email" id="fk-em-epost" name="epost" autocomplete="email" required aria-describedby="fk-em-epost-hint fk-em-epost-error">
-        <svg class="fk-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
-          <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 1 0 8 0Zm0 3a.9.9 0 0 1 .9.9v4.2a.9.9 0 0 1-1.8 0V3.9A.9.9 0 0 1 8 3Zm0 9.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
-        </svg>
-      </div>
+      <input class="fk-form-input" type="email" id="fk-em-epost" name="epost" autocomplete="email" required aria-describedby="fk-em-epost-hint fk-em-epost-error">
     </div>
     <div class="fk-form-group">
       <label class="fk-form-label" for="fk-em-telefon">Telefonnummer</label>
@@ -66,7 +56,7 @@
       <span class="fk-form-hint" id="fk-em-status-hint">Välj det alternativ eller de alternativ som gäller för dig.</span>
       <span class="fk-error-message" id="fk-em-status-error" style="display:none">
         <svg class="fk-error-message__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
-          <path fill-rule="evenodd" d="M8 0a8 8 0 1 0 0 16A8 8 0 1 0 8 0Zm0 3a.9.9 0 0 1 .9.9v4.2a.9.9 0 0 1-1.8 0V3.9A.9.9 0 0 1 8 3Zm0 9.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
+          <path d="M8 1a1 1 0 0 1 .857.486l7 12A1 1 0 0 1 15 14.5H1a1 1 0 0 1-.857-1.514l7-12A1 1 0 0 1 8 1zm0 3.5a.75.75 0 0 0-.75.75v3.5a.75.75 0 0 0 1.5 0v-3.5A.75.75 0 0 0 8 4.5zm0 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
         </svg>
         <span class="fk-error-message__text">Välj minst ett alternativ</span>
       </span>
