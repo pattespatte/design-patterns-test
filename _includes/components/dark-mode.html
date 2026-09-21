@@ -1,82 +1,274 @@
-<button type="button" class="btn js-toggle-dark-mode" aria-label="Växla mellan ljust och mörkt tema">
-	<svg class="theme-icon sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-		<circle cx="12" cy="12" r="5"></circle>
-		<line x1="12" y1="1" x2="12" y2="3"></line>
-		<line x1="12" y1="21" x2="12" y2="23"></line>
-		<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-		<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-		<line x1="1" y1="12" x2="3" y2="12"></line>
-		<line x1="21" y1="12" x2="23" y2="12"></line>
-		<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-		<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-	</svg>
+<div class="theme-toggle js-theme-toggle">
+	<button type="button" class="btn js-toggle-dark-mode" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">
+		<span class="visually-hidden">Tema: </span>
+		<svg class="theme-icon sun-icon" style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<circle cx="12" cy="12" r="5"></circle>
+			<line x1="12" y1="1" x2="12" y2="3"></line>
+			<line x1="12" y1="21" x2="12" y2="23"></line>
+			<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+			<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+			<line x1="1" y1="12" x2="3" y2="12"></line>
+			<line x1="21" y1="12" x2="23" y2="12"></line>
+			<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+			<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+		</svg>
 
-	<svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-		<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-	</svg>
-</button>
+		<svg class="theme-icon moon-icon" style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+		</svg>
+
+		<svg class="theme-icon system-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+			<line x1="8" y1="21" x2="16" y2="21"></line>
+			<line x1="12" y1="17" x2="12" y2="21"></line>
+		</svg>
+
+		<span class="theme-toggle-label js-theme-label">system</span>
+
+		<svg class="theme-caret" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<polyline points="6 9 12 15 18 9"></polyline>
+		</svg>
+	</button>
+
+	<ul id="theme-menu" class="theme-menu" role="menu" aria-label="Tema" hidden>
+		<li role="none">
+			<button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="light" class="theme-menu-item">
+				<svg class="theme-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<circle cx="12" cy="12" r="5"></circle>
+					<line x1="12" y1="1" x2="12" y2="3"></line>
+					<line x1="12" y1="21" x2="12" y2="23"></line>
+					<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+					<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+					<line x1="1" y1="12" x2="3" y2="12"></line>
+					<line x1="21" y1="12" x2="23" y2="12"></line>
+					<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+					<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+				</svg>
+				<span>ljust</span>
+				<svg class="theme-check" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+					<polyline points="20 6 9 17 4 12"></polyline>
+				</svg>
+			</button>
+		</li>
+		<li role="none">
+			<button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="dark" class="theme-menu-item">
+				<svg class="theme-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+				</svg>
+				<span>mörkt</span>
+				<svg class="theme-check" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+					<polyline points="20 6 9 17 4 12"></polyline>
+				</svg>
+			</button>
+		</li>
+		<li role="none">
+			<button type="button" role="menuitemradio" aria-checked="true" data-theme-choice="system" class="theme-menu-item">
+				<svg class="theme-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+					<line x1="8" y1="21" x2="16" y2="21"></line>
+					<line x1="12" y1="17" x2="12" y2="21"></line>
+				</svg>
+				<span>system</span>
+				<svg class="theme-check" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+					<polyline points="20 6 9 17 4 12"></polyline>
+				</svg>
+			</button>
+		</li>
+	</ul>
+</div>
 
 <script>
 (function () {
+	var wrapper = document.querySelector('.js-theme-toggle');
 	var toggle = document.querySelector('.js-toggle-dark-mode');
-	var sunIcon = document.querySelector('.sun-icon');
-	var moonIcon = document.querySelector('.moon-icon');
+	var label = document.querySelector('.js-theme-label');
+	var menu = document.getElementById('theme-menu');
 
-	if (!toggle || !sunIcon || !moonIcon) return;
+	if (!wrapper || !toggle || !menu) return;
 
-	function updateIcons(theme) {
-		if (theme === 'dark') {
-			sunIcon.style.display = 'block';
-			moonIcon.style.display = 'none';
-			toggle.classList.add('dark-mode');
-			toggle.classList.remove('light-mode');
-			document.documentElement.classList.add('dark');
-		} else {
-			sunIcon.style.display = 'none';
-			moonIcon.style.display = 'block';
-			toggle.classList.add('light-mode');
-			toggle.classList.remove('dark-mode');
-			document.documentElement.classList.remove('dark');
+	var icons = {
+		light: toggle.querySelector('.sun-icon'),
+		dark: toggle.querySelector('.moon-icon'),
+		system: toggle.querySelector('.system-icon')
+	};
+	var items = Array.prototype.slice.call(menu.querySelectorAll('[data-theme-choice]'));
+	var MODES = ['light', 'dark', 'system'];
+	var LABELS = { light: 'ljust', dark: 'mörkt', system: 'system' };
+	var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+	function storedMode() {
+		try {
+			var saved = localStorage.getItem('theme');
+			return MODES.indexOf(saved) !== -1 ? saved : 'system';
+		} catch (e) {
+			return 'system';
 		}
 	}
 
-	function setTheme(theme) {
-		updateIcons(theme);
-		localStorage.setItem('theme', theme);
+	var mode = storedMode();
+
+	function resolvedTheme() {
+		if (mode !== 'system') return mode;
+		return media && media.matches ? 'dark' : 'light';
+	}
+
+	function applyResolvedTheme() {
+		document.documentElement.classList.toggle('dark', resolvedTheme() === 'dark');
+	}
+
+	function render() {
+		MODES.forEach(function (m) {
+			if (icons[m]) icons[m].style.display = m === mode ? 'block' : 'none';
+		});
+		if (label) label.textContent = LABELS[mode];
+		items.forEach(function (item) {
+			item.setAttribute('aria-checked', item.getAttribute('data-theme-choice') === mode ? 'true' : 'false');
+		});
+	}
+
+	function setMode(next) {
+		if (MODES.indexOf(next) === -1 || next === mode) return;
+		mode = next;
+		try {
+			localStorage.setItem('theme', next);
+		} catch (e) { /* localStorage kan vara otillgängligt i privata lägen */ }
+		applyResolvedTheme();
+		render();
 		if (typeof jtd !== 'undefined' && jtd.setTheme) {
-			jtd.setTheme(theme);
+			jtd.setTheme(resolvedTheme());
 		}
 	}
 
-	// Apply saved icon state immediately (prevents flash)
-	var currentTheme = localStorage.getItem('theme') || 'light';
-	updateIcons(currentTheme);
-
-	// Wait for jtd to be ready before calling setTheme
-	function initTheme() {
-		if (currentTheme === 'dark') {
+	function initJtdTheme() {
+		if (typeof jtd === 'undefined' || !jtd.setTheme) return;
+		if (resolvedTheme() === 'dark') {
 			jtd.setTheme('dark');
 		}
-		jtd.addEvent(toggle, 'click', function () {
-			var newTheme = jtd.getTheme() === 'dark' ? 'light' : 'dark';
-			setTheme(newTheme);
-		});
 	}
 
-	if (typeof jtd !== 'undefined' && jtd.onReady) {
-		jtd.onReady(initTheme);
-	} else {
-		document.addEventListener('DOMContentLoaded', function () {
-			if (typeof jtd !== 'undefined' && jtd.setTheme) {
-				initTheme();
-			} else {
-				// Fallback: vanilla JS if jtd never loads
-				toggle.addEventListener('click', function () {
-					var newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-					setTheme(newTheme);
-				});
-			}
-		});
+	// Applicera sparat läge direkt (motverkar blinkning)
+	applyResolvedTheme();
+	render();
+
+	// Följ operativsystemets färgläge i system-läget
+	function onSystemChange() {
+		if (mode !== 'system') return;
+		applyResolvedTheme();
+		if (typeof jtd !== 'undefined' && jtd.setTheme) {
+			jtd.setTheme(resolvedTheme());
+		}
 	}
+
+	if (media) {
+		if (typeof media.addEventListener === 'function') {
+			media.addEventListener('change', onSystemChange);
+		} else if (typeof media.addListener === 'function') {
+			media.addListener(onSystemChange);
+		}
+	}
+
+	// Menyn: ARIA-mönstret menyknapp
+	function selected() {
+		return items.filter(function (item) {
+			return item.getAttribute('aria-checked') === 'true';
+		})[0] || items[0];
+	}
+
+	function menuIsOpen() {
+		return !menu.hidden;
+	}
+
+	function openMenu() {
+		menu.hidden = false;
+		toggle.setAttribute('aria-expanded', 'true');
+		selected().focus();
+	}
+
+	function closeMenu(refocusToggle) {
+		if (menu.hidden) return;
+		menu.hidden = true;
+		toggle.setAttribute('aria-expanded', 'false');
+		if (refocusToggle) toggle.focus();
+	}
+
+	function focusItemAt(index) {
+		var count = items.length;
+		items[((index % count) + count) % count].focus();
+	}
+
+	toggle.addEventListener('click', function () {
+		if (menuIsOpen()) {
+			closeMenu(true);
+		} else {
+			openMenu();
+		}
+	});
+
+	toggle.addEventListener('keydown', function (event) {
+		if (menuIsOpen()) return;
+		if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+			event.preventDefault();
+			openMenu();
+		}
+	});
+
+	menu.addEventListener('keydown', function (event) {
+		var index = items.indexOf(document.activeElement);
+		switch (event.key) {
+			case 'Escape':
+				closeMenu(true);
+				break;
+			case 'ArrowDown':
+				event.preventDefault();
+				focusItemAt(index + 1);
+				break;
+			case 'ArrowUp':
+				event.preventDefault();
+				focusItemAt(index - 1);
+				break;
+			case 'Home':
+				event.preventDefault();
+				focusItemAt(0);
+				break;
+			case 'End':
+				event.preventDefault();
+				focusItemAt(items.length - 1);
+				break;
+			case 'Tab':
+				closeMenu(false);
+				break;
+		}
+	});
+
+	items.forEach(function (item) {
+		item.addEventListener('click', function () {
+			setMode(item.getAttribute('data-theme-choice'));
+			closeMenu(true);
+		});
+	});
+
+	// Stäng menyn vid klick utanför
+	document.addEventListener('click', function (event) {
+		if (menuIsOpen() && !wrapper.contains(event.target)) {
+			closeMenu(false);
+		}
+	});
+
+	// Vänta på jtd innan webbtemats stilmall byts
+	if (typeof jtd !== 'undefined' && jtd.onReady) {
+		jtd.onReady(initJtdTheme);
+	} else {
+		document.addEventListener('DOMContentLoaded', initJtdTheme);
+	}
+
+	// Litet API för sidor som vill byta tema programmatiskt, till exempel QR-kod-exemplet
+	window.siteTheme = {
+		get: function () {
+			return mode;
+		},
+		set: function (next) {
+			setMode(next);
+		}
+	};
 })();
 </script>

@@ -17,6 +17,10 @@ has_children: true
 2. **Användaren i centrum** - Baserat på verkliga användarbehov
 3. **Öppen samverkan** - Alla myndigheter kan bidra
 
+## Färgläge
+
+Webbplatsen följer som standard färgläget i ditt operativsystem – ljust eller mörkt. Med knappen ljust, mörkt och system uppe till höger väljer du själv om webbplatsen alltid ska visas i ljust eller mörkt läge, eller om den ska fortsätta följa systemet. Ditt val sparas i webbläsaren tills du rensar webbplatsdata.
+
 ## Kontakt
 
 För frågor eller förslag, kontakta arbetsgruppen via [GitHub Issues](https://github.com/pattespatte/design-patterns-test/issues).

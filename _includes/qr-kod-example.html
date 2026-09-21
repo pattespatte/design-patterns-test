@@ -108,14 +108,14 @@
 	updateLabel();
 
 	toggle.addEventListener('click', function () {
-		var headerToggle = document.querySelector('.js-toggle-dark-mode');
-		if (headerToggle && headerToggle !== toggle) {
-			// Reuse the site's own toggle: it updates icons, localStorage and jtd.setTheme.
-			headerToggle.click();
+		if (window.siteTheme && typeof window.siteTheme.set === 'function') {
+			// Byt sidans tema via webbplatsens tema-API: det uppdaterar ikoner,
+			// localStorage och jtd.setTheme.
+			window.siteTheme.set(isDark() ? 'light' : 'dark');
 			return;
 		}
 
-		// Fallback when the header toggle is missing.
+		// Reservlösning när tema-API:t saknas.
 		var dark = !isDark();
 		document.documentElement.classList.toggle('dark', dark);
 		try {
